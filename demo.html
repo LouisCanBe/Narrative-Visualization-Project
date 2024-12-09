@@ -153,6 +153,91 @@
         </div>
       </footer>
     </main>
-    <script>document.addEventListener('DOMContentLoaded', () => { const sections = document.querySelectorAll('section'); const navLinks = document.querySelectorAll('nav a'); const backgrounds = document.querySelectorAll('.fixed.inset-0'); const thumbnails = document.querySelectorAll('[data-section]'); const footer = document.querySelector('footer'); const observerOptions = { root: null, rootMargin: '-20% 0px', threshold: 0.5 }; const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const id = entry.target.getAttribute('id'); navLinks.forEach(link => link.getAttribute('href') === `#${id}` ? link.classList.add('text-custom') : link.classList.remove('text-custom')); backgrounds.forEach((bg, index) => bg.style.opacity = index === Array.from(sections).findIndex(section => section.id === id) ? '1' : '0'); thumbnails.forEach(thumb => { const thumbSection = thumb.getAttribute('data-section'); if (thumbSection === id) { thumb.style.transform = 'scale(1)'; thumb.style.opacity = '1'; } else { thumb.style.transform = 'scale(0)'; thumb.style.opacity = '0'; } }); if (id === 'summary') { footer.style.opacity = '1'; } else { footer.style.opacity = '0'; } } }); }, observerOptions); sections.forEach(section => observer.observe(section)); const mobileMenuButton = document.querySelector('nav button'); const mobileMenu = document.querySelector('nav div.hidden'); mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); }); document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const targetId = this.getAttribute('href'); const targetElement = document.querySelector(targetId); if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth' }); } }); }); });</script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 获取所有section元素
+        const sections = document.querySelectorAll('section');
+        // 获取所有导航链接
+        const navLinks = document.querySelectorAll('nav a');
+        // 获取所有背景元素
+        const backgrounds = document.querySelectorAll('.fixed.inset-0');
+        // 获取所有缩略图元素
+        const thumbnails = document.querySelectorAll('[data-section]');
+        // 获取页脚元素
+        const footer = document.querySelector('footer');
+        // 定义观察器选项
+        const observerOptions = {
+          root: null,
+          rootMargin: '-20% 0px',
+          threshold: 0.5
+        };
+        // 创建观察器
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // 获取当前交叉的元素的ID
+              const id = entry.target.getAttribute('id');
+              // 根据当前交叉的元素ID，高亮对应的导航链接
+              navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${id}`) {
+                  link.classList.add('text-custom');
+                } else {
+                  link.classList.remove('text-custom');
+                }
+              });
+              // 根据当前交叉的元素ID，显示对应的背景
+              backgrounds.forEach((bg, index) => {
+                bg.style.opacity = index === Array.from(sections).findIndex(section => section.id === id) ? '1' : '0';
+              });
+              // 根据当前交叉的元素ID，显示对应的缩略图
+              thumbnails.forEach(thumb => {
+                const thumbSection = thumb.getAttribute('data-section');
+                if (thumbSection === id) {
+                  thumb.style.transform = 'scale(1)';
+                  thumb.style.opacity = '1';
+                } else {
+                  thumb.style.transform = 'scale(0)';
+                  thumb.style.opacity = '0';
+                }
+              });
+              // 如果当前交叉的元素ID是“summary”，则显示页脚
+              if (id === 'summary') {
+                footer.style.opacity = '1';
+              } else {
+                footer.style.opacity = '0';
+              }
+            }
+          });
+        }, observerOptions);
+
+        // 对每个section元素进行观察
+        sections.forEach(section => observer.observe(section));
+
+        // 获取移动菜单按钮和移动菜单
+        const mobileMenuButton = document.querySelector('nav button');
+        const mobileMenu = document.querySelector('nav div.hidden');
+        // 监听移动菜单按钮的点击事件
+        mobileMenuButton.addEventListener('click', () => {
+          // 切换移动菜单的显示和隐藏
+          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('flex');
+        });
+
+        // 监听所有锚点链接的点击事件
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            // 获取目标元素的ID
+            const targetId = this.getAttribute('href');
+            // 获取目标元素
+            const targetElement = document.querySelector(targetId);
+            // 如果目标元素存在，则平滑滚动到目标元素
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      });
+    </script>
   
 </body></html>
