@@ -1,158 +1,240 @@
 <!DOCTYPE html>
-<html lang="zh"><head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://ai-public.mastergo.com/gen_page/tailwind-custom.css" rel="stylesheet"/>
-    
-    
-    
-     <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
-    <script src="https://ai-public.mastergo.com/gen_page/tailwind-config.min.js" data-color="#D20000" data-border-radius="medium"></script>
-    <style>
-        /* 隐藏默认滚动条 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        /* 滚动条轨道 */
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-        
-        /* 滚动条滑块 */
-        ::-webkit-scrollbar-thumb {
-            background: rgba(210, 0, 0, 0.5);
-            border-radius: 4px;
-        }
-        
-        /* 鼠标悬停在滑块上的效果 */
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(210, 0, 0, 0.8);
-        }
-    </style>
-    </head>
-  <body class="bg-black text-white overflow-x-hidden">
-    <nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50">
-      <div class="container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-          <div class="text-2xl font-bold">我，辣条</div>
-          <div class="hidden md:flex space-x-8">
-            <a href="#origin" class="hover:text-custom transition-colors">起源</a>
-            <a href="#help" class="hover:text-custom transition-colors">帮扶</a>
-            <a href="#constraint" class="hover:text-custom transition-colors">约束</a>
-            <a href="#transform" class="hover:text-custom transition-colors">转型</a>
-            <a href="#review" class="hover:text-custom transition-colors">回顾</a>
-            <a href="#summary" class="hover:text-custom transition-colors">总结</a>
-          </div>
-          <button class="md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-          </button>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://ai-public.mastergo.com/gen_page/tailwind-custom.css" rel="stylesheet" />
+
+
+
+  <script
+    src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+  <script src="https://ai-public.mastergo.com/gen_page/tailwind-config.min.js" data-color="#D20000"
+    data-border-radius="medium"></script>
+  <style>
+    /* 隐藏默认滚动条 */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* 滚动条轨道 */
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* 滚动条滑块 */
+    ::-webkit-scrollbar-thumb {
+      background: rgba(210, 0, 0, 0.5);
+      border-radius: 4px;
+    }
+
+    /* 鼠标悬停在滑块上的效果 */
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(210, 0, 0, 0.8);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+  <nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold">我，辣条</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#origin" class="hover:text-custom transition-colors">起源</a>
+          <a href="#help" class="hover:text-custom transition-colors">帮扶</a>
+          <a href="#constraint" class="hover:text-custom transition-colors">约束</a>
+          <a href="#transform" class="hover:text-custom transition-colors">转型</a>
+          <a href="#review" class="hover:text-custom transition-colors">回顾</a>
+          <a href="#summary" class="hover:text-custom transition-colors">总结</a>
         </div>
+        <button class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-    </nav>
-    <main class="relative min-h-screen">
-      <div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
-        <img src="img/image (1).png" class="w-full h-full object-cover" alt="背景图片"/>
+    </div>
+  </nav>
+  <main class="relative min-h-screen">
+    <div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
+      <img src="img/image (1).png" class="w-full h-full object-cover" alt="背景图片" />
+    </div>
+    <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="img/image (2).png" class="w-full h-full object-cover" alt="背景图片2" />
+    </div>
+    <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="img/image (3).png" class="w-full h-full object-cover" alt="背景图片3" />
+    </div>
+    <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="img/image (4).png" class="w-full h-full object-cover" alt="背景图片4" />
+    </div>
+    <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片5" />
+    </div>
+    <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
+    </div>
+    <div class="relative pt-24 pb-20 container mx-auto">
+      <div
+        class="fixed left-[10vw] top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 pointer-events-none w-[10vw] mt-24"
+        style="position: fixed; left: 10vw; top: 50%; transform: translateY(-50%) scale(0.5); display: flex; flex-direction: column; gap: 1rem; width: 10vw; z-index: 40;">
+        <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2"
+          data-section="origin" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img
+            src="https://ai-public.mastergo.com/ai/img_res/53419713f70a16435d9451473f50ce53.jpg" class="w-full rounded"
+            alt="起源缩略图" /></div>
+        <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2"
+          data-section="help" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img
+            src="https://ai-public.mastergo.com/ai/img_res/091b9af45385546b6b0f013634cb0593.jpg" class="w-full rounded"
+            alt="帮扶缩略图" /></div>
+        <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2"
+          data-section="constraint" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img
+            src="https://ai-public.mastergo.com/ai/img_res/404973163840eecaa9f2cd82e016ff9c.jpg" class="w-full rounded"
+            alt="约束缩略图" /></div>
+        <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2"
+          data-section="transform" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img
+            src="https://ai-public.mastergo.com/ai/img_res/45cd12907fdd0f3a527fba32e768bed9.jpg" class="w-full rounded"
+            alt="转型缩略图" /></div>
+        <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2"
+          data-section="review" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img
+            src="https://ai-public.mastergo.com/ai/img_res/01a972ff7304f9b515a1c0215a97531e.jpg" class="w-full rounded"
+            alt="回顾缩略图" /></div>
+        <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2"
+          data-section="summary" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img
+            src="https://ai-public.mastergo.com/ai/img_res/486d221ed3b86fd4700962d29beab5af.jpg" class="w-full rounded"
+            alt="总结缩略图" /></div>
       </div>
-      <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-        <img src="img/image (2).png" class="w-full h-full object-cover" alt="背景图片2"/>
-      </div>
-      <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-        <img src="img/image (3).png" class="w-full h-full object-cover" alt="背景图片3"/>
-      </div>
-      <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-        <img src="img/image (4).png" class="w-full h-full object-cover" alt="背景图片4"/>
-      </div>
-      <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-        <img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片5"/>
-      </div>
-      <div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-        <img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6"/>
-      </div>
-      <div class="relative pt-24 pb-20 container mx-auto">
-        <div class="fixed left-[10vw] top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 pointer-events-none w-[10vw] mt-24" style="position: fixed; left: 10vw; top: 50%; transform: translateY(-50%) scale(0.5); display: flex; flex-direction: column; gap: 1rem; width: 10vw; z-index: 40;">
-          <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2" data-section="origin" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img src="https://ai-public.mastergo.com/ai/img_res/53419713f70a16435d9451473f50ce53.jpg" class="w-full rounded" alt="起源缩略图"/></div>
-          <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2" data-section="help" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img src="https://ai-public.mastergo.com/ai/img_res/091b9af45385546b6b0f013634cb0593.jpg" class="w-full rounded" alt="帮扶缩略图"/></div>
-          <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2" data-section="constraint" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img src="https://ai-public.mastergo.com/ai/img_res/404973163840eecaa9f2cd82e016ff9c.jpg" class="w-full rounded" alt="约束缩略图"/></div>
-          <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2" data-section="transform" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img src="https://ai-public.mastergo.com/ai/img_res/45cd12907fdd0f3a527fba32e768bed9.jpg" class="w-full rounded" alt="转型缩略图"/></div>
-          <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2" data-section="review" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img src="https://ai-public.mastergo.com/ai/img_res/01a972ff7304f9b515a1c0215a97531e.jpg" class="w-full rounded" alt="回顾缩略图"/></div>
-          <div class="bg-black bg-opacity-50 p-2 rounded-lg transform scale-0 transition-all duration-500 mb-2" data-section="summary" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease"><img src="https://ai-public.mastergo.com/ai/img_res/486d221ed3b86fd4700962d29beab5af.jpg" class="w-full rounded" alt="总结缩略图"/></div>
-        </div>
-        <section id="origin" class="min-h-screen flex items-center justify-center">
-          <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4 transform translate-y-0 opacity-100 transition-all duration-1000" style="margin-top: 80px; margin-bottom: 80px;">
-            <h2 class="text-3xl font-bold mb-4 text-center">诞生于洪灾的滋味</h2>
-            <p class="text-lg leading-relaxed text-center">
-              第一章节，主要讲述了平江县的辣条是洪水之中，结合农民的智慧而诞生的，一经问世就在平江县畅销
-            </p>
+      <section id="origin" class="min-h-screen flex items-center justify-center">
+        <div
+          class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4 transform translate-y-0 opacity-100 transition-all duration-1000"
+          style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-3xl font-bold mb-4 text-center">诞生于洪灾的滋味</h2>
+          <p class="text-lg leading-relaxed text-center">
+            第一章节，主要讲述了平江县的辣条是洪水之中，结合农民的智慧而诞生的，一经问世就在平江县畅销
+          </p>
           <!-- <div class="flex justify-center space-x-4 mt-6">
             <img src="https://ai-public.mastergo.com/ai/img_res/5485396a1b881b834bb1cf35a80d7e61.jpg" class="w-20 h-20 rounded-lg object-cover" alt="起源图1"/><img src="https://ai-public.mastergo.com/ai/img_res/a6906ce05269642f08608b47e6302436.jpg" class="w-20 h-20 rounded-lg object-cover" alt="起源图2"/><img src="https://ai-public.mastergo.com/ai/img_res/c1d0b47c584551fca02ab03c17d65d6a.jpg" class="w-20 h-20 rounded-lg object-cover" alt="起源图3"/></div> -->
-          </div>
-        </section>
-        <section id="help" class="min-h-screen flex items-center justify-center">
-          <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4" style="margin-top: 80px; margin-bottom: 80px;">
-            <h2 class="text-3xl font-bold mb-4 text-center">修一条通往外面的路</h2>
-            <p class="text-lg leading-relaxed text-center">
-              辣条规模在增长过程中因为运输和成本问题的陷入长久僵局，大量工人流失。修路通路过后，辣条企业迅速成功，主要通过描写辣条视角中工厂的变化
-            </p>
+        </div>
+      </section>
+      <section id="help" class="min-h-screen flex items-center justify-center">
+        <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4"
+          style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-3xl font-bold mb-4 text-center">修一条通往外面的路</h2>
+          <p class="text-lg leading-relaxed text-center">
+            辣条规模在增长过程中因为运输和成本问题的陷入长久僵局，大量工人流失。修路通路过后，辣条企业迅速成功，主要通过描写辣条视角中工厂的变化
+          </p>
           <!-- <div class="flex justify-center space-x-4 mt-6">
             <img src="https://ai-public.mastergo.com/ai/img_res/3cb06825f5fcdb4e1c8c99002506a4a8.jpg" class="w-20 h-20 rounded-lg object-cover" alt="帮扶图1"/><img src="https://ai-public.mastergo.com/ai/img_res/995c4071ffec596a2df4dad975f8dc6e.jpg" class="w-20 h-20 rounded-lg object-cover" alt="帮扶图2"/><img src="https://ai-public.mastergo.com/ai/img_res/aa6196386dc04808424f4e8a12e9b5fa.jpg" class="w-20 h-20 rounded-lg object-cover" alt="帮扶图3"/></div> -->
-          </div>
-        </section>
-        <section id="constraint" class="min-h-screen flex items-center justify-center">
-          <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4" style="margin-top: 80px; margin-bottom: 80px;">
-            <h2 class="text-3xl font-bold mb-4 text-center">不能成为垃圾的我</h2>
-            <p class="text-lg leading-relaxed text-center">
-              食品安全问题给整个辣条产业泼了一盆冷水被评为垃圾食品。在当地企业和平江县政府的支持下，制定标准，工厂升级
-            </p>
+        </div>
+      </section>
+      <section id="constraint" class="min-h-screen flex items-center justify-center">
+        <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4"
+          style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-3xl font-bold mb-4 text-center">不能成为垃圾的我</h2>
+          <p class="text-lg leading-relaxed text-center">
+            食品安全问题给整个辣条产业泼了一盆冷水被评为垃圾食品。在当地企业和平江县政府的支持下，制定标准，工厂升级
+          </p>
           <!-- <div class="flex justify-center space-x-4 mt-6">
             <img src="https://ai-public.mastergo.com/ai/img_res/2007feb1f13443ad759f5ed6e41da61d.jpg" class="w-20 h-20 rounded-lg object-cover" alt="约束图1"/><img src="https://ai-public.mastergo.com/ai/img_res/e26ef728481d1b0e03de362d5ba9fa35.jpg" class="w-20 h-20 rounded-lg object-cover" alt="约束图2"/><img src="https://ai-public.mastergo.com/ai/img_res/6d3a1ac4d60c3d619e4704d595e7206c.jpg" class="w-20 h-20 rounded-lg object-cover" alt="约束图3"/></div> -->
-          </div>
-        </section>
-        <section id="transform" class="min-h-screen flex items-center justify-center">
-          <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4" style="margin-top: 80px; margin-bottom: 80px;">
-            <h2 class="text-3xl font-bold mb-4 text-center">来一场主动的破局</h2>
-            <p class="text-lg leading-relaxed text-center">
-              平江县的辣条企业主动将原料端和销售端拉回本地，通过直播、联名等形式提高营销能力，并通过校企合作提高本地辣椒产量
-            </p>
+        </div>
+      </section>
+      <section id="transform" class="min-h-screen flex items-center justify-center">
+        <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4"
+          style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-3xl font-bold mb-4 text-center">来一场主动的破局</h2>
+          <p class="text-lg leading-relaxed text-center">
+            平江县的辣条企业主动将原料端和销售端拉回本地，通过直播、联名等形式提高营销能力，并通过校企合作提高本地辣椒产量
+          </p>
           <!-- <div class="flex justify-center space-x-4 mt-6">
             <img src="https://ai-public.mastergo.com/ai/img_res/c3346b9c899d08af57e8fc7fa878474f.jpg" class="w-20 h-20 rounded-lg object-cover" alt="转型图1"/><img src="https://ai-public.mastergo.com/ai/img_res/9b4cb399d6babb471e33b9231f9ff2fb.jpg" class="w-20 h-20 rounded-lg object-cover" alt="转型图2"/><img src="https://ai-public.mastergo.com/ai/img_res/dd07ff3c6297277b8af0f70690567bdd.jpg" class="w-20 h-20 rounded-lg object-cover" alt="转型图3"/></div> -->
-          </div>
-        </section>
-        <section id="review" class="min-h-screen flex items-center justify-center">
-          <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4" style="margin-top: 80px; margin-bottom: 80px;">
-            <h2 class="text-3xl font-bold mb-4 text-center">摘下贫困的帽子</h2>
-            <p class="text-lg leading-relaxed text-center">
-              回顾辣条产业的变化给平江县带来了多少产值的变化，带来大量工作岗位，并摘掉了贫困县的帽子
-            </p>
+        </div>
+      </section>
+      <section id="review" class="min-h-screen flex items-center justify-center">
+        <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4"
+          style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-3xl font-bold mb-4 text-center">摘下贫困的帽子</h2>
+          <p class="text-lg leading-relaxed text-center">
+            回顾辣条产业的变化给平江县带来了多少产值的变化，带来大量工作岗位，并摘掉了贫困县的帽子
+          </p>
           <div class="flex justify-center space-x-4 mt-6">
             <!-- <img src="https://ai-public.mastergo.com/ai/img_res/949e7b33fb488559a23c94e197ce3150.jpg" class="w-20 h-20 rounded-lg object-cover" alt="回顾图1"/><img src="https://ai-public.mastergo.com/ai/img_res/98d0c6a5d52da52b5260f8bbfaa3b781.jpg" class="w-20 h-20 rounded-lg object-cover" alt="回顾图2"/><img src="https://ai-public.mastergo.com/ai/img_res/6335a49c3290e3753e787240a50c6915.jpg" class="w-20 h-20 rounded-lg object-cover" alt="回顾图3"/></div></div> -->
           </div>
-        </section>
-        <section id="summary" class="min-h-screen flex items-center justify-center">
-          <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4" style="margin-top: 80px; margin-bottom: 80px;">
-            <h2 class="text-3xl font-bold mb-4 text-center">建造更美好的明天</h2>
-            <p class="text-lg leading-relaxed text-center">
-              回顾脱贫攻坚期间产业振兴中典型产业的作用和最后达成的成果
-            </p>
+      </section>
+      <section id="summary" class="min-h-screen flex items-center justify-center">
+        <div class="bg-black bg-opacity-70 p-8 rounded-lg max-w-2xl mx-4"
+          style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-3xl font-bold mb-4 text-center">建造更美好的明天</h2>
+          <p class="text-lg leading-relaxed text-center">
+            回顾脱贫攻坚期间产业振兴中典型产业的作用和最后达成的成果
+          </p>
           <!-- <div class="flex justify-center space-x-4 mt-6">
             <img src="https://ai-public.mastergo.com/ai/img_res/dab4bf455adce742e6c3da72ac7abd5b.jpg" class="w-20 h-20 rounded-lg object-cover" alt="总结图1"/><img src="https://ai-public.mastergo.com/ai/img_res/7890b9a128e26633ddcd569d37f622d4.jpg" class="w-20 h-20 rounded-lg object-cover" alt="总结图2"/><img src="https://ai-public.mastergo.com/ai/img_res/8e4b1afa40e21a3d1bd87fd52aaa50b8.jpg" class="w-20 h-20 rounded-lg object-cover" alt="总结图3"/></div> -->
-          </div>
-        </section>
-      </div>
-      <footer class="fixed bottom-0 w-full bg-black bg-opacity-80 backdrop-blur-sm opacity-0 transition-opacity duration-500">
-        <div class="container mx-auto px-6 py-4">
-          <div class="flex flex-wrap justify-between items-center">
-            <div class="flex space-x-6">
-              <a href="#" class="hover:text-custom transition-colors">联系我们</a>
-              <a href="#" class="hover:text-custom transition-colors">隐私政策</a>
-              <a href="#" class="hover:text-custom transition-colors">帮助中心</a>
-            </div>
-            <div class="text-sm">© 2024 数据动画. 保留所有权利</div>
-          </div>
         </div>
-      </footer>
-    </main>
-    <script>document.addEventListener('DOMContentLoaded', () => { const sections = document.querySelectorAll('section'); const navLinks = document.querySelectorAll('nav a'); const backgrounds = document.querySelectorAll('.fixed.inset-0'); const thumbnails = document.querySelectorAll('[data-section]'); const footer = document.querySelector('footer'); const observerOptions = { root: null, rootMargin: '-20% 0px', threshold: 0.5 }; const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const id = entry.target.getAttribute('id'); navLinks.forEach(link => link.getAttribute('href') === `#${id}` ? link.classList.add('text-custom') : link.classList.remove('text-custom')); backgrounds.forEach((bg, index) => bg.style.opacity = index === Array.from(sections).findIndex(section => section.id === id) ? '1' : '0'); thumbnails.forEach(thumb => { const thumbSection = thumb.getAttribute('data-section'); if (thumbSection === id) { thumb.style.transform = 'scale(1)'; thumb.style.opacity = '1'; } else { thumb.style.transform = 'scale(0)'; thumb.style.opacity = '0'; } }); if (id === 'summary') { footer.style.opacity = '1'; } else { footer.style.opacity = '0'; } } }); }, observerOptions); sections.forEach(section => observer.observe(section)); const mobileMenuButton = document.querySelector('nav button'); const mobileMenu = document.querySelector('nav div.hidden'); mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); }); document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const targetId = this.getAttribute('href'); const targetElement = document.querySelector(targetId); if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth' }); } }); }); });</script>
-  
-</body></html>
+      </section>
+    </div>
+    <footer
+      class="fixed bottom-0 w-full bg-black bg-opacity-80 backdrop-blur-sm opacity-0 transition-opacity duration-500">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex flex-wrap justify-between items-center">
+          <div class="flex space-x-6">
+            <a href="#" class="hover:text-custom transition-colors">联系我们</a>
+            <a href="#" class="hover:text-custom transition-colors">隐私政策</a>
+            <a href="#" class="hover:text-custom transition-colors">帮助中心</a>
+          </div>
+          <div class="text-sm">© 2024 数据动画. 保留所有权利</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+      const backgrounds = document.querySelectorAll('.fixed.inset-0');
+      const thumbnails = document.querySelectorAll('[data-section]');
+      const footer = document.querySelector('footer');
+      const observerOptions = { root: null, rootMargin: '-20% 0px', threshold: 0.5 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => link.getAttribute('href') === `#${id}` ? link.classList.add('text-custom') : link.classList.remove('text-custom')); backgrounds.forEach((bg, index) => bg.style.opacity = index === Array.from(sections).findIndex(section => section.id === id) ? '1' : '0');
+            thumbnails.forEach(thumb => {
+              const thumbSection = thumb.getAttribute('data-section');
+              if (thumbSection === id) {
+                thumb.style.transform = 'scale(1)';
+                thumb.style.opacity = '1';
+              } else {
+                thumb.style.transform = 'scale(0)';
+                thumb.style.opacity = '0';
+              }
+            });
+            if (id === 'summary') { footer.style.opacity = '1'; } else { footer.style.opacity = '0'; }
+          }
+        });
+      }, observerOptions);
+      sections.forEach(section => observer.observe(section));
+      const mobileMenuButton = document.querySelector('nav button');
+      const mobileMenu = document.querySelector('nav div.hidden');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+
+        });
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
