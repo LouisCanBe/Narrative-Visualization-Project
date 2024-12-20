@@ -15,6 +15,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
 	<style>
+		/* 确保html和body的宽度和高度为100% */
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0; /* 去掉默认边距 */
+		}
 		/* 隐藏默认滚动条 */
 		::-webkit-scrollbar {
 			width: 8px;
@@ -45,6 +51,15 @@
 			line-height: normal;
 			letter-spacing: 10px;
 		}
+		.line-black {
+			color: #000;
+			font-family: "Alibaba PuHuiTi 2.0";
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 70;
+			line-height: normal;
+			letter-spacing: 10px;
+		}
 	</style>
 </head>
 
@@ -56,6 +71,7 @@
 				<div class="hidden md:flex space-x-8">
 					<a href="#intro" class="hover:text-custom transition-colors">intro</a>
 					<a href="#origin" class="hover:text-custom transition-colors">诞生</a>
+					<a href="#assistance" class="hover:text-custom transition-colors">帮扶</a>
 					<a href="#constraint" class="hover:text-custom transition-colors">约束</a>
 					<a href="#transform" class="hover:text-custom transition-colors">转型</a>
 					<a href="#review" class="hover:text-custom transition-colors">回顾</a>
@@ -67,13 +83,17 @@
 			</div>
 		</div>
 	</nav>
-	<main class="relative min-h-screen">
+	<main class="relative min-h-screen w-full">
 		<div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
 			<img src="img/s1_bg01.png" class="w-full h-full object-cover" alt="背景图片" />
 		</div>
 		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 			<img src="img/s2_bg02.svg" class="w-full h-full object-cover" alt="背景图片2" />
 		</div>
+		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+			<img src="img/s3_bg03.png" class="w-full h-full object-cover" alt="背景图片3" />
+		</div>
+		<!-- 后续章节待更新 -->
 		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 			<img src="img/image (3).png" class="w-full h-full object-cover" alt="背景图片3" />
 		</div>
@@ -181,7 +201,7 @@
 				<div style="height: 50vh;"></div>
 				<img class="line_2 line" src="img/s2_title.svg" alt="诞生" style="width: 40vw; opacity: 0;">
 				<div style="height: 50vh;"></div>
-				<div class="line_2 line" style="text-align: center; opacity: 0;">我诞生于一场湿漉漉的“想象”</div>
+				<div class="line_2 line" style="text-align: center; opacity: 0;">我诞生于一场湿漉漉的"想象"</div>
 				<div style="height: 50vh;"></div>
 				<div class="line_2 line" style="text-align: center; opacity: 0;">1998年,受厄尔尼诺现象影响,
 					<br>长江流域爆发大规模洪水,湖南省平江县受灾严重
@@ -324,6 +344,137 @@
 				<div style="height: 100vh;"></div>
 			</section>
 
+			<section id="assistance" class="flex flex-col items-center justify-center">
+				<div style="height: 0vh;"></div>
+				<img class="line_3 line" src="img/s3_title.svg" alt="帮扶" style="width: 40vw; opacity: 0;">
+				<div style="height: 50vh;"></div>
+				<!-- <img class="fullscreen_img" src="img/s3_全屏.png" alt="全屏背景" 
+				style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; object-fit: cover; 
+				opacity: 0; z-index: 0;"> -->
+				<div class="fullscreen_overlay" 
+					 style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
+				</div>
+				<div style="display: flex; justify-content: space-between; width: 100%;">
+					<div style="width: 50%; display: flex; align-items: center; position: relative;">
+						<img class="factory_img" src="img/s3_工厂.png" alt="工厂图片" 
+							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; opacity: 0;">
+					</div>
+					<div style="width: 50%; margin-left: auto;z-index: 1;">
+						<div style="height: 80vh;"></div>
+						<!-- 每个文字块单独设置class -->
+						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">老张把"米线机"给淘汰了，<br>取而代之的是有着许多巨大轰鸣声的"铁皮机器"</div>
+						<div style="height: 50vh;"></div>
+						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">工坊中的"人类"也越来越多</div>
+						<div style="height: 50vh;"></div>
+						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">外面偶尔出现几台"卡车"，<br>将一部分我送入"那片黑暗"，嘴里嘟囔着"走出去"</div>
+						<div style="height: 50vh;"></div>
+						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">工厂的声音似乎在一天天的变大，<br>每天都有更多新的我被生产出来，被运出去。</div>
+					</div>
+				</div>
+				<script>
+					// 标题
+					(function () {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+
+						// 使用 GSAP 的 staggerFromTo 创建动画
+						var tween = gsap.timeline();
+						tween.fromTo(".line_3", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 1 })
+							.to(".line_2", { opacity: 0, duration: 1, stagger: 1, delay: 1 }, 1);
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#origin",
+							duration: 1800,
+							offset: 300 // 添加 offset，延迟一定距离触发
+						})
+							.setTween(tween)
+							.addIndicators() // 添加指示器（需要插件）
+							.addTo(controller);
+					})();
+					// 文字
+					(function() {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+						
+						// 为每个文字块创建单独的动画
+						document.querySelectorAll('.text-block').forEach((block, index) => {
+							var tween = gsap.timeline()
+								.fromTo(block, 
+									{ opacity: 0 }, 
+									{ opacity: 1, duration: 1 }
+								)
+								.to(block, 
+									{ opacity: 0, duration: 1 },
+									"+=1" // 停留2秒后淡出
+								);
+
+							// 为每个文字块创建单独的场景
+							var scene = new ScrollMagic.Scene({
+								triggerElement: block,
+								duration: 800,    // 动画持续的滚动距离
+								offset: -300      // 提前触发的距离
+							})
+								.setTween(tween)
+								.addIndicators() // 开发时可以保留，上线前删除
+								.addTo(controller);
+						});
+					})();
+					
+					// 工厂图片
+					(function() {
+						var controller = new ScrollMagic.Controller();
+						
+						// 创建淡入淡出动画
+						var tween = gsap.timeline()
+							.fromTo(".factory_img", 
+								{ opacity: 0 }, 
+								{ opacity: 1, duration: 1 }
+							)
+							.to(".factory_img", 
+								{ opacity: 0, duration: 1 }, 
+								"+=2" // 停留2秒后开始淡出
+							);
+
+						// 创建场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#assistance",
+							duration: 3500,  // 动画持续的滚动距离
+							offset: 1000     // 开始的偏移量
+						})
+							.setTween(tween)
+							.addIndicators() // 开发时可以保留，上线前删除
+							.addTo(controller);
+					})();
+
+					// 全屏图片动画
+					(function() {
+						var controller = new ScrollMagic.Controller();
+						
+						// 创建全屏图片的淡入淡出动画
+						var tween = gsap.timeline()
+							.fromTo(".fullscreen_overlay", 
+								{ opacity: 0 }, 
+								{ opacity: 1, duration: 1.5 }  // 较慢的淡入
+							)
+							.to(".fullscreen_overlay", 
+								{ opacity: 0, duration: 1.5 },  // 较慢的淡出
+								"+=3"  // 停留3秒后开始淡出
+							);
+
+						// 创建场景，比工厂图片先出现，后消失
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#assistance",
+							duration: 4000,  // 较长的动画持续时间
+							offset: 800     // 比工厂图片提前出现
+						})
+							.setTween(tween)
+							.addIndicators({name: "全屏图片"}) // 开发时的指示器
+							.addTo(controller);
+					})();
+				</script>
+				<div style="height: 100vh;"></div>
+			</section>
+
 			<section id="constraint" class="flex items-center justify-center">
 				<div style="height: 100vh;"></div>
 			</section>
@@ -370,9 +521,9 @@
 			const observerOptions = {
 				root: null,
 				rootMargin: '-20% 0px',
-				threshold: 0.00001
+				threshold: 0.01
 			};
-			// 创建观��器
+			// 创建观察器
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
