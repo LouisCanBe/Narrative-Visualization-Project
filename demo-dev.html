@@ -87,7 +87,7 @@
 			<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
 		</div>
 
-		<div class="relative pt-24 pb-20 container mx-auto">
+		<div class="relative pt-24 pb-20 w-full">
 
 			<section id="intro" class="flex flex-col items-center justify-center">
 				<img id="spicy-strip" src="img/s1_latiao.svg" alt="辣条开始"
@@ -233,8 +233,93 @@
 							.addTo(controller);
 					})();
 				</script>
-				<img id="backgroundImage" src="img/s2_长背景图.svg" style="width: 100vw; transform: scale(1.12); transform-origin: center;">
-				
+
+				<div style="height: 100vh;"></div>
+
+				<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
+					style="width: 900px; transform: translate(-500px, -300px);">
+				<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方"
+					style="width: 150px; transform: translate(-830px, -650px);">
+				<img class="scroll-image" src="img/s2_替代.svg" alt="替代"
+					style="width: 400px; transform: translate(-500px, -1200px);">
+				<img class="scroll-image" id="exportImage" src="img/s2_出口.svg" alt="出口"
+					style="width: 100px; transform: translate(-600px, -900px);">
+				<img id="latiao" class="scroll-image" src="img/s2_辣条.svg" alt="辣条"
+					style="width: 700px; transform: translate(-300px, -1000px);">
+
+				<script>
+					(function () {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+						// 创建 GSAP 动画，依次显示图片
+						var tween = gsap.fromTo(".scroll-image", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.5 });
+
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#rain",
+							duration: 200
+						})
+							.setTween(tween)
+							.addIndicators() // 添加指示器（需要插件）
+							.addTo(controller);
+					})();
+				</script>
+
+
+				<script>
+					gsap.to("#exportImage", {
+						rotation: 360,
+						transformOrigin: "center center",
+						repeat: -1,
+						ease: "linear",
+						duration: 3
+					});
+				</script>
+				<!-- <img id="backgroundImage" src="img/s2_长背景图.svg" style="width: 100vw; transform: scale(1); transform-origin: center; transform: translate(0, -200vh);"> -->
+
+
+				<div class="line_3 line" style="text-align: left; opacity: 1; transform: translate(300px, -2800px);">
+					<div class="line3">面对灾情</div>
+					<div class="line3">老张拿着一张“酱干”配方</div>
+					<div class="line3">利用”面粉“代替了原料“大豆”</div>
+					<div class="line3">倒入了“米线机”中，翻滚、压扁、拉长</div>
+					<div class="line3">于是，第一根“辣条”-我诞生了</div>
+				</div>
+				<script>
+					(function () {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+						// 创建 GSAP 动画，逐行显示
+						var tween = gsap.fromTo(".line3", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.5 });
+
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: ".line_3",
+							duration: 200
+						})
+							.setTween(tween)
+							.addIndicators() // 添加指示器（需要插件）
+							.addTo(controller);
+					})();
+				</script>
+				<div style="width: 1600px; transform: translate(-10px, -1900px);">
+					<img src="img/s2girl.svg" alt="girl" style="width: 100%;">
+					<img src="img/s2真好吃.svg" alt="girl" style="width: 30%; position: absolute; top: 20px; left: 1200px;">
+				</div>
+
+				<div style="width: 100%; transform: translate(-10px, -1300px);">
+					<img src="img/s2我火辣.svg" alt="girl" style="width: 40%; display: block; margin: 0 auto;">
+					<img src="img/s2滋味背景.svg" alt="girl" style="width: 100%; transform: translateY(-50%);">
+				</div>
+
+				<div style="width: 100%; transform: translate(-10px, -1300px);">
+				<img src="img/s2人类小孩.svg" alt="girl" style="width: 60%; display: block; margin: 0 auto; position: relative; z-index: 1;">
+				<img src="img/s2辣条商店.svg" alt="girl" style="width: 100%; transform: translateY(-100%); position: relative; z-index: 0;">
+				</div>
+
+				<img src="img/s2招牌.svg" style="width:60%; transform: translateY(-2300px)">
+				<img src="img/s2众多辣条.svg" style="width:100%; transform: translateY(-2100px)">
+
 
 				<div style="height: 100vh;"></div>
 			</section>
