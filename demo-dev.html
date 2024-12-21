@@ -95,7 +95,7 @@
 		</div>
 		<!-- 后续章节待更新 -->
 		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/image (3).png" class="w-full h-full object-cover" alt="背景图片3" />
+			<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" />
 		</div>
 		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 			<img src="img/image (4).png" class="w-full h-full object-cover" alt="背景图片4" />
@@ -340,8 +340,7 @@
 				<img src="img/s2招牌.svg" style="width:60%; transform: translateY(-2300px)">
 				<img src="img/s2众多辣条.svg" style="width:100%; transform: translateY(-2100px)">
 
-
-				<div style="height: 100vh;"></div>
+				<!-- <div style="height: 100vh;"></div> -->
 			</section>
 
 			<section id="assistance" class="flex flex-col items-center justify-center">
@@ -475,7 +474,46 @@
 				<div style="height: 100vh;"></div>
 			</section>
 
-			<section id="constraint" class="flex items-center justify-center">
+			<section id="constraint" class="flex flex-col items-center justify-center">
+				<img src="img/s4line01.svg" alt="">
+				<img src="img/s4line02.svg" alt="">
+				<div style="height: 1500px;" id="lajidui">
+					<img class="garbage" src="img/s4垃圾堆.svg" alt="">
+					<img class="track" src="img/s4跑道.svg" alt="" style="transform: translateY(-500px);">
+					<div class="spicy-strips" style="display: flex; justify-content: space-between; width: 100%; gap: 8px; transform: translateY(-1300px);">
+						<img src="img/s4辣条左.svg" alt="" style="transform: translateX(200px);">
+						<img src="img/s4辣条中.svg" alt="" style="transform: translateY(200px);">
+						<img src="img/s4辣条右.svg" alt="" style="transform: translateX(-200px);">
+					</div>
+					<img class="tv" src="img/s4电视.svg" alt="" style="transform: translateY(-1200px);">
+					<script>
+						(function () {
+							// 初始化 ScrollMagic 控制器
+							var controller = new ScrollMagic.Controller();
+
+							// 创建 GSAP 动画
+							var tween = gsap.timeline();
+							tween.to(".garbage", { y: -100, duration: 2 })
+								.to(".track", { y: -600, duration: 1.5 }, 0)
+								.to(".spicy-strips", { y: -1600, duration: 1 }, 0)
+								.to(".tv", { y: -1600, duration: 0.5 }, 0);
+
+							// 创建 ScrollMagic 场景
+							var scene = new ScrollMagic.Scene({
+								triggerElement: "#lajidui",
+								duration: 500,  // 动画持续的滚动距离
+								offset: 400     // 开始的偏移量
+							})
+								.setTween(tween)
+								.addIndicators({name: "垃圾堆"}) // 开发时可以保留，上线前删除
+								.addTo(controller);
+						})();
+					</script>
+				</div>
+				<img src="img/s4line03.svg" alt="">
+				<img src="img/s4line04.svg" alt="">
+				
+
 				<div style="height: 100vh;"></div>
 			</section>
 
