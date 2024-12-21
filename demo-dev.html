@@ -44,8 +44,9 @@
 
 		.line {
 			color: #FFF;
-			font-family: "Alibaba PuHuiTi 2.0";
-			font-size: 30px;
+			/* font-family: "Alibaba PuHuiTi 2.0"; */
+			font-family: 'Chillzhuo', sans-serif;
+			font-size: 60px;
 			font-style: normal;
 			font-weight: 70;
 			line-height: normal;
@@ -53,17 +54,60 @@
 		}
 		.line-black {
 			color: #000;
-			font-family: "Alibaba PuHuiTi 2.0";
+			font-family: 'Chillzhuo', sans-serif;
 			font-size: 30px;
 			font-style: normal;
 			font-weight: 70;
 			line-height: normal;
 			letter-spacing: 10px;
 		}
+
+		.factory_img.factory_1 {
+			display: none;
+			}
+
+		.factory_img.factory_2 {
+		display: none;
+		}
+
+		.factory_img.factory_3 {
+		display: none;
+		}
+
+		.factory_img.factory_4 {
+		display: none;
+		}
+
+		.factory_img.factory_5 {
+		display: none;
+		}
+		.factory_img.factory_1.active {
+		display: block;
+		}
+
+		.factory_img.factory_2.active {
+		display: block;
+		}
+
+		.factory_img.factory_3.active {
+		display: block;
+		}
+
+		.factory_img.factory_4.active {
+		display: block;
+		}
+
+		.factory_img.factory_5.active {
+		display: block;
+		}
 	</style>
 </head>
 
 <body class="bg-black text-white overflow-x-hidden">
+	<!-- 添加自动滚动按钮 -->
+	<button id="scrollToggle" class="fixed bottom-10 right-10 bg-red-500 text-white p-2 rounded" style="z-index: 1;">
+		开启自动滚动
+	</button>
 	<nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50">
 		<div class="container mx-auto px-6 py-4">
 			<div class="flex justify-between items-center">
@@ -202,11 +246,11 @@
 				<img class="line_2 line" src="img/s2_title.svg" alt="诞生" style="width: 40vw; opacity: 0;">
 				<div style="height: 50vh;"></div>
 				<div class="line_2 line" style="text-align: center; opacity: 0;">我诞生于一场湿漉漉的"想象"</div>
-				<div style="height: 50vh;"></div>
+				<div style="height: 30vh;"></div>
 				<div class="line_2 line" style="text-align: center; opacity: 0;">1998年,受厄尔尼诺现象影响,
 					<br>长江流域爆发大规模洪水,湖南省平江县受灾严重
 				</div>
-				<div style="height: 50vh;"></div>
+				<div style="height: 30vh;"></div>
 				<div class="line_2 line" style="text-align: center; opacity: 0;">平江县最大的产业酱干的原料大豆, <br>大幅度减产,生意难以为继</div>
 				<script>
 					(function () {
@@ -339,35 +383,42 @@
 
 				<img src="img/s2招牌.svg" style="width:60%; transform: translateY(-2300px)">
 				<img src="img/s2众多辣条.svg" style="width:100%; transform: translateY(-2100px)">
-
-				<!-- <div style="height: 100vh;"></div> -->
 			</section>
 
 			<section id="assistance" class="flex flex-col items-center justify-center">
-				<div style="height: 0vh;"></div>
-				<img class="line_3 line" src="img/s3_title.svg" alt="帮扶" style="width: 40vw; opacity: 0;">
+				<div style="height: 50vh;"></div>
+				<img class="line_3 line title" src="img/s3_title.svg" alt="帮扶" style="width: 40vw; opacity: 0;">
 				<div style="height: 50vh;"></div>
 				<!-- <img class="fullscreen_img" src="img/s3_全屏.png" alt="全屏背景" 
 				style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; object-fit: cover; 
 				opacity: 0; z-index: 0;"> -->
+				<!-- 背景图片 -->
 				<div class="fullscreen_overlay" 
 					 style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
 				</div>
-				<div style="display: flex; justify-content: space-between; width: 100%;">
+				<div style="display: flex; justify-content: space-between; width: 100%;z-index: 1;">
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
 						<img class="factory_img" src="img/s3_工厂.png" alt="工厂图片" 
-							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; opacity: 0;">
+							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
+						<img class="factory_img factory_1" src="img/s3_工厂1.png" alt="工厂图片" 
+							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
+						<img class="factory_img factory_2" src="img/s3_工厂2.png" alt="工厂图片" 
+							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ">
+						<img class="factory_img factory_3" src="img/s3_工厂3.png" alt="工厂图片" 
+							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
+						<img class="factory_img factory_4" src="img/s3_工厂4.png" alt="工厂图片" 
+							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; display: none;">
 					</div>
 					<div style="width: 50%; margin-left: auto;z-index: 1;">
 						<div style="height: 80vh;"></div>
 						<!-- 每个文字块单独设置class -->
-						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">老张把"米线机"给淘汰了，<br>取而代之的是有着许多巨大轰鸣声的"铁皮机器"</div>
+						<div class="text-block line_3 line" id="text1" style="text-align: left; opacity: 0;">老张把"米线机"给淘汰了，<br>取而代之的是有着许多巨大轰鸣声的"铁皮机器"</div>
 						<div style="height: 50vh;"></div>
-						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">工坊中的"人类"也越来越多</div>
+						<div class="text-block line_3 line" id="text2" style="text-align: left; opacity: 0;">工坊中的"人类"也越来越多</div>
 						<div style="height: 50vh;"></div>
-						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">外面偶尔出现几台"卡车"，<br>将一部分我送入"那片黑暗"，嘴里嘟囔着"走出去"</div>
+						<div class="text-block line_3 line" id="text3" style="text-align: left; opacity: 0;">外面偶尔出现几台"卡车"，<br>将一部分我送入"那片黑暗"，嘴里嘟囔着"走出去"</div>
 						<div style="height: 50vh;"></div>
-						<div class="line_3 line text-block" style="text-align: left; opacity: 0;">工厂的声音似乎在一天天的变大，<br>每天都有更多新的我被生产出来，被运出去。</div>
+						<div class="text-block line_3 line" id="text4" style="text-align: left; opacity: 0;">工厂的声音似乎在一天天的变大，<br>每天都有更多新的我被生产出来，被运出去。</div>
 					</div>
 				</div>
 				<script>
@@ -378,11 +429,11 @@
 
 						// 使用 GSAP 的 staggerFromTo 创建动画
 						var tween = gsap.timeline();
-						tween.fromTo(".line_3", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 1 })
-							.to(".line_2", { opacity: 0, duration: 1, stagger: 1, delay: 1 }, 1);
+						tween.fromTo(".title", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 1 })
+							.to(".title", { opacity: 0, duration: 1, stagger: 1, delay: 1 }, 1);
 						// 创建 ScrollMagic 场景
 						var scene = new ScrollMagic.Scene({
-							triggerElement: "#origin",
+							triggerElement: "#assistance",
 							duration: 1800,
 							offset: 300 // 添加 offset，延迟一定距离触发
 						})
@@ -390,6 +441,7 @@
 							.addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
+
 					// 文字
 					(function() {
 						// 初始化 ScrollMagic 控制器
@@ -445,6 +497,28 @@
 							.addTo(controller);
 					})();
 
+					(function(){
+						// init controller
+						var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 5600}});
+							// build scenes for factory images
+							new ScrollMagic.Scene({triggerElement: "#text1"})
+							.setClassToggle(".factory_img.factory_1", "active") // add class toggle for factory image 1
+							.addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+							new ScrollMagic.Scene({triggerElement: "#text2"})
+							.setClassToggle(".factory_img.factory_2", "active") // add class toggle for factory image 2
+							.addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+							new ScrollMagic.Scene({triggerElement: "#text3"})
+							.setClassToggle(".factory_img.factory_3", "active") // add class toggle for factory image 3
+							.addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+							new ScrollMagic.Scene({triggerElement: "#text4"})
+							.setClassToggle(".factory_img.factory_4", "active") // add class toggle for factory image 4
+							.addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+					})();
+
 					// 全屏图片动画
 					(function() {
 						var controller = new ScrollMagic.Controller();
@@ -463,7 +537,7 @@
 						// 创建场景，比工厂图片先出现，后消失
 						var scene = new ScrollMagic.Scene({
 							triggerElement: "#assistance",
-							duration: 4000,  // 较长的动画持续时间
+							duration: 31000,  // 较长的动画持续时间
 							offset: 800     // 比工厂图片提前出现
 						})
 							.setTween(tween)
@@ -472,11 +546,118 @@
 					})();
 				</script>
 				<div style="height: 100vh;"></div>
+				<div style="z-index: 1;">
+					<img src="img/s3_1_这样的活力维持了一段时间.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 80vh;"></div>
+					<img src="img/s3_2_但逐渐的，机器声音好像变得吃力.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 20vh;"></div>
+					<img src="img/s3_3.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_4_每次来接送我们的卡车也更脏，更破。.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 30vh;"></div>
+					<img src="img/s3_5.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_6_我听见一些工人嘴里说着.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 20vh;"></div>
+					<img src="img/s3_7.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_8_原料问题.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_9_小麦种植.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 20vh;"></div>
+					<img src="img/s3_10_小麦产量.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_che.png" alt="" style="display: block; margin: auto;">
+					<img src="img/s3_12.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 10vh;"></div>
+					<img src="img/s3_13.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_14.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_15.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<!-- 开始修路 -->
+					<div style="display: flex; justify-content: center; gap: 5vw;">
+						<img src="img/s3_16_wa.png" alt="" style="display: block;">
+						<img src="img/s3_16_tuo.png" alt="" style="display: block;">
+						<img src="img/s3_16_ren.png" alt="" style="display: block;">
+					</div>
+					<div style="height: 30vh;"></div>
+					<div class="line" style="display: block; margin: auto; text-align: center;">外面来了好多大机器，有带铲子的，有带巨大轮子的。<br>还有许多带着黄色帽子的人</div>
+					<div style="height: 50vh;"></div>
+					<div style="display: flex; justify-content: flex-start; width: 100%;">
+						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
+							<div class="line" style="text-align: center; font-size: 100px;height: 50vh;">爆山了！</div>
+							<div style="height: 50vh;"></div>
+							<div class="line" style="text-align: center; font-size: 120px;height: 50vh;">铺水泥！</div>
+							<div style="height: 50vh;"></div>
+							<div class="line" style="text-align: center; font-size: 140px;height: 50vh;">点灯！</div>
+						</div>
+						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
+							<!-- 预留右半边三个图片占位 -->
+							<div style="height: 50vh;">
+								<img src="img/s3_16_ren.png" alt="">
+							</div>
+							<div style="height: 50vh;"></div>
+							<div style="height: 50vh;">
+								<img src="img/s3_16_ren.png" alt="">
+							</div>
+							<div style="height: 50vh;"></div>
+							<div style="height: 50vh;">
+								<img src="img/s3_16_ren.png" alt="">
+							</div>
+						</div>
+					</div>
+					<!-- 路修通了 -->
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_b_1.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 10vh;"></div>
+					<img src="img/s3_b_2.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s3_b_3.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 10vh;"></div>
+					<img src="img/s3_b_4.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 40vh;"></div>
+					<img src="img/s3_b_5.png" alt="" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					
+					<div style="display: flex; justify-content: flex-start; width: 100%;">
+
+						<!-- 开车动画 -->
+						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
+							
+							<div style="height: 50vh;">
+								<img src="img/s3_12.png" alt="">
+							</div>
+						</div>
+						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
+							
+							<div class="line" style="text-align: center;height: 50vh;">同时我们被送入了一台新的机器，出来后被印上了一个统一的名字-麻辣王子</div>
+						</div>
+					</div>
+					</div>
+					<div style="height: 100vh;"></div>
+
+					
+				</div>	
 			</section>
 
 			<section id="constraint" class="flex flex-col items-center justify-center">
-				<img src="img/s4line01.svg" alt="">
-				<img src="img/s4line02.svg" alt="">
+
+				
+				<div style="height: 40vh;"></div>
+				<div class="line" style="text-align: center;font-size: 100px; z-index: 0;">CHAPTER3</div>
+				<div class="line" style="text-align: center;font-size: 160px; z-index: 0;">不能成为垃圾的我</div>
+				<div style="height: 50vh;"></div>
+				
+				<div style="z-index: 0;">
+					<img src="img/s4line01.svg" alt="">
+				</div>
+				<div style="z-index: 0;">
+					<img src="img/s4line02.svg" alt="">
+				</div>
 				<div style="height: 1500px;" id="lajidui">
 					<img class="garbage" src="img/s4垃圾堆.svg" alt="">
 					<img class="track" src="img/s4跑道.svg" alt="" style="transform: translateY(-500px);">
@@ -519,6 +700,54 @@
 
 			<section id="transform" class="flex flex-col items-center justify-center">
 				<div style="height: 100vh;"></div>
+				<!-- <div class="image-345-parent">
+					<img class="image-345-icon" alt="" src="image 345.png">
+					
+					<div class="div">小辣家的直播间</div>
+					<div class="div1">
+					</div>
+					<div class="div2">
+					</div>
+					<div class="div3">
+					</div>
+					<div class="div4">
+					</div>
+					<div class="div5">
+					</div>
+					<div class="div6">
+					</div>
+					<div class="div7">
+					</div>
+					<div class="div8">
+						  <p class="p">“</p>
+						  <p class="p">准备，准备！</p>
+						  <p class="p">马上开始啦！”</p>
+					</div>
+					<div class="div9">
+						  <p class="p">“床前明月光，</p>
+						  <p class="p">辣条买一箱！”</p>
+					</div>
+					<div class="iphone-16-1">
+						  <div class="div10">正在开启...</div>
+					</div>
+					<div class="frame-child">
+					</div>
+					<div class="iphone-16-2">
+						  <div class="div11">小辣家的直播间</div>
+						  <div class="iphone-16-2-child">
+						  </div>
+					</div>
+					<div class="div12">第一次站在满眼灯光的舞台上，我感觉 好紧张</div>
+					<div class="pk">天天都要我去拍摄，还和什么猪猪超人一起PK</div>
+					<div class="div13">来了几个小不点，和我小时候倒是长得挺像的</div>
+					<div class="div14">再往后，我们就一边长大，去了越来越多的舞台，直播间...</div>
+					<div class="div15">当然，可能现在就在你的手中</div>
+					<div class="div16">直播间现场布景</div>
+					<div class="div17">校企合作背景</div>
+					<div class="div18">①</div>
+					<div class="div19">②</div>
+					<div class="div20">③</div>
+			  </div> -->
 			</section>
 
 			<section id="review" class="flex items-center justify-center">
@@ -628,6 +857,24 @@
 					}
 				});
 			});
+		});
+	</script>
+
+	<script>
+		let autoScroll = false; // 自动滚动状态
+		let scrollInterval;
+
+		document.getElementById('scrollToggle').addEventListener('click', function() {
+			autoScroll = !autoScroll; // 切换状态
+			this.textContent = autoScroll ? '关闭自动滚动' : '开启自动滚动'; // 更新按钮文本
+
+			if (autoScroll) {
+				scrollInterval = setInterval(() => {
+					window.scrollBy(0, 1); // 每次向下滚动1px
+				}, 20); // 每20毫秒滚动一次
+			} else {
+				clearInterval(scrollInterval); // 停止滚动
+			}
 		});
 	</script>
 
