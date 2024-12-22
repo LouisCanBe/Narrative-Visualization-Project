@@ -130,30 +130,31 @@
 		</div>
 	</nav>
 	<main class="relative min-h-screen w-full">
-		<div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
-			<img src="img/s1_bg01.png" class="w-full h-full object-cover" alt="背景图片" />
+		<div id="bg">
+			<div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
+				<img src="img/s1_bg01.png" class="w-full h-full object-cover" alt="背景图片" />
+			</div>
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+				<img src="img/s2_bg02.svg" class="w-full h-full object-cover" alt="背景图片2" />
+			</div>
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+				<img src="img/s3_bg03.png" class="w-full h-full object-cover" alt="背景图片3" />
+			</div>
+			<!-- 后续章节待更新 -->
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+				<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" />
+			</div>
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+				<img src="img/image (4).png" class="w-full h-full object-cover" alt="背景图片4" />
+			</div>
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+				<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片5" />
+			</div>
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+				<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
+			</div>
 		</div>
-		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/s2_bg02.svg" class="w-full h-full object-cover" alt="背景图片2" />
-		</div>
-		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/s3_bg03.png" class="w-full h-full object-cover" alt="背景图片3" />
-		</div>
-		<!-- 后续章节待更新 -->
-		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" />
-		</div>
-		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/image (4).png" class="w-full h-full object-cover" alt="背景图片4" />
-		</div>
-		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片5" />
-		</div>
-		<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-			<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
-		</div>
-
-		<div class="relative pt-24 pb-20 w-full">
+		<div id="content" class="relative pt-24 pb-20 w-full">
 
 			<section id="intro" class="flex flex-col items-center justify-center">
 				<img id="spicy-strip" src="img/s1_latiao.svg" alt="辣条开始"
@@ -649,14 +650,14 @@
 					<div style="height: 100vh;"></div>
 
 					
-				</div>	
+				
 			</section>
 
 			<section id="constraint" class="flex flex-col items-center justify-center">
-				<div style="height: 40vh;"></div>
+				<div style="height: 50vh;"></div>
 				<div class="line title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER3</div>
 				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1;">不能成为垃圾的我</div>
-				<div style="height: 80vh;"></div>
+				<div style="height: 100vh;"></div>
 				<div style="z-index: 0;">
 					<img src="img/s4line01.svg" alt="">
 				</div>
@@ -733,7 +734,7 @@
 			</section>
 
 			<section id="transform" class="flex flex-col items-center justify-center">
-				<div style="height: 40vh;"></div>
+				<div style="height: 50vh;"></div>
 				<div class="line title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER4</div>
 				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1;">来一场主动的破局</div>
 				<div style="height: 50vh;"></div>
@@ -769,7 +770,7 @@
 			</section>
 
 			<section id="review" class="flex flex-col items-center justify-center">
-				<div style="height: 40vh;"></div>
+				<div style="height: 50vh;"></div>
 				<div class="line black title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER5</div>
 				<div class="line black title" style="text-align: center;font-size: 160px; z-index: 1;">那是我们的来时路</div>
 				<div style="height: 80vh;"></div>
@@ -856,6 +857,7 @@
 			</div>
 		</footer>
 	</main>
+	<!-- 背景图片切换 -->
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 			// 获取所有section元素
@@ -943,7 +945,7 @@
 			});
 		});
 	</script>
-
+	<!-- 自动播放按钮 -->
 	<script>
 		let autoScroll = false; // 自动滚动状态
 		let scrollInterval;
