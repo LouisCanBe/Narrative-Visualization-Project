@@ -15,6 +15,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
 
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/BezierPlugin.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 	<style>
 		@font-face {
 			font-family: 'Chillzhuo';
@@ -114,8 +122,8 @@
 
 <body class="bg-black text-white overflow-x-hidden">
 	<!-- 添加自动滚动按钮 -->
-	<button id="scrollToggle" class="fixed bottom-10 right-10 bg-red-500 text-white p-2 rounded" style="z-index: 10;">
-		开启自动滚动
+	<button id="scrollToggle" class="fixed  right-10 bg-red-500 text-white p-2 rounded" style="position:fixed; top: 50vh;;z-index: 10;">
+		点击速速通
 	</button>
 	<nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50">
 		<div class="container mx-auto px-6 py-4">
@@ -161,6 +169,9 @@
 				<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
 			</div>
 		</div>
+		<background></background>
+		<content>
+		</content>
 		<div id="content" class="relative pt-24 pb-20 w-full">
 
 			<section id="intro" class="flex flex-col items-center justify-center">
@@ -676,7 +687,7 @@
 						// 创建场景，比工厂图片先出现，后消失
 						var scene = new ScrollMagic.Scene({
 							triggerElement: "#assistance",
-							duration: 31000,  // 较长的动画持续时间
+							duration: 33000,  // 较长的动画持续时间
 							offset: 800     // 比工厂图片提前出现
 						})
 							.setTween(tween)
@@ -836,29 +847,90 @@
 					<!-- 修路对比 -->
 					<!-- <div id="roadbattle" style="height: 40vh;"></div> -->
 					<div id="roadbattle"></div>
-					<div id="target" style="position: relative;height: 80vh;">
+					<div id="roadbattle2"></div>
+					<div id="target" style="position: relative;height: 70vh;">
 						<img src="img/s3_b_5.png" alt="" style="display: block; margin: auto;">
-						<img src="img/s3_moutain.png" alt="" style="display: block; position: absolute; top: 0; left: 0;">
-						<img id="old_truck" src="img/s3_che.png" alt="" style="display: block; position: absolute;top: 30vh;">
-						<img src="img/s3_tunnel.png" alt="" style="display: block; position: absolute; top: 105vh;">
+						<!-- shan -->
+						<img src="img/s3_moutain.png" alt="" style=" display: block; position: absolute; top: 0; left: 0;">
+						<!-- 车 -->
+						<img id="old_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: block; position: absolute;top: 20vh;">
+						<!-- 隧道 -->
+						<img id="tunnel" src="img/s3_tunnel.png" alt="" style="block; position: absolute; top: 79vh;">
+						<!-- 新车 -->
+						<img id="new_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: display: block; position: absolute;top: 75vh;">
+						
 					</div>
 					<script>
-						(function () {
+						(function old_truck() {
+							// var tl = gsap.timeline();
+							// // 定义动画链
+							// // x,y指的是位置，rotation指的是旋转角度，duration指的是持续时间，-=1指的是从上个动画结束的位置开始，+=1指的是从上个动画结束后1秒开始
+							// tl.to("#old_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
+							// tl.to("#old_truck", { x: 700, y: 300, rotation: 0, duration: 100 }, "-=1");
+							// tl.to("#old_truck", { x: 1000, y: 150, rotation: -35, duration: 100 }, "-=1");
+							// tl.to("#old_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
+							// tl.to("#old_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
+							// tl.to("#old_truck", { x: 1850, y: 100, rotation: 25, duration: 100 }, "-=1");
+
+							// var tl2 = gsap.timeline();
+							// tl2.to("#new_truck", { x: 1500, y: 0, rotation: 0, opacity:0, duration: 50 },"<");
+
+							const timeline = new TimelineMax();
+							// 先tl再tl2的写法
+							// timeline.add(tl);
+							// timeline.add(tl2);
+							timeline.to("#old_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
+							timeline.to("#new_truck", { x: 900, y: 0, rotation: 0, opacity:1, duration: 100 },"<");
+							timeline.to("#new_truck", { x: 1000, y: 0, rotation: 0, opacity:0, duration: 50 },"-=1");
+							timeline.to("#old_truck", { x: 700, y: 300, rotation: 0, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1000, y: 150, rotation: -35, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
+							timeline.to("#old_truck", { x: 1850, y: 100, rotation: 25, duration: 100 }, "-=1");
+
 							// 创建 ScrollMagic 控制器
 							var controller = new ScrollMagic.Controller();
 
 							// 创建场景
 							var scene = new ScrollMagic.Scene({
 								triggerElement: "#roadbattle", // 触发元素
-								duration:1000,
+								duration:1500,
 								offset:0,
 								triggerHook: 0.1 // 触发点
 							})
-							.setTween("#old_truck", { x: 450, y: 400 , rotation:0}) // 使用 GSAP 动画
-							.setPin("#target")
-							.addIndicators() // 添加指示器（可选）
-							.addTo(controller); // 将场景添加到控制器
+								.setTween(timeline) // 使用 GSAP 动画
+								.setPin("#target")
+								.addIndicators() // 添加指示器（可选）
+								.addTo(controller); // 将场景添加到控制器
 						})();
+
+						// (function new_truck() {
+						// 	var tl = gsap.timeline();
+						// 	// 定义动画链
+						// 	// x,y指的是位置，rotation指的是旋转角度，duration指的是持续时间，-=1指的是从上个动画结束的位置开始，+=1指的是从上个动画结束后1秒开始
+						// 	tl.to("#new_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
+						// 	tl.to("#new_truck", { x: 700, y: 200, rotation: 0, duration: 100 }, "-=1");
+						// 	tl.to("#new_truck", { x: 1000, y: 200, rotation: -35, duration: 100 }, "-=1");
+						// 	// tl.to("#new_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
+						// 	// tl.to("#new_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
+						// 	// tl.to("#new_truck", { x: 1850, y: 100, rotation: 25, duration: 100 }, "-=1");
+
+						// 	// 创建 ScrollMagic 控制器
+						// 	var controller = new ScrollMagic.Controller();
+
+						// 	// 创建场景
+						// 	var scene = new ScrollMagic.Scene({
+						// 		triggerElement: "#roadbattle2", // 触发元素
+						// 		duration:500,
+						// 		offset:0,
+						// 		triggerHook: 0 // 触发点
+						// 	})
+						// 		.setTween(tl) // 使用 GSAP 动画
+						// 		.setPin("#target")
+						// 		.addIndicators() // 添加指示器（可选）
+						// 		.addTo(controller); // 将场景添加到控制器
+						// })();
+
 					</script>
 					<!-- <script>
 						(function () { // wait for document ready
@@ -1207,7 +1279,7 @@
 		});
 	</script>
 	<!-- 自动播放按钮 -->
-	<script>
+	<!-- <script id="autoScrollScript"">
 		let autoScroll = false; // 自动滚动状态
 		let scrollInterval;
 
@@ -1217,11 +1289,90 @@
 
 			if (autoScroll) {
 				scrollInterval = setInterval(() => {
-					window.scrollBy(0, 1); // 每次向下滚动1px
+					window.scrollBy(0, 10); // 每次向下滚动1px
 				}, 20); // 每20毫秒滚动一次
 			} else {
 				clearInterval(scrollInterval); // 停止滚动
 			}
+		});
+
+	</script> -->
+	<!-- <script>
+		let isAutoScrolling = false;
+	
+		document.getElementById('scrollToggle').addEventListener('click', () => {
+			isAutoScrolling = !isAutoScrolling;
+			if (isAutoScrolling) {
+				document.getElementById('scrollToggle').innerText = '关闭自动滚动';
+				requestAnimationFrame(autoScroll);
+			} else {
+				document.getElementById('scrollToggle').innerText = '开启自动滚动';
+			}
+		});
+	
+		function autoScroll() {
+			if (!isAutoScrolling) return;
+	
+			const centerX = window.innerWidth / 2;
+			const centerY = window.innerHeight / 2;
+			const mouseX = event.clientX;
+			const mouseY = event.clientY;
+	
+			const distanceX = mouseX - centerX;
+			const distanceY = mouseY - centerY;
+	
+			const speedFactor = 0.1; // 调整这个值可以改变滚动速度的敏感度
+			const scrollSpeedX = distanceX * speedFactor;
+			const scrollSpeedY = distanceY * speedFactor;
+	
+			window.scrollBy(0, scrollSpeedY);
+	
+			requestAnimationFrame(autoScroll);
+		}
+	
+		document.addEventListener('mousemove', (event) => {
+			if (isAutoScrolling) {
+				autoScroll(event);
+			}
+		});
+	</script> -->
+	<script>
+		let isAutoScrolling = false;
+		let mouseX = window.innerWidth / 2; // 初始化鼠标位置为中心
+		let mouseY = window.innerHeight / 2;
+	
+		document.getElementById('scrollToggle').addEventListener('click', () => {
+			isAutoScrolling = !isAutoScrolling;
+			if (isAutoScrolling) {
+				document.getElementById('scrollToggle').innerText = '还是慢慢看';
+				requestAnimationFrame(autoScroll);
+			} else {
+				document.getElementById('scrollToggle').innerText = '点击速速通';
+			}
+		});
+	
+		function autoScroll() {
+			if (!isAutoScrolling) return;
+	
+			const centerX = window.innerWidth / 2;
+			const centerY = window.innerHeight / 2;
+	
+			const distanceX = mouseX - centerX;
+			const distanceY = mouseY - centerY;
+	
+			const baseSpeed = 2; // 基础滚动速度
+			const speedFactor = 0.1; // 调整这个值可以改变滚动速度的敏感度
+			const scrollSpeedX = distanceX * speedFactor;
+			const scrollSpeedY = distanceY * speedFactor + baseSpeed; // 基础速度加上鼠标控制的速度
+	
+			window.scrollBy(0, scrollSpeedY);
+	
+			requestAnimationFrame(autoScroll);
+		}
+	
+		document.addEventListener('mousemove', (event) => {
+			mouseX = event.clientX;
+			mouseY = event.clientY;
 		});
 	</script>
 
