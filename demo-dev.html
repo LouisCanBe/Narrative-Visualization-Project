@@ -20,12 +20,16 @@
 			font-family: 'Chillzhuo';
 			src: url('/fonts/寒蝉手拙体.ttf') format('truetype');
 		}
+
 		/* 确保html和body的宽度和高度为100% */
-		html, body {
+		html,
+		body {
 			width: 100%;
 			height: 100%;
-			margin: 0; /* 去掉默认边距 */
+			margin: 0;
+			/* 去掉默认边距 */
 		}
+
 		/* 隐藏默认滚动条 */
 		::-webkit-scrollbar {
 			width: 8px;
@@ -57,50 +61,53 @@
 			line-height: normal;
 			letter-spacing: 10px;
 		}
+
 		.line.black {
 			color: #000;
 		}
+
 		.line.red {
 			color: #C10200;
 		}
 
 		.factory_img.factory_1 {
 			display: none;
-			}
+		}
 
 		.factory_img.factory_2 {
-		display: none;
+			display: none;
 		}
 
 		.factory_img.factory_3 {
-		display: none;
+			display: none;
 		}
 
 		.factory_img.factory_4 {
-		display: none;
+			display: none;
 		}
 
 		.factory_img.factory_5 {
-		display: none;
+			display: none;
 		}
+
 		.factory_img.factory_1.active {
-		display: block;
+			display: block;
 		}
 
 		.factory_img.factory_2.active {
-		display: block;
+			display: block;
 		}
 
 		.factory_img.factory_3.active {
-		display: block;
+			display: block;
 		}
 
 		.factory_img.factory_4.active {
-		display: block;
+			display: block;
 		}
 
 		.factory_img.factory_5.active {
-		display: block;
+			display: block;
 		}
 	</style>
 </head>
@@ -181,11 +188,11 @@
 					})();
 				</script>
 				<div style="height: 50vh;"></div>
-				<div class="line">我，一根辣条</div>
-				<div class="line">那在便利店、街头小摊以及学校随处可见的平凡零食</div>
-				<div class="line">我已经成为了人们生活中的一部分</div>
-				<div class="line">无论是在课间休息时的解馋，还是在忙碌工作中的片刻放松</div>
-				<div class="line">然而，谁又能想到</div>
+				<div class="line line_1">我，一根辣条</div>
+				<div class="line line_1">那在便利店、街头小摊以及学校随处可见的平凡零食</div>
+				<div class="line line_1">我已经成为了人们生活中的一部分</div>
+				<div class="line line_1">无论是在课间休息时的解馋，还是在忙碌工作中的片刻放松</div>
+				<div class="line line_1">然而，谁又能想到</div>
 				<div class="line">一根辣条，曾左右一个地方的脱贫致富</div>
 				<div class="line">甚至带动一个企业的上市</div>
 
@@ -196,9 +203,8 @@
 
 						// 使用 GSAP 的 staggerFromTo 创建动画
 						var tween = gsap.timeline();
-						tween.fromTo(".line", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.5 })
-							.to(".line", { opacity: 0, duration: 1, stagger: 0.5, delay: 0.5 }, 0.5)
-						// .to(".line:last-child", { opacity: 1, duration: 1 }, "-=1");
+						tween.fromTo(".line_1", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.5 })
+							.to(".line_1", { opacity: 0, duration: 1, stagger: 0.5, delay: 0.5 }, 0.5)
 
 
 						// 创建 ScrollMagic 场景
@@ -246,19 +252,167 @@
 
 			<section id="origin" class="flex flex-col items-center justify-center">
 				<div style="height: 50vh;"></div>
-				<!-- 原来的图片标题 -->
-				<!-- <img class="line_2 line" src="img/s2_title.svg" alt="诞生" style="width: 40vw; opacity: 0;"> -->
-				<div class="line_2 line title" style="text-align: center; opacity: 1; font-size: 100px;">CHAPTER 1</div>
-				<div class="line_2 line title" style="text-align: center; opacity: 1; font-size: 160px;">诞生于洪水的滋味</div>
-				<div style="height: 80vh;"></div>
-				<div class="line_2 line" style="text-align: center; opacity: 0;">我诞生于一场湿漉漉的"想象"</div>
+				<div id="chapter1" class="line title chapter_1"
+					style="text-align: center; opacity: 1; font-size: 100px;">CHAPTER 1</div>
+				<div class="line title chapter_1" style="text-align: center; opacity: 1; font-size: 160px;">诞生于洪水的滋味
+				</div>
+				<div style="height: 30vh;"></div>
+
+				<div id="xiangxiang" class="line_2 line" style="text-align: center; opacity: 0;">我诞生于一场湿漉漉的"想象"</div>
 				<div style="height: 30vh;"></div>
 				<div class="line_2 line" style="text-align: center; opacity: 0;">1998年,受厄尔尼诺现象影响,
 					<br>长江流域爆发大规模洪水,湖南省平江县受灾严重
 				</div>
 				<div style="height: 30vh;"></div>
 				<div class="line_2 line" style="text-align: center; opacity: 0;">平江县最大的产业酱干的原料大豆, <br>大幅度减产,生意难以为继</div>
+				<div style="display: flex; justify-content: center; gap: 50vw; transform: translateY(-250px);"
+					id="chanliangid">
+					<img class="chanliang" src="img/s2_面积产量.svg" style="width: 20vw">
+					<img class="chanliang" src="img/s2_洪水中大豆产量.svg" style="width: 20vw">
+				</div>
+				<div style="height: 20vh;"></div>
+
+
+				<div style="height: 20vh;"></div>
+
+				<!-- 添加一个和视窗一样的 div 做背景板 -->
+				<div id="background" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: black; z-index: 0; opacity: 0;"></div>
+
+				<div style="height: 900px;">
+					<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
+						style="width: 900px; transform: translate(-500px, -300px);">
+					<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方"
+						style="width: 150px; transform: translate(-500px, -650px);">
+					<img class="scroll-image" src="img/s2_替代.svg" alt="替代"
+						style="width: 400px; transform: translate(-300px, -1200px);">
+					<img class="scroll-image" id="exportImage" src="img/s2_出口.svg" alt="出口"
+						style="width: 100px; transform: translate(-135px, -950px);">
+					<img id="latiao" class="scroll-image" src="img/s2_辣条.svg" alt="辣条"
+						style="width: 700px; transform: translate(-195px, -1000px);">
+
+					
+					<script>
+						(function () {
+							// 初始化 ScrollMagic 控制器
+							var controller = new ScrollMagic.Controller();
+
+							// 使用 GSAP 的 fromTo 创建动画
+							var tween = gsap.fromTo("#background", { opacity: 0 }, { opacity: 1, duration: 1 });
+
+							// 创建 ScrollMagic 场景
+							var scene = new ScrollMagic.Scene({
+								triggerElement: "#rain",
+							})
+								.setTween(tween)
+								.addIndicators() // 添加指示器（需要插件）
+								.addTo(controller);
+						})();
+					</script>
+
+					<div class="line_3 line"
+						style="text-align: left; opacity: 1; transform: translate(300px, -3000px);">
+						<div class="line3">面对灾情</div>
+						<div class="line3">老张拿着一张“酱干”配方</div>
+						<div class="line3">利用”面粉“代替了原料“大豆”</div>
+						<div class="line3">倒入了“米线机”中，翻滚、压扁、拉长</div>
+						<div class="line3">于是，第一根“辣条”-我诞生了</div>
+					</div>
+				</div>
+
+				<div style="width: 1600px; z-index: 1;">
+					<img src="img/s2girl.svg" alt="" style="width: 100%; ">
+					<img src="img/s2真好吃.svg" alt="" style="width: 30%; transform: translate(900px, -800px);">
+				</div>
+				<div style="height: 50vh;"></div>
+				<div style="width: 100%; height: 1000px;">
+					<img src="img/s2我火辣.svg" alt=""
+						style="width: 40%; display: block; margin: 0 auto; position: relative; z-index: 1;" id="fire">
+					<img src="img/s2滋味背景.svg" alt=""
+						style="width: 100%; transform: translateY(-50%); position: relative; z-index: 0; opacity: 0;"
+						id="feather">
+
+					<script>
+						(function () {
+							// 初始化 ScrollMagic 控制器
+							var controller = new ScrollMagic.Controller();
+
+							// 使用 GSAP 的 fromTo 创建动画
+							var tween = gsap.timeline({ repeat: -1, yoyo: true });
+							tween.fromTo("#feather", { opacity: 0 }, { opacity: 1, duration: 0.5 })
+								.to("#feather", { y: "+=40", x: "+=40", scale: 1.05, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: -1 })
+								.to("#feather", { y: "-=40", x: "-=40", scale: 0.95, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: -1 });
+
+							// 创建 ScrollMagic 场景
+							var scene = new ScrollMagic.Scene({
+								triggerElement: "#fire",
+								offset: 0 // 添加 offset，延迟一定距离触发
+							})
+								.setTween(tween)
+								.addIndicators() // 添加指示器（需要插件）
+								.addTo(controller);
+						})();
+					</script>
+				</div>
+
+
+
+				<div style="width: 100%; height: 1000px;">
+					<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; z-index: 1; 
+					transform: translateY(10%);">
+						<div class="line">我出现在平江的各种小卖部中</div>
+						<div class="line" id="lineToAnimate" style="text-align: center;">
+							一被摆上货架就被迅速清空<br>尤其是每天都能看见疯抢的人类小孩</div>
+
+					</div>
+					<img src="img/s2人类小孩.svg" alt="" id="human"
+						style="width: 50%; display: block; margin: 0 auto; position: relative; z-index: 1;">
+					<img src="img/s2辣条商店.svg" alt=""
+						style="width: 100%; transform: translateY(-100%); position: relative; z-index: 0;">
+				</div>
+
+				<div style="height: 600px;"></div>
+
+				<img src="img/s2招牌.svg" style="width:60%; z-index: 1" >
+				<div style="height: 600px;"></div>
+				<img src="img/s2众多辣条.svg" style="width:100%; z-index: 1">
+
+				<div style="height: 100vh;" id="logo"></div>
+
 				<script>
+					(function () {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+
+						// 使用 GSAP 的 fromTo 创建动画
+						var tween = gsap.fromTo("#background", { opacity: 1 }, { opacity: 0, duration: 1 });
+
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#logo",
+						})
+							.setTween(tween)
+							.addIndicators() // 添加指示器（需要插件）
+							.addTo(controller);
+					})();
+				</script>
+
+				<script>
+					(function () {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+
+						// 使用 GSAP 的 staggerFromTo 创建动画
+						var tween = gsap.timeline();
+						tween.fromTo(".chapter_1", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.5 })
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#chapter1",
+							offset: 0 // 添加 offset，延迟一定距离触发
+						})
+							.setTween(tween)
+							.addIndicators() // 添加指示器（需要插件）
+							.addTo(controller);
+					})();
 					(function () {
 						// 初始化 ScrollMagic 控制器
 						var controller = new ScrollMagic.Controller();
@@ -269,9 +423,9 @@
 							.to(".line_2", { opacity: 0, duration: 1, stagger: 1, delay: 1 }, 1);
 						// 创建 ScrollMagic 场景
 						var scene = new ScrollMagic.Scene({
-							triggerElement: "#origin",
+							triggerElement: "#xiangxiang",
 							duration: 1800,
-							offset: 300 // 添加 offset，延迟一定距离触发
+							offset: 0 // 添加 offset，延迟一定距离触发
 						})
 							.setTween(tween)
 							.addIndicators() // 添加指示器（需要插件）
@@ -279,12 +433,7 @@
 					})();
 				</script>
 
-				<div style="display: flex; justify-content: center; gap: 50vw; transform: translateY(-250px);"
-					id="chanliangid">
-					<img class="chanliang" src="img/s2_面积产量.svg" style="width: 20vw">
-					<img class="chanliang" src="img/s2_洪水中大豆产量.svg" style="width: 20vw">
-				</div>
-				<div style="height: 20vh;"></div>
+
 				<script>
 					(function () {
 						// 初始化 ScrollMagic 控制器
@@ -303,23 +452,23 @@
 							.addTo(controller);
 					})();
 				</script>
+				<script>
+					(function () {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+						// 创建 GSAP 动画，控制 opacity 出现
+						var tween = gsap.fromTo(["#lineToAnimate", "#human"], { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 1 });
 
-				<div style="height: 100vh;"></div>
-				<div class="fullscreen_overlay" 
-					 style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
-				</div>
-
-				<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
-					style="width: 900px; transform: translate(-500px, -300px);">
-				<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方"
-					style="width: 150px; transform: translate(-830px, -650px);">
-				<img class="scroll-image" src="img/s2_替代.svg" alt="替代"
-					style="width: 400px; transform: translate(-500px, -1200px);">
-				<img class="scroll-image" id="exportImage" src="img/s2_出口.svg" alt="出口"
-					style="width: 100px; transform: translate(-600px, -900px);">
-				<img id="latiao" class="scroll-image" src="img/s2_辣条.svg" alt="辣条"
-					style="width: 700px; transform: translate(-300px, -1000px);">
-
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#lineToAnimate",
+							offset: 200
+						})
+							.setTween(tween)
+							.addIndicators() // 添加指示器（需要插件）
+							.addTo(controller);
+					})();
+				</script>
 				<script>
 					(function () {
 						// 初始化 ScrollMagic 控制器
@@ -338,7 +487,6 @@
 					})();
 				</script>
 
-
 				<script>
 					gsap.to("#exportImage", {
 						rotation: 360,
@@ -348,16 +496,7 @@
 						duration: 3
 					});
 				</script>
-				<!-- <img id="backgroundImage" src="img/s2_长背景图.svg" style="width: 100vw; transform: scale(1); transform-origin: center; transform: translate(0, -200vh);"> -->
 
-
-				<div class="line_3 line" style="text-align: left; opacity: 1; transform: translate(300px, -2800px);">
-					<div class="line3">面对灾情</div>
-					<div class="line3">老张拿着一张“酱干”配方</div>
-					<div class="line3">利用”面粉“代替了原料“大豆”</div>
-					<div class="line3">倒入了“米线机”中，翻滚、压扁、拉长</div>
-					<div class="line3">于是，第一根“辣条”-我诞生了</div>
-				</div>
 				<script>
 					(function () {
 						// 初始化 ScrollMagic 控制器
@@ -375,59 +514,48 @@
 							.addTo(controller);
 					})();
 				</script>
-				<div style="width: 1600px; transform: translate(-10px, -1900px);">
-					<img src="img/s2girl.svg" alt="girl" style="width: 100%;">
-					<img src="img/s2真好吃.svg" alt="girl" style="width: 30%; position: absolute; top: 20px; left: 1200px;">
-				</div>
-
-				<div style="width: 100%; transform: translate(-10px, -1300px);">
-					<img src="img/s2我火辣.svg" alt="girl" style="width: 40%; display: block; margin: 0 auto;">
-					<img src="img/s2滋味背景.svg" alt="girl" style="width: 100%; transform: translateY(-50%);">
-				</div>
-
-				<div style="width: 100%; transform: translate(-10px, -1300px);">
-				<img src="img/s2人类小孩.svg" alt="girl" style="width: 60%; display: block; margin: 0 auto; position: relative; z-index: 1;">
-				<img src="img/s2辣条商店.svg" alt="girl" style="width: 100%; transform: translateY(-100%); position: relative; z-index: 0;">
-				</div>
-
-				<img src="img/s2招牌.svg" style="width:60%; transform: translateY(-2300px)">
-				<img src="img/s2众多辣条.svg" style="width:100%; transform: translateY(-2100px)">
 			</section>
 
 			<section id="assistance" class="flex flex-col items-center justify-center">
 				<div style="height: 50vh;"></div>
 				<!-- 原来的图片标题 -->
 				<!-- <img class="line_3 line title" src="img/s3_title.svg" alt="帮扶" style="width: 40vw; opacity: 0;"> -->
-				<div class="line_3 line black title" style="text-align: center; opacity: 1; font-size: 100px;z-index: 1;">CHAPTER 2</div>
-				<div class="line_3 line black title" style="text-align: center; opacity: 1; font-size: 160px;z-index: 1;">修一条通往外面的路</div>
+				<div class="line_3 line black title"
+					style="text-align: center; opacity: 1; font-size: 100px;z-index: 1;">CHAPTER 2</div>
+				<div class="line_3 line black title"
+					style="text-align: center; opacity: 1; font-size: 160px;z-index: 1;">修一条通往外面的路</div>
 				<div style="height: 80vh;"></div>
 				<!-- 背景图片 -->
-				<div class="fullscreen_overlay" 
-					 style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
+				<div class="fullscreen_overlay"
+					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
 				</div>
 				<div style="display: flex; justify-content: space-between; width: 100%;z-index: 1;">
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
-						<img class="factory_img" src="img/s3_工厂.png" alt="工厂图片" 
-							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_1" src="img/s3_工厂1.png" alt="工厂图片" 
-							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_2" src="img/s3_工厂2.png" alt="工厂图片" 
-							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ">
-						<img class="factory_img factory_3" src="img/s3_工厂3.png" alt="工厂图片" 
-							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_4" src="img/s3_工厂4.png" alt="工厂图片" 
-							 style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; display: none;">
+						<img class="factory_img" src="img/s3_工厂.png" alt="工厂图片"
+							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
+						<img class="factory_img factory_1" src="img/s3_工厂1.png" alt="工厂图片"
+							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
+						<img class="factory_img factory_2" src="img/s3_工厂2.png" alt="工厂图片"
+							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ">
+						<img class="factory_img factory_3" src="img/s3_工厂3.png" alt="工厂图片"
+							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
+						<img class="factory_img factory_4" src="img/s3_工厂4.png" alt="工厂图片"
+							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; display: none;">
 					</div>
 					<div style="width: 50%; margin-left: auto;z-index: 1;">
 						<div style="height: 80vh;"></div>
 						<!-- 每个文字块单独设置class -->
-						<div class="text-block line_3 line" id="text1" style="text-align: left; opacity: 0;">老张把"米线机"给淘汰了，<br>取而代之的是有着许多巨大轰鸣声的"铁皮机器"</div>
+						<div class="text-block line_3 line" id="text1" style="text-align: left; opacity: 0;">
+							老张把"米线机"给淘汰了，<br>取而代之的是有着许多巨大轰鸣声的"铁皮机器"</div>
 						<div style="height: 50vh;"></div>
-						<div class="text-block line_3 line" id="text2" style="text-align: left; opacity: 0;">工坊中的"人类"也越来越多</div>
+						<div class="text-block line_3 line" id="text2" style="text-align: left; opacity: 0;">
+							工坊中的"人类"也越来越多</div>
 						<div style="height: 50vh;"></div>
-						<div class="text-block line_3 line" id="text3" style="text-align: left; opacity: 0;">外面偶尔出现几台"卡车"，<br>将一部分我送入"那片黑暗"，嘴里嘟囔着"走出去"</div>
+						<div class="text-block line_3 line" id="text3" style="text-align: left; opacity: 0;">
+							外面偶尔出现几台"卡车"，<br>将一部分我送入"那片黑暗"，嘴里嘟囔着"走出去"</div>
 						<div style="height: 50vh;"></div>
-						<div class="text-block line_3 line" id="text4" style="text-align: left; opacity: 0;">工厂的声音似乎在一天天的变大，<br>每天都有更多新的我被生产出来，被运出去。</div>
+						<div class="text-block line_3 line" id="text4" style="text-align: left; opacity: 0;">
+							工厂的声音似乎在一天天的变大，<br>每天都有更多新的我被生产出来，被运出去。</div>
 					</div>
 				</div>
 				<script>
@@ -452,18 +580,18 @@
 					})();
 
 					// 文字
-					(function() {
+					(function () {
 						// 初始化 ScrollMagic 控制器
 						var controller = new ScrollMagic.Controller();
-						
+
 						// 为每个文字块创建单独的动画
 						document.querySelectorAll('.text-block').forEach((block, index) => {
 							var tween = gsap.timeline()
-								.fromTo(block, 
-									{ opacity: 0 }, 
+								.fromTo(block,
+									{ opacity: 0 },
 									{ opacity: 1, duration: 1 }
 								)
-								.to(block, 
+								.to(block,
 									{ opacity: 0, duration: 1 },
 									"+=1" // 停留2秒后淡出
 								);
@@ -479,19 +607,19 @@
 								.addTo(controller);
 						});
 					})();
-					
+
 					// 工厂图片
-					(function() {
+					(function () {
 						var controller = new ScrollMagic.Controller();
-						
+
 						// 创建淡入淡出动画
 						var tween = gsap.timeline()
-							.fromTo(".factory_img", 
-								{ opacity: 0 }, 
+							.fromTo(".factory_img",
+								{ opacity: 0 },
 								{ opacity: 1, duration: 1 }
 							)
-							.to(".factory_img", 
-								{ opacity: 0, duration: 1 }, 
+							.to(".factory_img",
+								{ opacity: 0, duration: 1 },
 								"+=2" // 停留2秒后开始淡出
 							);
 
@@ -506,39 +634,39 @@
 							.addTo(controller);
 					})();
 
-					(function(){
+					(function () {
 						// init controller
-						var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 5600}});
-							// build scenes for factory images
-							new ScrollMagic.Scene({triggerElement: "#text1"})
+						var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: 5600 } });
+						// build scenes for factory images
+						new ScrollMagic.Scene({ triggerElement: "#text1" })
 							.setClassToggle(".factory_img.factory_1", "active") // add class toggle for factory image 1
 							.addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
-							new ScrollMagic.Scene({triggerElement: "#text2"})
+						new ScrollMagic.Scene({ triggerElement: "#text2" })
 							.setClassToggle(".factory_img.factory_2", "active") // add class toggle for factory image 2
 							.addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
-							new ScrollMagic.Scene({triggerElement: "#text3"})
+						new ScrollMagic.Scene({ triggerElement: "#text3" })
 							.setClassToggle(".factory_img.factory_3", "active") // add class toggle for factory image 3
 							.addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
-							new ScrollMagic.Scene({triggerElement: "#text4"})
+						new ScrollMagic.Scene({ triggerElement: "#text4" })
 							.setClassToggle(".factory_img.factory_4", "active") // add class toggle for factory image 4
 							.addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
 					})();
 
 					// 全屏图片动画
-					(function() {
+					(function () {
 						var controller = new ScrollMagic.Controller();
-						
+
 						// 创建全屏图片的淡入淡出动画
 						var tween = gsap.timeline()
-							.fromTo(".fullscreen_overlay", 
-								{ opacity: 0 }, 
+							.fromTo(".fullscreen_overlay",
+								{ opacity: 0 },
 								{ opacity: 1, duration: 1.5 }  // 较慢的淡入
 							)
-							.to(".fullscreen_overlay", 
+							.to(".fullscreen_overlay",
 								{ opacity: 0, duration: 1.5 },  // 较慢的淡出
 								"+=3"  // 停留3秒后开始淡出
 							);
@@ -550,7 +678,7 @@
 							offset: 800     // 比工厂图片提前出现
 						})
 							.setTween(tween)
-							.addIndicators({name: "全屏图片"}) // 开发时的指示器
+							.addIndicators({ name: "全屏图片" }) // 开发时的指示器
 							.addTo(controller);
 					})();
 				</script>
@@ -576,7 +704,8 @@
 					<div style="height: 20vh;"></div>
 					<img src="img/s3_10_小麦产量.png" alt="" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" alt="" style="display: block; margin: auto;">
+					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" alt=""
+						style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_che.png" alt="" style="display: block; margin: auto;">
 					<img src="img/s3_12.png" alt="" style="display: block; margin: auto;">
@@ -594,7 +723,8 @@
 						<img src="img/s3_16_ren.png" alt="" style="display: block;">
 					</div>
 					<div style="height: 30vh;"></div>
-					<div class="line" style="display: block; margin: auto; text-align: center;">外面来了好多大机器，有带铲子的，有带巨大轮子的。<br>还有许多带着黄色帽子的人</div>
+					<div class="line" style="display: block; margin: auto; text-align: center;">
+						外面来了好多大机器，有带铲子的，有带巨大轮子的。<br>还有许多带着黄色帽子的人</div>
 					<div style="height: 50vh;"></div>
 					<div style="display: flex; justify-content: flex-start; width: 100%;">
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
@@ -631,26 +761,27 @@
 					<div style="height: 40vh;"></div>
 					<img src="img/s3_b_5.png" alt="" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					
+
 					<div style="display: flex; justify-content: flex-start; width: 100%;">
 
 						<!-- 开车动画 -->
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
-							
+
 							<div style="height: 50vh;">
 								<img src="img/s3_12.png" alt="">
 							</div>
 						</div>
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
-							
-							<div class="line" style="text-align: center;height: 50vh;">同时我们被送入了一台新的机器，出来后被印上了一个统一的名字-麻辣王子</div>
+
+							<div class="line" style="text-align: center;height: 50vh;">
+								同时我们被送入了一台新的机器，出来后被印上了一个统一的名字-麻辣王子</div>
 						</div>
 					</div>
-					</div>
-					<div style="height: 100vh;"></div>
+				</div>
+				<div style="height: 100vh;"></div>
 
-					
-				
+
+
 			</section>
 
 			<section id="constraint" class="flex flex-col items-center justify-center">
@@ -667,7 +798,8 @@
 				<div style="height: 1500px;" id="lajidui">
 					<img class="garbage" src="img/s4垃圾堆.svg" alt="">
 					<img class="track" src="img/s4跑道.svg" alt="" style="transform: translateY(-500px);">
-					<div class="spicy-strips" style="display: flex; justify-content: space-between; width: 100%; gap: 8px; transform: translateY(-1300px);">
+					<div class="spicy-strips"
+						style="display: flex; justify-content: space-between; width: 100%; gap: 8px; transform: translateY(-1300px);">
 						<img id="spicy-strip-left" src="img/s4辣条左.svg" alt="" style="transform: translateX(200px);">
 						<img id="spicy-strip-center" src="img/s4辣条中.svg" alt="" style="transform: translateY(200px);">
 						<img id="spicy-strip-right" src="img/s4辣条右.svg" alt="" style="transform: translateX(-200px);">
@@ -698,7 +830,7 @@
 						</script>
 					</div>
 					<img class="tv" src="img/s4电视.svg" alt="" style="transform: translateY(-1200px);">
-					
+
 					<script>
 						(function () {
 							// 初始化 ScrollMagic 控制器
@@ -718,7 +850,7 @@
 								offset: 1500     // 开始的偏移量
 							})
 								.setTween(tween)
-								.addIndicators({name: "垃圾堆"}) // 开发时可以保留，上线前删除
+								.addIndicators({ name: "垃圾堆" }) // 开发时可以保留，上线前删除
 								.addTo(controller);
 						})();
 					</script>
@@ -729,7 +861,7 @@
 				<div style="z-index: 0;">
 					<img src="img/s4line04.svg" alt="">
 				</div>
-				
+
 				<!-- <div style="height: 100vh;"></div> -->
 			</section>
 
@@ -740,23 +872,23 @@
 				<div style="height: 50vh;"></div>
 				<!-- 章节正文 -->
 				<div style="z-index: 1;">
-							<p class="line">“</p>
-							<p class="line">准备，准备！</p>
-							<p class="line">马上开始啦！”</p>
-					
+					<p class="line">“</p>
+					<p class="line">准备，准备！</p>
+					<p class="line">马上开始啦！”</p>
+
 					<div class="div9">
-							<p class="line">“床前明月光，</p>
-							<p class="line">辣条买一箱！”</p>
+						<p class="line">“床前明月光，</p>
+						<p class="line">辣条买一箱！”</p>
 					</div>
 					<div class="iphone-16-1">
-							<div class="div10">正在开启...</div>
+						<div class="div10">正在开启...</div>
 					</div>
 					<div class="frame-child">
 					</div>
 					<div class="iphone-16-2">
-							<div class="div11">小辣家的直播间</div>
-							<div class="iphone-16-2-child">
-							</div>
+						<div class="div11">小辣家的直播间</div>
+						<div class="iphone-16-2-child">
+						</div>
 					</div>
 					<div class="div12">第一次站在满眼灯光的舞台上，我感觉 好紧张</div>
 					<div class="pk">天天都要我去拍摄，还和什么猪猪超人一起PK</div>
@@ -779,13 +911,13 @@
 
 					<!-- 产业图片 -->
 					<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
-						
+
 						<div style="height: 50vh;">
 							<img src="img/s3_12.png" alt="">
 						</div>
 					</div>
 					<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
-						
+
 						<div class="line" style="text-align: left;height: 50vh;">
 							<p>我叫小辣，这就是我的故事</p>
 							<br>
@@ -829,12 +961,12 @@
 							<p>他们都像我一样</p>
 							<p>再各自的家乡慢慢成长</p>
 						</div>
-						
+
 					</div>
-					
+
 				</div>
 			</section>
-			
+
 			<section id="summary" class="flex flex-col items-center justify-center">
 				<div style="height: 40vh;"></div>
 				<div class="line red title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER6</div>
@@ -950,7 +1082,7 @@
 		let autoScroll = false; // 自动滚动状态
 		let scrollInterval;
 
-		document.getElementById('scrollToggle').addEventListener('click', function() {
+		document.getElementById('scrollToggle').addEventListener('click', function () {
 			autoScroll = !autoScroll; // 切换状态
 			this.textContent = autoScroll ? '关闭自动滚动' : '开启自动滚动'; // 更新按钮文本
 
