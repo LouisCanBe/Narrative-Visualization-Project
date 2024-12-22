@@ -299,6 +299,9 @@
 				</script>
 
 				<div style="height: 100vh;"></div>
+				<div class="fullscreen_overlay" 
+					 style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
+				</div>
 
 				<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
 					style="width: 900px; transform: translate(-500px, -300px);">
@@ -659,11 +662,37 @@
 					<img class="garbage" src="img/s4垃圾堆.svg" alt="">
 					<img class="track" src="img/s4跑道.svg" alt="" style="transform: translateY(-500px);">
 					<div class="spicy-strips" style="display: flex; justify-content: space-between; width: 100%; gap: 8px; transform: translateY(-1300px);">
-						<img src="img/s4辣条左.svg" alt="" style="transform: translateX(200px);">
-						<img src="img/s4辣条中.svg" alt="" style="transform: translateY(200px);">
-						<img src="img/s4辣条右.svg" alt="" style="transform: translateX(-200px);">
+						<img id="spicy-strip-left" src="img/s4辣条左.svg" alt="" style="transform: translateX(200px);">
+						<img id="spicy-strip-center" src="img/s4辣条中.svg" alt="" style="transform: translateY(200px);">
+						<img id="spicy-strip-right" src="img/s4辣条右.svg" alt="" style="transform: translateX(-200px);">
+						<script>
+							gsap.to("#spicy-strip-left", {
+								y: -50,
+								duration: 1,
+								repeat: -1,
+								yoyo: true,
+								ease: "power1.inOut"
+							});
+							gsap.to("#spicy-strip-center", {
+								y: 50,
+								duration: 1,
+								repeat: -1,
+								yoyo: true,
+								ease: "power1.inOut",
+								delay: 0.5
+							});
+							gsap.to("#spicy-strip-right", {
+								y: -50,
+								duration: 1,
+								repeat: -1,
+								yoyo: true,
+								ease: "power1.inOut",
+								delay: 1
+							});
+						</script>
 					</div>
 					<img class="tv" src="img/s4电视.svg" alt="" style="transform: translateY(-1200px);">
+					
 					<script>
 						(function () {
 							// 初始化 ScrollMagic 控制器
@@ -671,7 +700,7 @@
 
 							// 创建 GSAP 动画
 							var tween = gsap.timeline();
-							tween.to(".garbage", { y: -100, duration: 2 })
+							tween.to(".garbage", { y: 2000, opacity: 0, duration: 2 })
 								.to(".track", { y: -600, duration: 1.5 }, 0)
 								.to(".spicy-strips", { y: -1600, duration: 1 }, 0)
 								.to(".tv", { y: -1600, duration: 0.5 }, 0);
@@ -679,8 +708,8 @@
 							// 创建 ScrollMagic 场景
 							var scene = new ScrollMagic.Scene({
 								triggerElement: "#lajidui",
-								duration: 500,  // 动画持续的滚动距离
-								offset: 400     // 开始的偏移量
+								// duration: 1000,  // 动画持续的滚动距离
+								offset: 1500     // 开始的偏移量
 							})
 								.setTween(tween)
 								.addIndicators({name: "垃圾堆"}) // 开发时可以保留，上线前删除
