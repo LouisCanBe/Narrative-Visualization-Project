@@ -532,7 +532,7 @@
 				<!-- 原来的图片标题 -->
 				<!-- <img class="line_3 line title" src="img/s3_title.svg" alt="帮扶" style="width: 40vw; opacity: 0;"> -->
 				<div class="line_3 line black title"
-					style="text-align: center; opacity: 1; font-size: 100px;z-index: 1;">CHAPTER 2</div>
+					style="text-align: center; opacity: 1; font-size: 100px;z-index: 1;">CHAPTER 2<br>帮扶之手</div>
 				<div class="line_3 line black title"
 					style="text-align: center; opacity: 1; font-size: 160px;z-index: 1;">修一条通往外面的路</div>
 				<div style="height: 80vh;"></div>
@@ -975,7 +975,7 @@
 
 			<section id="constraint" class="flex flex-col items-center justify-center">
 				<div style="height: 50vh;"></div>
-				<div class="line title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER3</div>
+				<div class="line title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER3<br>约束之手</div>
 				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1;">不能成为垃圾的我</div>
 				<div style="height: 100vh;"></div>
 				<div style="z-index: 0;">
@@ -1053,7 +1053,7 @@
 					<img src="img/s4_电视框.svg" style=" width:80%; position: absolute; top: 10800px; left: 50%; transform: translateX(-50%);">
 				</div>
 
-				<!-- <div style="height: 100vh;"></div> -->
+				<div style="height: 100vh;"></div>
 			</section>
 
 			<!-- 来一场主动的破局 -->
@@ -1062,7 +1062,7 @@
 				<div 
 				class="line title" 
 				style="text-align: 
-				center;font-size: 100px; z-index: 1; color: black;">CHAPTER4</div>
+				center;font-size: 100px; z-index: 1; color: black;">CHAPTER4<br>转型之手</div>
 				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1; color: #000;">来一场主动的破局</div>
 				<div style="height: 50vh;"></div>
 				<!-- 章节正文 -->
@@ -1142,9 +1142,40 @@
 
 			<section id="summary" class="flex flex-col items-center justify-center">
 				<div style="height: 40vh;"></div>
-				<div class="line red title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER6</div>
-				<div class="line red title" style="text-align: center;font-size: 160px; z-index: 1;">星星之火 可以燎原</div>
-				<div style="height: 80vh;"></div>
+				<div class="line red title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER5</div>
+				<div class="line red title" style="text-align: center;font-size: 160px; z-index: 1;">辣条的故事也是平江的故事</div>
+				<div style="height: 50vh;"></div>
+				<!-- <div style="height: 10vh;"class="w-full" style="background: linear-gradient(to bottom, #fff, #C10200);"></div> -->
+				<div class="w-full" style="background-color: #C10200;">
+					<div style="height: 80vh;"></div>
+					<img src="img/s6_1.png" style="display: block; margin: auto;">
+					<img src="img/s6_2.png" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s6_3.png" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s6_4.png" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s6_5.png" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<img src="img/s6_6.png" style="display: block; margin: auto;">
+					<div style="height: 50vh;"></div>
+					<div style="display: flex; justify-content: center; gap: 5vw;">
+						<a href="#assistance" class="hover:text-custom transition-colors">
+	
+							<img src="img/s6_d1.png" style="display: block;">
+						</a>
+						<a href="#constraint" class="hover:text-custom transition-colors">
+	
+							<img src="img/s6_d2.png" style="display: block;">
+						</a>
+						<a href="#transform" class="hover:text-custom transition-colors">
+	
+							<img src="img/s6_d3.png" style="display: block;">
+						</a>
+					</div>
+					<div style="height: 20vh;"></div>
+				</div>
+
 				<!-- <div style="height: 100vh;"></div> -->
 			</section>
 		</div>
@@ -1349,6 +1380,82 @@
 
 </script>
 
+	<!-- 在<body>标签内添加以下代码
+	<div id="customNav" class="fixed left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-80 p-4 rounded">
+		<ul class="space-y-2">
+			<li><a href="#origin" class="text-white hover:text-custom">表1 产量对比</a></li>
+			<li><a href="#table2" class="text-white hover:text-custom">表2 销售数据</a></li>
+			<li><a href="#table3" class="text-white hover:text-custom">表3 市场分析</a></li>
+			<li><a href="#table4" class="text-white hover:text-custom">表4 竞争对手</a></li>
+			<li><a href="#table5" class="text-white hover:text-custom">表5 未来展望</a></li>
+		</ul>
+	</div> -->
+	<div id="customNav" class="fixed left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-80 p-4 rounded">
+		<ul id="navList" class="space-y-2">
+			<!-- 动态生成的导航项将插入到这里 -->
+		</ul>
+	</div>
+
+	<!-- 在<script>标签内添加以下代码 -->
+	<script>
+		// 监听所有自定义导航链接的点击事件
+		document.querySelectorAll('#customNav a').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault(); // 阻止默认行为
+				const targetId = this.getAttribute('href'); // 获取目标元素的ID
+				const targetElement = document.querySelector(targetId); // 获取目标元素
+
+				// 如果目标元素存在，则平滑滚动到目标元素
+				if (targetElement) {
+					targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		});
+		 // 定义customNav数据
+		const customNavData = {
+        section1: ["表1 产量对比", "表2 销售数据"],
+        section2: ["表3 市场分析", "表4 竞争对手"],
+        section3: ["表5 未来展望", "表6 其他数据"],
+        section4: ["表7 额外信息", "表8 参考资料"],
+        section5: ["表9 结论", "表10 附录"]
+		};
+
+		// 更新导航内容
+		function updateNav(sectionId) {
+			const navList = document.getElementById("navList");
+			navList.innerHTML = ""; // 清空当前导航项
+
+			// 根据sectionId获取对应的导航数据
+			const navItems = customNavData[sectionId] || [];
+			navItems.forEach(item => {
+				const li = document.createElement("li");
+				li.innerText = item;
+				navList.appendChild(li);
+			});
+		}
+
+		// 监测当前可见的section
+		const sections = document.querySelectorAll('section');
+		const observerOptions = {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.5 // 当section可见50%时触发
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const id = entry.target.getAttribute('id');
+					updateNav(id); // 更新导航内容
+				}
+			});
+		}, observerOptions);
+
+		// 对每个section元素进行观察
+		sections.forEach(section => observer.observe(section));
+
+
+	</script>
 
 </body>
 
