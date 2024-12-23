@@ -848,14 +848,17 @@
 					<div id="roadbattle2"></div>
 					<div id="target" style="position: relative;height: 70vh;">
 						<img src="img/s3_b_5.png" alt="" style="display: block; margin: auto;">
+						<div id="scroll-distance" class="line" style="text-align: center; display: block;"></div>
+						
 						<!-- shan -->
-						<img src="img/s3_moutain.png" alt="" style=" display: block; position: absolute; top: 0; left: 0;">
+						<img src="img/s3_moutain.png" alt="" style=" display: block; position: absolute; top: 0; left: 0;z-index: -1;">
+
 						<!-- 车 -->
 						<img id="old_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: block; position: absolute;top: 20vh;">
 						<!-- 隧道 -->
-						<img id="tunnel" src="img/s3_tunnel.png" alt="" style="block; position: absolute; top: 79vh;">
+						<img id="tunnel" src="img/s3_tunnel.png" alt="" style="display: block; position: absolute; top: 79vh;">
 						<!-- 新车 -->
-						<img id="new_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: display: block; position: absolute;top: 75vh;">
+						<img id="new_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: block; position: absolute;top: 75vh;">
 						
 					</div>
 					<script>
@@ -873,7 +876,7 @@
 							// var tl2 = gsap.timeline();
 							// tl2.to("#new_truck", { x: 1500, y: 0, rotation: 0, opacity:0, duration: 50 },"<");
 
-							const timeline = new TimelineMax();
+							const timeline = new TimelineMax({ repeat: 2 });
 							// 先tl再tl2的写法
 							// timeline.add(tl);
 							// timeline.add(tl2);
@@ -884,7 +887,23 @@
 							timeline.to("#old_truck", { x: 1000, y: 150, rotation: -35, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
+							timeline.to("#old_truck", { x: 1850, y: 100, rotation: 25,opacity:0, duration: 100 }, "-=1");
+
+							timeline.to("#old_truck", { x: 0, y: 0, rotation: 0,opacity:0, duration: 100 },"+=1");
+							timeline.to("#old_truck", { x: 0, y: 0, rotation: 0,opacity:1, duration: 10 },);
+							timeline.to("#old_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
+							timeline.to("#new_truck", { x: 0, y: 0, rotation: 0, opacity:0, duration: 100 },);
+							timeline.to("#new_truck", { x: 0, y: 0, rotation: 0, opacity:1, duration: 10 },);
+							timeline.to("#new_truck", { x: 900, y: 0, rotation: 0, opacity:1, duration: 100 },"<");
+							timeline.to("#new_truck", { x: 1000, y: 0, rotation: 0, opacity:0, duration: 50 },"-=1");
+							timeline.to("#old_truck", { x: 700, y: 300, rotation: 0, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1000, y: 150, rotation: -35, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
 							timeline.to("#old_truck", { x: 1850, y: 100, rotation: 25, duration: 100 }, "-=1");
+
+							// 计算总持续时间
+							const totalDuration = timeline.totalDuration(); // 获取动画的总持续时间
 
 							// 创建 ScrollMagic 控制器
 							var controller = new ScrollMagic.Controller();
@@ -911,96 +930,42 @@
 							// 创建场景
 							var scene = new ScrollMagic.Scene({
 								triggerElement: "#roadbattle", // 触发元素
-								duration:1500,
-								offset:0,
+								duration: totalDuration, // 使用总持续时间
+								offset: 0,
 								triggerHook: 0.1 // 触发点
 							})
 								.setTween(timeline) // 使用 GSAP 动画
 								.setPin("#target")
 								.addIndicators() // 添加指示器（可选）
 								.addTo(controller); // 将场景添加到控制器
-						})();
 
-						// (function new_truck() {
-						// 	var tl = gsap.timeline();
-						// 	// 定义动画链
-						// 	// x,y指的是位置，rotation指的是旋转角度，duration指的是持续时间，-=1指的是从上个动画结束的位置开始，+=1指的是从上个动画结束后1秒开始
-						// 	tl.to("#new_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
-						// 	tl.to("#new_truck", { x: 700, y: 200, rotation: 0, duration: 100 }, "-=1");
-						// 	tl.to("#new_truck", { x: 1000, y: 200, rotation: -35, duration: 100 }, "-=1");
-						// 	// tl.to("#new_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
-						// 	// tl.to("#new_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
-						// 	// tl.to("#new_truck", { x: 1850, y: 100, rotation: 25, duration: 100 }, "-=1");
+							// 记录滚动距离
+							const initialScrollValue = 0; // 初始值
+							const endScrollValue = totalDuration; // 结束值
 
-						// 	// 创建 ScrollMagic 控制器
-						// 	var controller = new ScrollMagic.Controller();
+							scene.on("update", (event) => {
+								const scrollPos = event.scrollPos; // 当前滚动位置
+								const mappedValue = mapScrollToRange(scrollPos, initialScrollValue, endScrollValue, 0, 100); // 映射到0-100范围
+								document.getElementById("scroll-distance").innerText = `滚动距离: ${mappedValue.toFixed(2)}`; // 更新显示
+							});
 
-						// 	// 创建场景
-						// 	var scene = new ScrollMagic.Scene({
-						// 		triggerElement: "#roadbattle2", // 触发元素
-						// 		duration:500,
-						// 		offset:0,
-						// 		triggerHook: 0 // 触发点
-						// 	})
-						// 		.setTween(tl) // 使用 GSAP 动画
-						// 		.setPin("#target")
-						// 		.addIndicators() // 添加指示器（可选）
-						// 		.addTo(controller); // 将场景添加到控制器
-						// })();
-
-					</script>
-					<!-- <script>
-						(function () { // wait for document ready
-							var flightpath = {
-								entry : {
-									curviness: 1.25,
-									autoRotate: true,
-									values: [
-											{x: 100,	y: -20},
-											{x: 300,	y: 10}
-										]
-								},
-								looping : {
-									curviness: 1.25,
-									autoRotate: true,
-									values: [
-											{x: 510,	y: 60},
-											{x: 620,	y: -60},
-											{x: 500,	y: -100},
-											{x: 380,	y: 20},
-											{x: 500,	y: 60},
-											{x: 580,	y: 20},
-											{x: 620,	y: 15}
-										]
-								},
-								leave : {
-									curviness: 1.25,
-									autoRotate: true,
-									values: [
-											{x: 660,	y: 20},
-											{x: 800,	y: 130},
-											{x: $(window).width() + 300,	y: -100},
-										]
+							// 显示/隐藏滚动距离文本
+							document.getElementById("toggleScrollDistance").addEventListener("click", function() {
+								console.log("ni")
+								const scrollDistanceDiv = document.getElementById("scroll-distance");
+								if (scrollDistanceDiv.style.display === "none") {
+									scrollDistanceDiv.style.display = "block"; // 显示文本
+								} else {
+									scrollDistanceDiv.style.display = "none"; // 隐藏文本
 								}
-							};
-							// init controller
-							var controller = new ScrollMagic.Controller();
+							});
 
-							// create tween
-							var tween = new TimelineMax()
-								.add(TweenMax.to($("#pack_truck"), 1.2, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut}))
-								.add(TweenMax.to($("#pack_truck"), 2, {css:{bezier:flightpath.looping}, ease:Power1.easeInOut}))
-								.add(TweenMax.to($("#pack_truck"), 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}));
-
-							// build scene
-							var scene = new ScrollMagic.Scene({triggerElement: "#pack", duration: 500, offset: 100})
-											.setPin("#target")
-											.setTween(tween)
-											.addIndicators() // add indicators (requires plugin)
-											.addTo(controller);
-						})
-					</script> -->
-
+							// 显示映射函数
+							function mapScrollToRange(value, inMin, inMax, outMin, outMax) {
+								return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+							}
+						})();
+					</script>
 				</div>
 				<div style="height: 100vh;"></div>
 
@@ -1381,7 +1346,9 @@
 			mouseX = event.clientX;
 			mouseY = event.clientY;
 		});
-	</script>
+
+</script>
+
 
 </body>
 
