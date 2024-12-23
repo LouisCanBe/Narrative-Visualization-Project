@@ -1112,12 +1112,38 @@
 				</div> -->
 
 				<div style="height: 1400px; width: 100%; position: relative; border: 1px solid black;">
-					<img src="img/s5_2.svg" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-					<img src="img/s5_文本框 窗前.svg" style="position: absolute; top: 300px; left: 500px;">
-					<img src="img/s5_直播.svg" style="position: absolute; top: 300px; right: 100px;">
-					<img src="img/s5_文本框 上车.svg" style="position: absolute; top: 200px; right: 100px;">
+					<img id="s5_2" src="img/s5_2.svg" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+					<img id="s5_textbox_window" src="img/s5_文本框 窗前.svg" style="position: absolute; top: 300px; left: 500px;">
+					<img id="s5_live" src="img/s5_直播.svg" style="position: absolute; top: 300px; right: 100px;">
+					<img id="s5_textbox_car" src="img/s5_文本框 上车.svg" style="position: absolute; top: 200px; right: 100px;">
 				</div>
+				<script>
+					(function () {
+						// 创建 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+
+						// 创建 GSAP 动画时间线
+						var tween = gsap.timeline();
+						// 文本框_窗前淡出
+						tween.from("#s5_textbox_window", { opacity: 0 }, { opacity: 1, duration: 1 })
+							// 直播从右侧屏幕外向左平移到当前位置
+							.fromTo("#s5_live", { x: window.innerWidth }, { x: 0, duration: 1 }, "+=0.5")
+							// 文本框_上车淡出
+							.fromTo("#s5_textbox_car", { opacity: 0 }, { opacity: 1, duration: 1 }, "+=0.5");
+
+						// 创建 ScrollMagic 场景
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#s5_2", // 触发动画的元素
+							triggerHook: 0.5 // 触发点在视口中间
+						})
+							.setTween(tween) // 将 GSAP 动画绑定到场景
+							.addIndicators({ name: "动画触发" }) // 添加指示器用于调试
+							.addTo(controller); // 将场景添加到控制器
+					})();
+				</script>
 				<img src="img/s5_辣条之王.svg">
+				<div style="height: 100px;"></div>
+				<img src="img/s5_饼图和鲨鱼.svg">
 				<!-- </div> -->
 				<div style="height: 100vh;"></div>
 			</section>
