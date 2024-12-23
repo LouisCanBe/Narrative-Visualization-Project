@@ -159,8 +159,9 @@
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 				<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" />
 			</div>
-			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-				<img src="img/s5_bg04.png" class="w-full h-full object-cover" alt="背景图片4" />
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000" >
+				<div style="width: 100%; height: 100%; background-color: #fff"></div>
+				<!-- <img src="img/s5_bg04.png" class="w-full h-full object-cover" alt="背景图片4" /> -->
 			</div>
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 				<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
@@ -1142,6 +1143,34 @@
 				<img src="img/s5_辣条之王.svg">
 				<div style="height: 100px;"></div>
 				<img src="img/s5_饼图和鲨鱼.svg">
+				<div style="height: 100px;"></div>
+				<div style="height: 2500px; width:100%; border:1px solid red; position: relative;">
+					<img src="img/s5_黑影时间线.svg" style=" width:100%; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+					<img class="fade-image" src="img/s5_辣条带货.svg" style=" width:48%; position: absolute; top: 0; left: 0;">
+					<img class="fade-image" src="img/s5_县长辣条.svg" style=" width:48%; position: absolute; top: 500px; right: 100px;">
+					<img class="fade-image" src="img/s5_辣椒箱.svg" style=" width:48%; position: absolute; bottom: 750px; left: 0;">
+					<img class="fade-image" src="img/s5_辣条博物馆.svg" style=" width:48%; position: absolute; bottom: -30px; right: 30px;">
+					<script>
+						(function () {
+							// 创建 ScrollMagic 控制器
+							var controller = new ScrollMagic.Controller();
+
+							// 创建 GSAP 动画，使用 stagger
+							var tween = gsap.fromTo(".fade-image", { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 2 });
+
+							// 创建 ScrollMagic 场景
+							var scene = new ScrollMagic.Scene({
+								triggerElement: "img[src='img/s5_黑影时间线.svg']", // 触发动画的元素
+							})
+								.setTween(tween) // 将 GSAP 动画绑定到场景
+								.addIndicators({ name: "动画触发" }) // 添加指示器用于调试
+								.addTo(controller); // 将场景添加到控制器
+						})();
+					</script>
+				</div>
+				<img src="img/s5_地图.svg">
+
+
 				<!-- </div> -->
 				<div style="height: 100vh;"></div>
 			</section>
