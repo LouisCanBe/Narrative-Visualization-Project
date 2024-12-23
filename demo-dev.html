@@ -123,7 +123,8 @@
 
 <body class="bg-black text-white overflow-x-hidden">
 	<!-- 添加自动滚动按钮 -->
-	<button id="scrollToggle" class="fixed  right-10 bg-red-500 text-white p-2 rounded" style="position:fixed; top: 50vh;;z-index: 10;">
+	<button id="scrollToggle" class="fixed  right-10 bg-red-500 text-white p-2 rounded"
+		style="position:fixed; top: 50vh;;z-index: 10;">
 		点击速速通
 	</button>
 	<nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50">
@@ -159,7 +160,7 @@
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 				<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" />
 			</div>
-			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000" >
+			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
 				<div style="width: 100%; height: 100%; background-color: #fff"></div>
 				<!-- <img src="img/s5_bg04.png" class="w-full h-full object-cover" alt="背景图片4" /> -->
 			</div>
@@ -183,7 +184,7 @@
 						// 创建 GSAP 动画，滚动一定距离后再边滚动边消失
 						var tween = gsap.timeline();
 						tween.to("#spicy-strip", { y: -800, duration: 1 })
-							.to("#spicy-strip", { opacity: 0, duration: 1 }, "-=0.5");
+							.fromTo("#spicy-strip", { display: "block" }, { display: "none", duration: 1 }, "-=0.5");
 
 						// 创建 ScrollMagic 场景
 						var scene = new ScrollMagic.Scene({
@@ -286,13 +287,13 @@
 
 				<!-- 添加一个和视窗一样的 div 做背景板 -->
 				<div id="background"
-					style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #0B2A52; z-index: 0; opacity: 0;">
+					style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #0B2A52; z-index: 0; display: none;">
 				</div>
 
 				<div style="height: 900px;">
 					<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
 						style="width: 900px; transform: translate(-500px, -300px);">
-					<img id="secret" class="scroll-image" src="img/s2_��方.svg" alt="秘方"
+					<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方"
 						style="width: 150px; transform: translate(-500px, -650px);">
 					<img class="scroll-image" src="img/s2_替代.svg" alt="替代"
 						style="width: 400px; transform: translate(-300px, -1200px);">
@@ -308,7 +309,7 @@
 							var controller = new ScrollMagic.Controller();
 
 							// 使用 GSAP 的 fromTo 创建动画
-							var tween = gsap.fromTo("#background", { opacity: 0 }, { opacity: 1, duration: 1 });
+							var tween = gsap.fromTo("#background", { display: "none" }, { display: "block", duration: 0.5 });
 
 							// 创建 ScrollMagic 场景
 							var scene = new ScrollMagic.Scene({
@@ -395,7 +396,7 @@
 						var controller = new ScrollMagic.Controller();
 
 						// 使用 GSAP 的 fromTo 创建动画
-						var tween = gsap.fromTo("#background", { opacity: 1 }, { opacity: 0, duration: 1 });
+						var tween = gsap.fromTo("#background", { display: "block" }, { display: "none", duration: .5 });
 
 						// 创建 ScrollMagic 场景
 						var scene = new ScrollMagic.Scene({
@@ -699,29 +700,30 @@
 					<div style="height: 80vh;"></div>
 					<img src="img/s3_2_但逐渐的，机器声音好像变得吃力.png" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img id="machine" src="img/s3_3.png" alt="" style="display: block; margin: auto; aspect-ratio: 16 / 1;">
+					<img id="machine" src="img/s3_3.png" alt=""
+						style="display: block; margin: auto; aspect-ratio: 16 / 1;">
 					<script>
 						// 使用 GSAP 创建自动向右移动的动画
 						const movingImage = document.getElementById("machine");
-						   // 获取图片的宽度
-							const imageWidth = movingImage.offsetWidth;
-								// 设置动画
-							function startAnimation() {
-								gsap.to(movingImage, {
-									x: window.innerWidth / 2, // 向右移动到窗口宽度的一半
-									duration: 10, // 动画持续时间
-									ease: "power2.out", // 逐渐减慢的效果
-									onComplete: () => {
-										// 当动画完成时，将图���位置重置到左侧
-										gsap.set(movingImage, { x: -imageWidth });
-										// 重新开始动画
-										startAnimation();
-									}
-								});
-							}
-								// 启动动画
-							startAnimation();
-					 </script>
+						// 获取图片的宽度
+						const imageWidth = movingImage.offsetWidth;
+						// 设置动画
+						function startAnimation() {
+							gsap.to(movingImage, {
+								x: window.innerWidth / 2, // 向右移动到窗口宽度的一半
+								duration: 10, // 动画持续时间
+								ease: "power2.out", // 逐渐减慢的效果
+								onComplete: () => {
+									// 当动画完成时，将图���位置重置到左侧
+									gsap.set(movingImage, { x: -imageWidth });
+									// 重新开始动画
+									startAnimation();
+								}
+							});
+						}
+						// 启动动画
+						startAnimation();
+					</script>
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_4_每次来接送我们的卡车也更脏，更破。.png" style="display: block; margin: auto;">
 					<div style="height: 30vh;"></div>
@@ -737,7 +739,8 @@
 					<div style="height: 20vh;"></div>
 					<img src="img/s3_10_小麦产量.png" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" alt="" style="display: block; margin: auto;">
+					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" alt=""
+						style="display: block; margin: auto;">
 					<div style="height: 40vh;"></div>
 					<div id="dive" style="height: 10vh;"></div>
 					<img id="dive_truck" src="img/s3_che.png" alt="" style="display: block; margin: 10;">
@@ -747,14 +750,14 @@
 							// 创建 ScrollMagic 控制器
 							var controller = new ScrollMagic.Controller();
 
-							 // 创建场景
+							// 创建场景
 							var scene = new ScrollMagic.Scene({
 								triggerElement: "#dive", // 触发元素
 								triggerHook: 0 // 触发点
 							})
-							.setTween("#dive_truck", { x: 900, y: 700 , rotation:540}) // 使用 GSAP 动画
-							.addIndicators() // 添加指示器（可选）
-							.addTo(controller); // 将场景添加到控制器
+								.setTween("#dive_truck", { x: 900, y: 700, rotation: 540 }) // 使用 GSAP 动画
+								.addIndicators() // 添加指示器（可选）
+								.addTo(controller); // 将场景添加到控制器
 						})();
 					</script>
 					<div style="height: 10vh;"></div>
@@ -800,16 +803,18 @@
 					<div style="height: 40vh;"></div>
 					<!-- 新机器 -->
 					<div style="display: flex; justify-content: flex-start; width: 100%;">
-						
+
 						<!-- 开车动画 -->
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
-							
+
 							<div style="height: 50vh; display: flex; justify-content: center; gap: 5vw;">
 								<img src="img/s3_工厂4.png" alt="" style="transform: scale(80%);">
 							</div>
 						</div>
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
-							<div id="pack" class="line" style="text-align: left;height: 50vh;"><br>同时我们被送入了一台新的机器，<br>出来后被印上了一个统一的名字-麻辣王子</div>
+							<div id="pack" class="line" style="text-align: left;height: 50vh;">
+								<br>同时我们被送入了一台新的机器，<br>出来后被印上了一个统一的名字-麻辣王子
+							</div>
 						</div>
 					</div>
 					<!-- 装车打包 -->
@@ -827,9 +832,9 @@
 								triggerElement: "#pack", // 触发元素
 								triggerHook: 0 // 触发点
 							})
-							.setTween("#pack_truck", { x: 1850, y: -100 , rotation:0}) // 使用 GSAP 动画
-							.addIndicators() // 添加指示器（可选）
-							.addTo(controller); // 将场景添加到控制器
+								.setTween("#pack_truck", { x: 1850, y: -100, rotation: 0 }) // 使用 GSAP 动画
+								.addIndicators() // 添加指示器（可选）
+								.addTo(controller); // 将场景添加到控制器
 						})();
 					</script>
 					<!-- 路修通了 -->
@@ -849,17 +854,21 @@
 					<div id="target" style="position: relative;height: 70vh;">
 						<img src="img/s3_b_5.png" alt="" style="display: block; margin: auto;">
 						<div id="scroll-distance" class="line" style="text-align: center; display: block;"></div>
-						
+
 						<!-- shan -->
-						<img src="img/s3_moutain.png" alt="" style=" display: block; position: absolute; top: 0; left: 0;z-index: -1;">
+						<img src="img/s3_moutain.png" alt=""
+							style=" display: block; position: absolute; top: 0; left: 0;z-index: -1;">
 
 						<!-- 车 -->
-						<img id="old_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: block; position: absolute;top: 20vh;">
+						<img id="old_truck" src="img/s3_che.png" alt=""
+							style="transform: scale(0.7); display: block; position: absolute;top: 20vh;">
 						<!-- 隧道 -->
-						<img id="tunnel" src="img/s3_tunnel.png" alt="" style="display: block; position: absolute; top: 79vh;">
+						<img id="tunnel" src="img/s3_tunnel.png" alt=""
+							style="display: block; position: absolute; top: 79vh;">
 						<!-- 新车 -->
-						<img id="new_truck" src="img/s3_che.png" alt="" style="transform: scale(0.7); display: block; position: absolute;top: 75vh;">
-						
+						<img id="new_truck" src="img/s3_che.png" alt=""
+							style="transform: scale(0.7); display: block; position: absolute;top: 75vh;">
+
 					</div>
 					<script>
 						(function old_truck() {
@@ -881,21 +890,21 @@
 							// timeline.add(tl);
 							// timeline.add(tl2);
 							timeline.to("#old_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
-							timeline.to("#new_truck", { x: 900, y: 0, rotation: 0, opacity:1, duration: 100 },"<");
-							timeline.to("#new_truck", { x: 1000, y: 0, rotation: 0, opacity:0, duration: 50 },"-=1");
+							timeline.to("#new_truck", { x: 900, y: 0, rotation: 0, opacity: 1, duration: 100 }, "<");
+							timeline.to("#new_truck", { x: 1000, y: 0, rotation: 0, opacity: 0, duration: 50 }, "-=1");
 							timeline.to("#old_truck", { x: 700, y: 300, rotation: 0, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1000, y: 150, rotation: -35, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1350, y: -30, rotation: 0, duration: 10 }, "-=1");
-							timeline.to("#old_truck", { x: 1850, y: 100, rotation: 25,opacity:0, duration: 100 }, "-=1");
+							timeline.to("#old_truck", { x: 1850, y: 100, rotation: 25, opacity: 0, duration: 100 }, "-=1");
 
-							timeline.to("#old_truck", { x: 0, y: 0, rotation: 0,opacity:0, duration: 100 },"+=1");
-							timeline.to("#old_truck", { x: 0, y: 0, rotation: 0,opacity:1, duration: 10 },);
+							timeline.to("#old_truck", { x: 0, y: 0, rotation: 0, opacity: 0, duration: 100 }, "+=1");
+							timeline.to("#old_truck", { x: 0, y: 0, rotation: 0, opacity: 1, duration: 10 },);
 							timeline.to("#old_truck", { x: 300, y: 200, rotation: 25, duration: 100 });
-							timeline.to("#new_truck", { x: 0, y: 0, rotation: 0, opacity:0, duration: 100 },);
-							timeline.to("#new_truck", { x: 0, y: 0, rotation: 0, opacity:1, duration: 10 },);
-							timeline.to("#new_truck", { x: 900, y: 0, rotation: 0, opacity:1, duration: 100 },"<");
-							timeline.to("#new_truck", { x: 1000, y: 0, rotation: 0, opacity:0, duration: 50 },"-=1");
+							timeline.to("#new_truck", { x: 0, y: 0, rotation: 0, opacity: 0, duration: 100 },);
+							timeline.to("#new_truck", { x: 0, y: 0, rotation: 0, opacity: 1, duration: 10 },);
+							timeline.to("#new_truck", { x: 900, y: 0, rotation: 0, opacity: 1, duration: 100 }, "<");
+							timeline.to("#new_truck", { x: 1000, y: 0, rotation: 0, opacity: 0, duration: 50 }, "-=1");
 							timeline.to("#old_truck", { x: 700, y: 300, rotation: 0, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1000, y: 150, rotation: -35, duration: 100 }, "-=1");
 							timeline.to("#old_truck", { x: 1300, y: -50, rotation: -25, duration: 100 }, "-=1");
@@ -913,9 +922,9 @@
 								curviness: 1.25,
 								autoRotate: true,
 								values: [
-									{x: 100, y: -20},
-									{x: 300, y: 10},
-									{x: 450, y: 400}
+									{ x: 100, y: -20 },
+									{ x: 300, y: 10 },
+									{ x: 450, y: 400 }
 								]
 							};
 
@@ -950,7 +959,7 @@
 							});
 
 							// 显示/隐藏滚动距离文本
-							document.getElementById("toggleScrollDistance").addEventListener("click", function() {
+							document.getElementById("toggleScrollDistance").addEventListener("click", function () {
 								console.log("ni")
 								const scrollDistanceDiv = document.getElementById("scroll-distance");
 								if (scrollDistanceDiv.style.display === "none") {
@@ -1047,10 +1056,13 @@
 				<div style="z-index: 0;">
 					<img src="img/s4line03.svg">
 				</div>
-				<div id="tv_box" style="z-index: 0; width:100%; border:2px solid red; position: relative; height: 15800px;">
+				<div id="tv_box"
+					style="z-index: 0; width:100%; border:2px solid red; position: relative; height: 15800px;">
 					<img src="img/s4line04.svg" style=" width:99%; position: absolute; top: 0; left: 0;">
-					<img src="img/s4_电视框.svg" style=" width:80%; position: absolute; top: 13000px; left: 50%; transform: translateX(-50%);">
-					<img src="img/s4_电视框.svg" style=" width:80%; position: absolute; top: 14000px; left: 50%; transform: translateX(-50%);">
+					<img src="img/s4_电视框.svg"
+						style=" width:80%; position: absolute; top: 13000px; left: 50%; transform: translateX(-50%);">
+					<img src="img/s4_电视框.svg"
+						style=" width:80%; position: absolute; top: 14000px; left: 50%; transform: translateX(-50%);">
 				</div>
 
 				<div style="height: 100vh;"></div>
@@ -1059,11 +1071,10 @@
 			<!-- 来一场主动的破局 -->
 			<section id="transform" class="flex flex-col items-center justify-center">
 				<div style="height: 50vh;"></div>
-				<div 
-				class="line title" 
-				style="text-align: 
+				<div class="line title" style="text-align: 
 				center;font-size: 100px; z-index: 1; color: black;">CHAPTER4<br>转型之手</div>
-				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1; color: #000;">来一场主动的破局</div>
+				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1; color: #000;">来一场主动的破局
+				</div>
 				<div style="height: 50vh;"></div>
 				<!-- 章节正文 -->
 				<!-- <div style="z-index: 1;"> -->
@@ -1076,10 +1087,13 @@
 				</div> -->
 
 				<div style="height: 1400px; width: 100%; position: relative; border: 1px solid black;">
-					<img id="s5_2" src="img/s5_2.svg" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-					<img id="s5_textbox_window" src="img/s5_文本框 窗前.svg" style="position: absolute; top: 300px; left: 500px;">
+					<img id="s5_2" src="img/s5_2.svg"
+						style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+					<img id="s5_textbox_window" src="img/s5_文本框 窗前.svg"
+						style="position: absolute; top: 300px; left: 500px;">
 					<img id="s5_live" src="img/s5_直播.svg" style="position: absolute; top: 300px; right: 100px;">
-					<img id="s5_textbox_car" src="img/s5_文本框 上车.svg" style="position: absolute; top: 200px; right: 100px;">
+					<img id="s5_textbox_car" src="img/s5_文本框 上车.svg"
+						style="position: absolute; top: 200px; right: 100px;">
 				</div>
 				<script>
 					(function () {
@@ -1110,11 +1124,16 @@
 				<img src="img/s5_饼图和鲨鱼.svg">
 				<div style="height: 100px;"></div>
 				<div style="height: 2500px; width:100%; border:1px solid red; position: relative;">
-					<img src="img/s5_黑影时间线.svg" style=" width:100%; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-					<img class="fade-image" src="img/s5_辣条带货.svg" style=" width:48%; position: absolute; top: 0; left: 0;">
-					<img class="fade-image" src="img/s5_县长辣条.svg" style=" width:48%; position: absolute; top: 500px; right: 100px;">
-					<img class="fade-image" src="img/s5_辣椒箱.svg" style=" width:48%; position: absolute; bottom: 750px; left: 0;">
-					<img class="fade-image" src="img/s5_辣条博物馆.svg" style=" width:48%; position: absolute; bottom: -30px; right: 30px;">
+					<img src="img/s5_黑影时间线.svg"
+						style=" width:100%; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+					<img class="fade-image" src="img/s5_辣条带货.svg"
+						style=" width:48%; position: absolute; top: 0; left: 0;">
+					<img class="fade-image" src="img/s5_县长辣条.svg"
+						style=" width:48%; position: absolute; top: 500px; right: 100px;">
+					<img class="fade-image" src="img/s5_辣椒箱.svg"
+						style=" width:48%; position: absolute; bottom: 750px; left: 0;">
+					<img class="fade-image" src="img/s5_辣条博物馆.svg"
+						style=" width:48%; position: absolute; bottom: -30px; right: 30px;">
 					<script>
 						(function () {
 							// 创建 ScrollMagic 控制器
@@ -1160,18 +1179,15 @@
 					<img src="img/s6_6.png" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
 					<div style="display: flex; justify-content: center; gap: 5vw;">
-						<a href="#assistance" class="hover:text-custom transition-colors">
-	
-							<img src="img/s6_d1.png" style="display: block;">
-						</a>
-						<a href="#constraint" class="hover:text-custom transition-colors">
-	
-							<img src="img/s6_d2.png" style="display: block;">
-						</a>
-						<a href="#transform" class="hover:text-custom transition-colors">
-	
-							<img src="img/s6_d3.png" style="display: block;">
-						</a>
+						<!-- <a href="#assistance" class="hover:text-custom transition-colors"> -->
+
+						<img src="img/s6_d1.png" style="display: block; cursor: pointer;"
+							onclick="document.getElementById('assistance').scrollIntoView({ behavior: 'smooth' });">
+						<img src="img/s6_d2.png" style="display: block; cursor: pointer;"
+							onclick="document.getElementById('constraint').scrollIntoView({ behavior: 'smooth' });">
+						<img src="img/s6_d3.png" style="display: block; cursor: pointer;"
+							onclick="document.getElementById('transform').scrollIntoView({ behavior: 'smooth' });">
+
 					</div>
 					<div style="height: 20vh;"></div>
 				</div>
@@ -1343,7 +1359,7 @@
 		let isAutoScrolling = false;
 		let mouseX = window.innerWidth / 2; // 初始化鼠标位置为中心
 		let mouseY = window.innerHeight / 2;
-	
+
 		document.getElementById('scrollToggle').addEventListener('click', () => {
 			isAutoScrolling = !isAutoScrolling;
 			if (isAutoScrolling) {
@@ -1353,32 +1369,32 @@
 				document.getElementById('scrollToggle').innerText = '点击速速通';
 			}
 		});
-	
+
 		function autoScroll() {
 			if (!isAutoScrolling) return;
-	
+
 			const centerX = window.innerWidth / 2;
 			const centerY = window.innerHeight / 2;
-	
+
 			const distanceX = mouseX - centerX;
 			const distanceY = mouseY - centerY;
-	
+
 			const baseSpeed = 2; // 基础滚动速度
 			const speedFactor = 0.1; // 调整这个值可以改变滚动速度的敏感度
 			const scrollSpeedX = distanceX * speedFactor;
 			const scrollSpeedY = distanceY * speedFactor + baseSpeed; // 基础速度加上鼠标控制的速度
-	
+
 			window.scrollBy(0, scrollSpeedY);
-	
+
 			requestAnimationFrame(autoScroll);
 		}
-	
+
 		document.addEventListener('mousemove', (event) => {
 			mouseX = event.clientX;
 			mouseY = event.clientY;
 		});
 
-</script>
+	</script>
 
 	<!-- 在<body>标签内添加以下代码
 	<div id="customNav" class="fixed left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-80 p-4 rounded">
@@ -1411,13 +1427,13 @@
 				}
 			});
 		});
-		 // 定义customNav数据
+		// 定义customNav数据
 		const customNavData = {
-        section1: ["表1 产量对比", "表2 销售数据"],
-        section2: ["表3 市场分析", "表4 竞争对手"],
-        section3: ["表5 未来展望", "表6 其他数据"],
-        section4: ["表7 额外信息", "表8 参考资料"],
-        section5: ["表9 结论", "表10 附录"]
+			section1: ["表1 产量对比", "表2 销售数据"],
+			section2: ["表3 市场分析", "表4 竞争对手"],
+			section3: ["表5 未来展望", "表6 其他数据"],
+			section4: ["表7 额外信息", "表8 参考资料"],
+			section5: ["表9 结论", "表10 附录"]
 		};
 
 		// 更新导航内容
