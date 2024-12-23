@@ -11,6 +11,7 @@
 	<script src="https://ai-public.mastergo.com/gen_page/tailwind-config.min.js" data-color="#D20000"
 		data-border-radius="medium"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/BezierPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
@@ -294,7 +295,7 @@
 				<div style="height: 900px;">
 					<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
 						style="width: 900px; transform: translate(-500px, -300px);">
-					<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方"
+					<img id="secret" class="scroll-image" src="img/s2_��方.svg" alt="秘方"
 						style="width: 150px; transform: translate(-500px, -650px);">
 					<img class="scroll-image" src="img/s2_替代.svg" alt="替代"
 						style="width: 400px; transform: translate(-300px, -1200px);">
@@ -325,10 +326,10 @@
 					<div class="line_3 line"
 						style="text-align: left; opacity: 1; transform: translate(300px, -3000px);">
 						<div class="line3">面对灾情</div>
-						<div class="line3">老张拿着一张“酱干”配方</div>
-						<div class="line3">利用”面粉“代替了原料“大豆”</div>
-						<div class="line3">倒入了“米线机”中，翻滚、压扁、拉长</div>
-						<div class="line3">于是，第一根“辣条”-我诞生了</div>
+						<div class="line3">老张拿着一张"酱干"配方</div>
+						<div class="line3">利用"面粉"代替了原料"大豆"</div>
+						<div class="line3">倒入了"米线机"中，翻滚、压扁、拉长</div>
+						<div class="line3">于是，第一根"辣条"-我诞生了</div>
 					</div>
 				</div>
 
@@ -546,7 +547,7 @@
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
 						<img class="factory_img" src="img/s3_工厂.png" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_1" src="img/s3_工厂1.png" alt="工厂图片"
+						<img class="factory_img factory_1" src="img/s3_工厂1.png" alt="工��图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
 						<img class="factory_img factory_2" src="img/s3_工厂2.png" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ">
@@ -714,7 +715,7 @@
 									duration: 10, // 动画持续时间
 									ease: "power2.out", // 逐渐减慢的效果
 									onComplete: () => {
-										// 当动画完成时，将图片位置重置到左侧
+										// 当动画完成时，将图���位置重置到左侧
 										gsap.set(movingImage, { x: -imageWidth });
 										// 重新开始动画
 										startAnimation();
@@ -890,6 +891,25 @@
 
 							// 创建 ScrollMagic 控制器
 							var controller = new ScrollMagic.Controller();
+
+							// 定义自定义运动路径
+							var flightpath = {
+								curviness: 1.25,
+								autoRotate: true,
+								values: [
+									{x: 100, y: -20},
+									{x: 300, y: 10},
+									{x: 450, y: 400}
+								]
+							};
+
+							// 创建 GSAP 动画
+							var tween = new TimelineMax().add(
+								TweenMax.to("#old_truck", 1.2, {
+									bezier: flightpath,
+									ease: Power1.easeInOut
+								})
+							);
 
 							// 创建场景
 							var scene = new ScrollMagic.Scene({
@@ -1158,7 +1178,7 @@
 					<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
 						<div class="line" style="text-align: left;height: 50vh;">
 							<p>后来，</p>
-							<p>我还遇到了很多个“小辣”</p>
+							<p>我还遇到了很多个"小辣"</p>
 							<p>他们都像我一样</p>
 							<p>再各自的家乡慢慢成长</p>
 						</div>
@@ -1254,7 +1274,7 @@
 			// 获取移动菜单按钮和移动菜单
 			const mobileMenuButton = document.querySelector('nav button');
 			const mobileMenu = document.querySelector('nav div.hidden');
-			// 监听移动菜单按钮的点击事件
+			// 监听移动菜单按钮的点击���件
 			mobileMenuButton.addEventListener('click', () => {
 				// 切换移动菜单的显示和隐藏
 				mobileMenu.classList.toggle('hidden');
