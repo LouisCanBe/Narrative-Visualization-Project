@@ -14,7 +14,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/BezierPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug// .addIndicators.min.js"></script>
 
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
@@ -193,7 +193,7 @@
 							offset: 600
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -223,7 +223,7 @@
 							offset: 4 // 添加 offset，延迟一定距离触发
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -246,7 +246,7 @@
 								offset: 500
 							})
 								.setTween(tween)
-								.addIndicators() // 添加指示器（需要插件）
+								// .addIndicators() // 添加指示器（需要插件）
 								.addTo(controller);
 						})();
 					</script>
@@ -327,7 +327,7 @@
 								triggerElement: "#rain",
 							})
 								.setTween(tween)
-								.addIndicators() // 添加指示器（需要插件）
+								// .addIndicators() // 添加指示器（需要插件）
 								.addTo(controller);
 
 							scene.on("enter", function () {
@@ -378,7 +378,7 @@
 								offset: 0 // 添加 offset，延迟一定距离触发
 							})
 								.setTween(tween)
-								.addIndicators() // 添加指示器（需要插件）
+								// .addIndicators() // 添加指示器（需要插件）
 								.addTo(controller);
 						})();
 					</script>
@@ -425,7 +425,7 @@
 							triggerHook: 0.9
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 
 						scene.on("enter", function () {
@@ -451,7 +451,7 @@
 							offset: 0 // 添加 offset，延迟一定距离触发
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 					(function () {
@@ -469,7 +469,7 @@
 							offset: 0 // 添加 offset，延迟一定距离触发
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -489,7 +489,7 @@
 							// offset: 800
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -506,7 +506,7 @@
 							offset: 200
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -523,7 +523,7 @@
 							duration: 200
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -551,7 +551,7 @@
 							duration: 200
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 				</script>
@@ -616,7 +616,7 @@
 							offset: -300 // 添加 offset，延迟一定距离触发
 						})
 							.setTween(tween)
-							.addIndicators() // 添加指示器（需要插件）
+							// .addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
 					})();
 
@@ -644,7 +644,7 @@
 								offset: -300      // 提前触发的距离
 							})
 								.setTween(tween)
-								.addIndicators() // 开发时可以保留，上线前删除
+								// .addIndicators() // 开发时可以保留，上线前删除
 								.addTo(controller);
 						});
 					})();
@@ -671,7 +671,7 @@
 							offset: 1000     // 开始的偏移量
 						})
 							.setTween(tween)
-							.addIndicators() // 开发时可以保留，上线前删除
+							// .addIndicators() // 开发时可以保留，上线前删除
 							.addTo(controller);
 					})();
 
@@ -681,19 +681,19 @@
 						// build scenes for factory images
 						new ScrollMagic.Scene({ triggerElement: "#text1" })
 							.setClassToggle(".factory_img.factory_1", "active") // add class toggle for factory image 1
-							.addIndicators() // add indicators (requires plugin)
+							// .addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
 						new ScrollMagic.Scene({ triggerElement: "#text2" })
 							.setClassToggle(".factory_img.factory_2", "active") // add class toggle for factory image 2
-							.addIndicators() // add indicators (requires plugin)
+							// .addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
 						new ScrollMagic.Scene({ triggerElement: "#text3" })
 							.setClassToggle(".factory_img.factory_3", "active") // add class toggle for factory image 3
-							.addIndicators() // add indicators (requires plugin)
+							// .addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
 						new ScrollMagic.Scene({ triggerElement: "#text4" })
 							.setClassToggle(".factory_img.factory_4", "active") // add class toggle for factory image 4
-							.addIndicators() // add indicators (requires plugin)
+							// .addIndicators() // add indicators (requires plugin)
 							.addTo(controller);
 					})();
 
@@ -718,7 +718,7 @@
 							offset: 800     // 比工厂图片提前出现
 						})
 							.setTween(tween)
-							.addIndicators({ name: "全屏图片" }) // 开发时的指示器
+							// .addIndicators({ name: "全屏图片" }) // 开发时的指示器
 							.addTo(controller);
 					})();
 				</script>
@@ -784,7 +784,7 @@
 								triggerHook: 0 // 触发点
 							})
 								.setTween("#dive_truck", { x: 900, y: 700, rotation: 540 }) // 使用 GSAP 动画
-								.addIndicators() // 添加指示器（可选）
+								// .addIndicators() // 添加指示器（可选）
 								.addTo(controller); // 将场景添加到控制器
 						})();
 					</script>
@@ -861,7 +861,7 @@
 								triggerHook: 0 // 触发点
 							})
 								.setTween("#pack_truck", { x: 1850, y: -100, rotation: 0 }) // 使用 GSAP 动画
-								.addIndicators() // 添加指示器（可选）
+								// .addIndicators() // 添加指示器（可选）
 								.addTo(controller); // 将场景添加到控制器
 						})();
 					</script>
@@ -973,7 +973,7 @@
 							})
 								.setTween(timeline) // 使用 GSAP 动画
 								.setPin("#target")
-								.addIndicators() // 添加指示器（可选）
+								// .addIndicators() // 添加指示器（可选）
 								.addTo(controller); // 将场景添加到控制器
 
 							// 记录滚动距离
@@ -1076,7 +1076,7 @@
 								offset: 1500     // 开始的偏移量
 							})
 								.setTween(tween)
-								.addIndicators({ name: "垃圾堆" }) // 开发时可以保留，上线前删除
+								// .addIndicators({ name: "垃圾堆" }) // 开发时可以保留，上线前删除
 								.addTo(controller);
 						})();
 					</script>
@@ -1098,7 +1098,7 @@
 				<div style="z-index: 0;">
 				</div>
 
-				<div style="height: 100vh;"></div>
+				<!-- <div style="height: 100vh;"></div> -->
 			</section>
 
 			<!-- 来一场主动的破局 -->
@@ -1148,7 +1148,7 @@
 							triggerHook: 0.5 // 触发点在视口中间
 						})
 							.setTween(tween) // 将 GSAP 动画绑定到场景
-							.addIndicators({ name: "动画触发" }) // 添加指示器用于调试
+							// .addIndicators({ name: "动画触发" }) // 添加指示器用于调试
 							.addTo(controller); // 将场景添加到控制器
 					})();
 				</script>
@@ -1180,16 +1180,16 @@
 								triggerElement: "img[src='img/s5_黑影时间线.svg']", // 触发动画的元素
 							})
 								.setTween(tween) // 将 GSAP 动画绑定到场景
-								.addIndicators({ name: "动画触发" }) // 添加指示器用于调试
+								// .addIndicators({ name: "动画触发" }) // 添加指示器用于调试
 								.addTo(controller); // 将场景添加到控制器
 						})();
 					</script>
 				</div>
-				<img src="img/s5_地图.svg">
+				<img src="img/s5_地图.png">
 
 
 				<!-- </div> -->
-				<div style="height: 100vh;"></div>
+				<!-- <div style="height: 100vh;"></div> -->
 			</section>
 
 			<section id="summary" class="flex flex-col items-center justify-center">
