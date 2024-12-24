@@ -97,6 +97,9 @@
 			display: block;
 		}
 
+		.factory_img.factory_0 {
+			display: none;
+		}
 		.factory_img.factory_1 {
 			display: none;
 		}
@@ -117,6 +120,9 @@
 			display: none;
 		}
 
+		.factory_img.factory_0.active {
+			display: block;
+		}
 		.factory_img.factory_1.active {
 			display: block;
 		}
@@ -590,9 +596,9 @@
 				</div>
 				<div style="display: flex; justify-content: space-between; width: 100%;z-index: 1;">
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
-						<img class="factory_img" src="img/s3_工厂.png" loading="lazy" alt="工厂图片"
+						<img class="factory_img factory_0" src="img/s3_工厂.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_1" src="img/s3_工厂1.png" loading="lazy" alt="工��图片"
+						<img class="factory_img factory_1" src="img/s3_工厂1.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
 						<img class="factory_img factory_2" src="img/s3_工厂2.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ">
@@ -688,7 +694,7 @@
 							duration: 3500,  // 动画持续的滚动距离
 							offset: 1000     // 开始的偏移量
 						})
-							.setClassToggle(".factory_img", "active") 
+							.setClassToggle(".factory_img.factory_0", "active") 
 							.setTween(tween)
 							// .addIndicators() // 开发时可以保留，上线前删除
 							.addTo(controller);
