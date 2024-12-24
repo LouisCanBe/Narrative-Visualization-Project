@@ -164,7 +164,7 @@
 		</div>
 	</nav>
 	<main class="relative min-h-screen w-full">
-		<div id="bg">
+		<div id="bg" style="z-index: -1;">
 			<div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
 				<img src="img/s1_bg01.png" class="w-full h-full object-cover" alt="背景图片" loading="lazy" />
 			</div>
@@ -189,7 +189,7 @@
 		<background></background>
 		<content>
 		</content>
-		<div id="content" class="relative pt-24 pb-20 w-full">
+		<div id="content" class="relative pt-24 w-full">
 
 			<section id="intro" class="flex flex-col items-center justify-center">
 				<img id="spicy-strip" src="img/s1_latiao.svg" alt="辣条开始"
@@ -1218,9 +1218,6 @@
 				<div style="height: 40vh;"></div>
 				<div class="line red title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER5</div>
 				<div class="line red title" style="text-align: center;font-size: 160px; z-index: 1;">辣条的故事也是平江的故事</div>
-				<div class="fullscreen_overlay"
-					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: #C10200; opacity: 0; z-index: 0;">
-				</div>
 
 				<div id="end_view" class=" w-full" style="background-color: #C10200;z-index: 1;">
 					<div style="height: 80vh;"></div>
@@ -1238,53 +1235,19 @@
 					<div id="end" style="height: 20vh;"></div>
 					<div style="display: flex; justify-content: center; gap: 5vw;">
 						<!-- <a href="#assistance" class="hover:text-custom transition-colors"> -->
-
 						<img src="img/s6_d1_z.png" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('assistance').scrollIntoView({ behavior: 'smooth' });">
 						<img src="img/s6_d2_z.png" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('constraint').scrollIntoView({ behavior: 'smooth' });">
 						<img src="img/s6_d3_z.png" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('transform').scrollIntoView({ behavior: 'smooth' });">
-
 					</div>
-					<div style="height: 20vh;"></div>
+					<div style="height: 10vh;"></div>
 				</div>
-
-				<!-- <div style="height: 100vh;"></div> -->
-			</section>
-			
-			<script>
-					// 全屏图片动画
-					(function () {
-						var controller = new ScrollMagic.Controller();
-
-						// 创建全屏图片的淡入淡出动画
-						var tween = gsap.timeline()
-							.fromTo(".fullscreen_overlay",
-								{ opacity: 0 },
-								{ opacity: 1, duration: 1.5 }  // 较慢的淡入
-							)
-							// .to(".fullscreen_overlay",
-							// 	{ opacity: 0,  duration: 1.5 },  // 较慢的淡出
-							// 	"+=3"  // 停留3秒后开始淡出
-							// );
-
-						// 创建场景，比工厂图片先出现，后消失
-						var scene = new ScrollMagic.Scene({
-							triggerElement: "#summary",
-							duration: 4400,  // 较长的动画持续时间
-							offset: 800     // 比工厂图片提前出现
-						})
-							.setClassToggle(".fullscreen_overlay", "active") 
-							.setTween(tween)
-							.addIndicators({ name: "全屏图片" }) // 开发时的指示器
-							.addTo(controller);
-					})();
-				</script>
-				
+			</section>				
 		</div>
-		<footer
-			class="fixed bottom-0 w-full bg-black bg-opacity-80 backdrop-blur-sm opacity-0 transition-opacity duration-500">
+		<!-- <footer
+			class="fixed bottom-0 w-full bg-black bg-opacity-80 backdrop-blur-sm opacity-0 transition-opacity duration-500" style="z-index: 1">
 			<div class="container mx-auto px-6 py-4">
 				<div class="flex flex-wrap justify-between items-center">
 					<div class="flex space-x-6">
@@ -1295,7 +1258,7 @@
 					<div class="text-sm">© 2024 数据动画. 保留所有权利</div>
 				</div>
 			</div>
-		</footer>
+		</footer> -->
 	</main>
 	<!-- 背景图片切换 -->
 	<script>
@@ -1481,83 +1444,6 @@
 			mouseX = event.clientX;
 			mouseY = event.clientY;
 		});
-
-	</script>
-
-	<!-- 在<body>标签内添加以下代码
-	<div id="customNav" class="fixed left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-80 p-4 rounded">
-		<ul class="space-y-2">
-			<li><a href="#origin" class="text-white hover:text-custom">表1 产量对比</a></li>
-			<li><a href="#table2" class="text-white hover:text-custom">表2 销售数据</a></li>
-			<li><a href="#table3" class="text-white hover:text-custom">表3 市场分析</a></li>
-			<li><a href="#table4" class="text-white hover:text-custom">表4 竞争对手</a></li>
-			<li><a href="#table5" class="text-white hover:text-custom">表5 未来展望</a></li>
-		</ul>
-	</div> -->
-	<div id="customNav" class="fixed left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-80 p-4 rounded">
-		<ul id="navList" class="space-y-2">
-			<!-- 动态生成的导航项将插入到这里 -->
-		</ul>
-	</div>
-
-	<!-- 在<script>标签内添加以下代码 -->
-	<script>
-		// 监听所有自定义导航链接的点击事件
-		document.querySelectorAll('#customNav a').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault(); // 阻止默认行为
-				const targetId = this.getAttribute('href'); // 获取目标元素的ID
-				const targetElement = document.querySelector(targetId); // 获取目标元素
-
-				// 如果目标元素存在，则平滑滚动到目标元素
-				if (targetElement) {
-					targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-				}
-			});
-		});
-		// 定义customNav数据
-		const customNavData = {
-			section1: ["表1 产量对比", "表2 销售数据"],
-			section2: ["表3 市场分析", "表4 竞争对手"],
-			section3: ["表5 未来展望", "表6 其他数据"],
-			section4: ["表7 额外信息", "表8 参考资料"],
-			section5: ["表9 结论", "表10 附录"]
-		};
-
-		// 更新导航内容
-		function updateNav(sectionId) {
-			const navList = document.getElementById("navList");
-			navList.innerHTML = ""; // 清空当前导航项
-
-			// 根据sectionId获取对应的导航数据
-			const navItems = customNavData[sectionId] || [];
-			navItems.forEach(item => {
-				const li = document.createElement("li");
-				li.innerText = item;
-				navList.appendChild(li);
-			});
-		}
-
-		// 监测当前可见的section
-		const sections = document.querySelectorAll('section');
-		const observerOptions = {
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.5 // 当section可见50%时触发
-		};
-
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					const id = entry.target.getAttribute('id');
-					updateNav(id); // 更新导航内容
-				}
-			});
-		}, observerOptions);
-
-		// 对每个section元素进行观察
-		sections.forEach(section => observer.observe(section));
-
 
 	</script>
 
