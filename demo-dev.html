@@ -289,6 +289,18 @@
 				<div id="background"
 					style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #0B2A52; z-index: 0; display: none;">
 				</div>
+				<script>
+					const backgroundElement = document.getElementById('background');
+					const observer2 = new MutationObserver((mutationsList) => {
+						for (let mutation of mutationsList) {
+							if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+								console.log(`Background display changed to: ${backgroundElement.style.display}`);
+								console.trace('Style attribute changed by:');
+							}
+						}
+					});
+					observer2.observe(backgroundElement, { attributes: true });
+				</script>
 
 				<div style="height: 900px;">
 					<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
@@ -318,6 +330,13 @@
 								.setTween(tween)
 								.addIndicators() // 添加指示器（需要插件）
 								.addTo(controller);
+
+							scene.on("enter", function () {
+								console.log("Scene entered: background display changed to block");
+							});
+							scene.on("leave", function () {
+								console.log("Scene left: background display changed to none");
+							});
 						})();
 					</script>
 
@@ -396,15 +415,26 @@
 						var controller = new ScrollMagic.Controller();
 
 						// 使用 GSAP 的 fromTo 创建动画
+
+						// var tween = gsap.to("#background", { display: "none", duration: .5 });
 						var tween = gsap.fromTo("#background", { display: "block" }, { display: "none", duration: .5 });
+						
 
 						// 创建 ScrollMagic 场景
 						var scene = new ScrollMagic.Scene({
 							triggerElement: "#logo",
+							triggerHook: 0.9
 						})
 							.setTween(tween)
 							.addIndicators() // 添加指示器（需要插件）
 							.addTo(controller);
+
+						scene.on("enter", function () {
+							console.log("Scene entered: background display changed to none");
+						});
+						scene.on("leave", function () {
+							console.log("Scene left: background display changed to block");
+						});
 					})();
 				</script>
 
