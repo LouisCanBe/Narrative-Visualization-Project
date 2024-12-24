@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
 </head>
 <body>
-    <div style="height: 1000px;"></div>
+    <!-- <div style="height: 1000px;"></div>
 <div id="square" style="width: 100px; height: 100px; background-color: red;"></div>
 
 <script>
@@ -30,6 +30,264 @@
     .addIndicators() // Add indicators (requires plugin)
     .addTo(controller);
 </script>
-<div style="height: 1000px;"></div>
+<div style="height: 1000px;"></div> -->
+<section id="assistance" class="flex flex-col items-center justify-center">
+<div style="height: 50vh;"></div>
+				<div class="data-section" style="width: 80vw; z-index: 1;">
+					<!-- 小麦种植面积对比 -->
+					<div class="comparison-block opacity-0">
+						<div class="text-[#ffe300] text-[65px] tracking-[14.30px] mb-20">
+							首先用来制作辣条的面粉多为来自小麦主产区河南，<br>本地面粉产出量很低，价格偏高。
+						</div>
+						<div class="flex justify-between items-center mb-10">
+							<div class="text-white text-[61px]">
+								<span>湖南省-</span><span class="text-[88px]">118.60</span><span>千公顷</span>
+							</div>
+							<div class="text-white text-[61px]">
+								<span>河南省-</span><span class="text-[88px]">4922.33</span><span>千公顷</span>
+							</div>
+						</div>
+						<!-- 添加箭头图标 -->
+						<div style="display: flex; justify-content: space-between; margin: 20px 0;">
+							<img src="img/s3_arrow_down.svg" alt="向下箭头" style="width: 101px; height: 84px;">
+							<img src="img/s3_arrow_down.svg" alt="向下箭头" style="width: 101px; height: 84px; transform: rotate(180deg);">
+						</div>
+						<div class="text-black text-[106px] text-center bg-white bg-opacity-80 py-10">
+							小麦种植面积=<span class="text-[147px]">1:41.5</span>
+						</div>
+					</div>
+
+					<div style="height: 50vh;"></div>
+
+					<!-- 小麦产量对比 -->
+					<div class="production-block opacity-0">
+						<div class="flex justify-between items-center mb-10">
+							<div class="text-white text-[61px]">
+								<span>湖南省-</span><span class="text-[88px]">23.30万吨</span>
+							</div>
+							<div class="text-white text-[61px]">
+								<span>河南省-</span><span class="text-[88px]">2235.95万吨</span>
+							</div>
+						</div>
+						<!-- 添加箭头图标 -->
+						<div style="display: flex; justify-content: space-between; margin: 20px 0;">
+							<img src="img/s3_arrow_down.svg" alt="向下箭头" style="width: 101px; height: 84px;">
+							<img src="img/s3_arrow_down.svg" alt="向下箭头" style="width: 101px; height: 84px; transform: rotate(180deg);">
+						</div>
+						<div class="text-black text-[106px] text-center bg-white bg-opacity-80 py-10">
+							小麦产量=<span class="text-[147px]">1:95.96</span>
+						</div>
+					</div>
+
+					<div style="height: 50vh;"></div>
+
+					<!-- 地理条件说明 -->
+					<div class="geography-block opacity-0">
+						<div class="text-[#ffe300] text-[65px] tracking-[14.30px] mb-20">
+							此外平江县的地貌以山地和丘陵为主，<br>
+							有21座海拔1000米以上的高山，东西相对高度差接近1500米，<br>
+							交通闭塞和高昂的运费成本让辣条生产企业难以承受。
+						</div>
+						<!-- 添加地形图片 -->
+						<div class="flex justify-between items-center">
+							<img src="img/s3_terrain_left.png" alt="地形图左" style="width: 986px; height: 873px;">
+							<img src="img/s3_terrain_right.png" alt="地形图右" style="width: 926px; height: 121px;">
+						</div>
+						<div class="text-black text-[120px] font-normal tracking-[12px] text-center bg-white bg-opacity-80 py-5" 
+							 style="margin-top: -100px; position: relative; z-index: 2;">
+							东西相对差达1500米
+						</div>
+					</div>
+
+					<div style="height: 50vh;"></div>
+
+					<!-- 运输问题图片 -->
+					<div class="transport-block opacity-0">
+						<div class="flex justify-center gap-20">
+							<img src="img/s3_transport1.png" alt="运输图1" style="width: 323px; height: 136px;">
+							<img src="img/s3_transport2.png" alt="运输图2" style="width: 323px; height: 136px;">
+							<img src="img/s3_transport3.png" alt="运输图3" style="width: 323px; height: 136px;">
+						</div>
+					</div>
+
+					<div style="height: 50vh;"></div>
+
+					<!-- 最终结果 -->
+					<div class="result-block opacity-0">
+						<div class="text-[#ff0000] text-center text-[114px] mb-20">
+							外面的原料进不来，做好的产品出不去<br>
+							"逃离平江"<br>
+							成为了许多平江人无奈的选择
+						</div>
+						<div class="text-white text-center text-[87px]">
+							2000年平江县的辣条产业逐渐都往河南省迁移，<br>
+							河南辣条企业多达4000家
+						</div>
+					</div>
+				</div>
+				<script>
+					(function() {
+						// ... 保持现有动画脚本不变 ...
+			
+						// 添加新的动画效果
+						['problem-title', 'comparison-block', 'geography-block', 'result-block'].forEach(className => {
+							new ScrollMagic.Scene({
+								triggerElement: `.${className}`,
+								triggerHook: 0.8,
+								duration: '100%'
+							})
+							.setTween(gsap.fromTo(`.${className}`, 
+								{ opacity: 0, y: 100 }, 
+								{ opacity: 1, y: 0, duration: 1 }
+							))
+							.addTo(controller);
+						});
+						// 为新增的区块添加动画
+						['production-block', 'transport-block'].forEach(className => {
+							new ScrollMagic.Scene({
+								triggerElement: `.${className}`,
+								triggerHook: 0.8,
+								duration: '100%'
+							})
+							.setTween(gsap.fromTo(`.${className}`, 
+								{ opacity: 0, y: 100 }, 
+								{ opacity: 1, y: 0, duration: 1 }
+							))
+							.addTo(controller);
+						});
+			
+						// 自动调整背景高度
+						function adjustBackground() {
+							const section = document.querySelector('#assistance');
+							const mainContent = document.querySelector('main');
+							if (section) {
+								const sectionHeight = section.scrollHeight;
+								mainContent.style.minHeight = `${sectionHeight}px`;
+							}
+						}
+			
+						// 页面加载和改变大小时调整背景
+						window.addEventListener('load', adjustBackground);
+						window.addEventListener('resize', adjustBackground);
+					})();
+				</script>
+<section id="assistance" class="flex flex-col items-center justify-center">
+	<!-- 数据对比部分 -->
+	<div class="data-section" style="width: 80vw; z-index: 1;">
+		<!-- 其他内容... -->
+		<!-- 添加图表 -->
+		<div class="chart-container" style="width: 80%; margin: auto; padding: 50px;">
+			<canvas id="myChart"></canvas>
+		</div>
+		<!-- 其他内容... -->
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// 其他现有代码...
+				// 创建图表
+			const ctx = document.getElementById('myChart').getContext('2d');
+			const myChart = new Chart(ctx, {
+				type: 'bar', // 图表类型
+				data: {
+					labels: ['湖南省', '河南省'], // 标签
+					datasets: [{
+						label: '小麦种植面积 (千公顷)',
+						data: [118.60, 4922.33], // 数据
+						backgroundColor: [
+							'rgba(255, 226, 0, 0.6)', // 湖南省颜色
+							'rgba(255, 0, 0, 0.6)' // 河南省颜色
+						],
+						borderColor: [
+							'rgba(255, 226, 0, 1)',
+							'rgba(255, 0, 0, 1)'
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true,
+							title: {
+								display: true,
+								text: '面积 (千公顷)'
+							}
+						}
+					},
+					responsive: true,
+					plugins: {
+						legend: {
+							display: true,
+							position: 'top',
+						},
+						title: {
+							display: true,
+							text: '小麦种植面积对比'
+						}
+					}
+				}
+			});
+		});
+	</script>
+
 </body>
 </html>
+<!-- 
+
+	添加多张重叠的工厂图片 
+    <img class="factory_img factory_1" src="img/s3_工厂.png" alt="工厂图片1" 
+    style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; opacity: 0;">
+<img class="factory_img factory_2" src="img/s3_工厂2.png" alt="工厂图片2" 
+    style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; opacity: 0;">
+<img class="factory_img factory_3" src="img/s3_工厂3.png" alt="工厂图片3" 
+    style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; opacity: 0;">
+<img class="factory_img factory_4" src="img/s3_工厂4.png" alt="工厂图片4" 
+    style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; opacity: 0;">
+</div>
+
+// 文字图片
+					(function() {
+						// 初始化 ScrollMagic 控制器
+						var controller = new ScrollMagic.Controller();
+						
+						// 为每个文字块创建单独的动画，同时控制对应的工厂图片
+						document.querySelectorAll('.text-block').forEach((block, index) => {
+							// 文字动画
+							var textTween = gsap.timeline()
+								.fromTo(block, 
+									{ opacity: 0 }, 
+									{ opacity: 1, duration: 1 }
+								)
+								.to(block, 
+									{ opacity: 0, duration: 1 },
+									"+=2" // 停留2秒后淡出
+								);
+
+							// 工厂图片动画
+							var factoryTween = gsap.timeline()
+								.fromTo(`.factory_${index + 1}`, 
+									{ opacity: 0 }, 
+									{ opacity: 1, duration: 1 }
+								)
+								.to(`.factory_${index + 1}`, 
+									{ opacity: 0, duration: 1 },
+									"+=2"
+								);
+
+							// 合并文字和图片动画
+							var combinedTween = gsap.timeline()
+								.add(textTween, 0)
+								.add(factoryTween, 0);
+
+							// 创建场景
+							var scene = new ScrollMagic.Scene({
+								triggerElement: block,
+								duration: 800,
+								offset: -300
+							})
+								.setTween(combinedTween)
+								.addIndicators()
+								.addTo(controller);
+						});
+					})();
+					 -->

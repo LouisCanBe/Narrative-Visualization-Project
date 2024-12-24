@@ -79,6 +79,24 @@
 			color: #C10200;
 		}
 
+
+		.fullscreen_overlay {
+			display: none;
+
+		}
+		.fullscreen_overlay.active {
+			display: block;
+
+		}
+
+		.factory_img {
+			display: none;
+		}
+		
+		.factory_img.active {
+			display: block;
+		}
+
 		.factory_img.factory_1 {
 			display: none;
 		}
@@ -253,10 +271,10 @@
 
 				</div>
 				<div style="height: 10vh;"></div>
-				<img src="img/s1_title.png" loading="lazy" alt="辣条正传" style="width: 200vw; z-index: 999;">
+				<img src="img/s1_title.png" alt="辣条正传" style="width: 200vw; z-index: 999;">
 				<img src="img/s1_xiaola.gif" alt="s1_xiaola style=" width: 40vw; margin-top: -150px; z-index: 1;">
 				<img src="img/s1_intro.svg" alt="字1" style="width: 120vw;" class="min-w-screen">
-				<div style="height: 50vh;"></div>
+				<div style="height: 100vh;"></div>
 			</section>
 
 			<section id="origin" class="flex flex-col items-center justify-center">
@@ -568,7 +586,7 @@
 				<div style="height: 80vh;"></div>
 				<!-- 背景图片 -->
 				<div class="fullscreen_overlay"
-					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; display: none; z-index: 0;">
+					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
 				</div>
 				<div style="display: flex; justify-content: space-between; width: 100%;z-index: 1;">
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
@@ -670,6 +688,7 @@
 							duration: 3500,  // 动画持续的滚动距离
 							offset: 1000     // 开始的偏移量
 						})
+							.setClassToggle(".factory_img", "active") 
 							.setTween(tween)
 							// .addIndicators() // 开发时可以保留，上线前删除
 							.addTo(controller);
@@ -703,11 +722,12 @@
 
 						// 创建全屏图片的淡入淡出动画
 						var tween = gsap.timeline()
-							.to(".fullscreen_overlay",
-								display // 较慢的淡入
+							.fromTo(".fullscreen_overlay",
+								{ opacity: 0 },
+								{ opacity: 1, duration: 1.5 }  // 较慢的淡入
 							)
 							.to(".fullscreen_overlay",
-								{ opacity: 0, duration: 1.5 },  // 较慢的淡出
+								{ opacity: 0,  duration: 1.5 },  // 较慢的淡出
 								"+=3"  // 停留3秒后开始淡出
 							);
 
@@ -717,6 +737,7 @@
 							duration: 33000,  // 较长的动画持续时间
 							offset: 800     // 比工厂图片提前出现
 						})
+							.setClassToggle(".fullscreen_overlay", "active") 
 							.setTween(tween)
 							// .addIndicators({ name: "全屏图片" }) // 开发时的指示器
 							.addTo(controller);
@@ -728,7 +749,8 @@
 					<div style="height: 80vh;"></div>
 					<img src="img/s3_2_但逐渐的，机器声音好像变得吃力.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img id="machine" src="img/s3_3.png" loading="lazy" alt=""
+					<img src="img/s3_3运输.gif" alt="">
+					<!-- <img id="machine" src="img/s3_3.png" alt=""
 						style="display: block; margin: auto; aspect-ratio: 16 / 1;">
 					<script>
 						// 使用 GSAP 创建自动向右移动的动画
@@ -751,15 +773,15 @@
 						}
 						// 启动动画
 						startAnimation();
-					</script>
+					</script> -->
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_4_每次来接送我们的卡车也更脏，更破。.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 30vh;"></div>
-					<img id="truck" src="img/s3_5.png" loading="lazy" alt="" style="display: block; margin: auto;">
+					<img id="truck" src="img/s3_5破车.gif" alt="" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_6_我听见一些工人嘴里说着.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img src="img/s3_7.png" loading="lazy" style="display: block; margin: auto;">
+					<img src="img/s3_7人跑了.gif" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_8_原料问题.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
@@ -816,15 +838,15 @@
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
 							<!-- 预留右半边三个图片占位 -->
 							<div style="height: 50vh;">
-								<img src="img/s3_16_ren.png" loading="lazy">
+								<img src="img/s3_爆山了.gif" loading="lazy">
 							</div>
 							<div style="height: 50vh;"></div>
 							<div style="height: 50vh;">
-								<img src="img/s3_16_ren.png" loading="lazy">
+								<img src="img/s3_铺水泥.gif" loading="lazy">
 							</div>
 							<div style="height: 50vh;"></div>
 							<div style="height: 50vh;">
-								<img src="img/s3_16_ren.png" loading="lazy">
+								<img src="img/s3_点灯.gif" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -878,7 +900,7 @@
 					<!-- 修路对比 -->
 					<!-- <div id="roadbattle" style="height: 40vh;"></div> -->
 					<div id="roadbattle"></div>
-					<div id="roadbattle2"></div>
+					
 					<div id="target" style="position: relative;height: 70vh;">
 						<img src="img/s3_b_5.png" loading="lazy" alt="" style="display: block; margin: auto;">
 						<div id="scroll-distance" class="line" style="text-align: center; display: block;"></div>
@@ -1196,9 +1218,11 @@
 				<div style="height: 40vh;"></div>
 				<div class="line red title" style="text-align: center;font-size: 100px; z-index: 1;">CHAPTER5</div>
 				<div class="line red title" style="text-align: center;font-size: 160px; z-index: 1;">辣条的故事也是平江的故事</div>
-				<div style="height: 50vh;"></div>
-				<!-- <div style="height: 10vh;"class="w-full" style="background: linear-gradient(to bottom, #fff, #C10200);"></div> -->
-				<div class="w-full" style="background-color: #C10200;">
+				<div class="fullscreen_overlay"
+					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: #C10200; opacity: 0; z-index: 0;">
+				</div>
+
+				<div id="end_view" class=" w-full" style="background-color: #C10200;z-index: 1;">
 					<div style="height: 80vh;"></div>
 					<img src="img/s6_1.png" loading="lazy" style="display: block; margin: auto;">
 					<img src="img/s6_2.png" loading="lazy" style="display: block; margin: auto;">
@@ -1211,14 +1235,15 @@
 					<div style="height: 50vh;"></div>
 					<img src="img/s6_6.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
+					<div id="end" style="height: 20vh;"></div>
 					<div style="display: flex; justify-content: center; gap: 5vw;">
 						<!-- <a href="#assistance" class="hover:text-custom transition-colors"> -->
 
-						<img src="img/s6_d1.png" loading="lazy" style="display: block; cursor: pointer;"
+						<img src="img/s6_d1_z.png" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('assistance').scrollIntoView({ behavior: 'smooth' });">
-						<img src="img/s6_d2.png" loading="lazy" style="display: block; cursor: pointer;"
+						<img src="img/s6_d2_z.png" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('constraint').scrollIntoView({ behavior: 'smooth' });">
-						<img src="img/s6_d3.png" loading="lazy" style="display: block; cursor: pointer;"
+						<img src="img/s6_d3_z.png" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('transform').scrollIntoView({ behavior: 'smooth' });">
 
 					</div>
@@ -1227,6 +1252,36 @@
 
 				<!-- <div style="height: 100vh;"></div> -->
 			</section>
+			
+			<script>
+					// 全屏图片动画
+					(function () {
+						var controller = new ScrollMagic.Controller();
+
+						// 创建全屏图片的淡入淡出动画
+						var tween = gsap.timeline()
+							.fromTo(".fullscreen_overlay",
+								{ opacity: 0 },
+								{ opacity: 1, duration: 1.5 }  // 较慢的淡入
+							)
+							// .to(".fullscreen_overlay",
+							// 	{ opacity: 0,  duration: 1.5 },  // 较慢的淡出
+							// 	"+=3"  // 停留3秒后开始淡出
+							// );
+
+						// 创建场景，比工厂图片先出现，后消失
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#summary",
+							duration: 4400,  // 较长的动画持续时间
+							offset: 800     // 比工厂图片提前出现
+						})
+							.setClassToggle(".fullscreen_overlay", "active") 
+							.setTween(tween)
+							.addIndicators({ name: "全屏图片" }) // 开发时的指示器
+							.addTo(controller);
+					})();
+				</script>
+				
 		</div>
 		<footer
 			class="fixed bottom-0 w-full bg-black bg-opacity-80 backdrop-blur-sm opacity-0 transition-opacity duration-500">
