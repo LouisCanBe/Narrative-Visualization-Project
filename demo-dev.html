@@ -198,13 +198,13 @@
 					})();
 				</script>
 				<div style="height: 50vh;"></div>
-				<div class="line line_1">我，一根辣条</div>
-				<div class="line line_1">那在便利店、街头小摊以及学校随处可见的平凡零食</div>
-				<div class="line line_1">我已经成为了人们生活中的一部分</div>
-				<div class="line line_1">无论是在课间休息时的解馋，还是在忙碌工作中的片刻放松</div>
-				<div class="line line_1">然而，谁又能想到</div>
-				<div class="line">一根辣条，曾左右一个地方的脱贫致富</div>
-				<div class="line">甚至带动一个企业的上市</div>
+				<div class="line line_1" id="line_1_1" style="opacity: 1;">我，一根辣条</div>
+				<div class="line line_1" id="line_1_2" style="opacity: 0;">那在便利店、街头小摊以及学校随处可见的平凡零食</div>
+				<div class="line line_1" id="line_1_3" style="opacity: 0;">我已经成为了人们生活中的一部分</div>
+				<div class="line line_1" id="line_1_4" style="opacity: 0;">无论是在课间休息时的解馋，还是在忙碌工作中的片刻放松</div>
+				<div class="line line_1" id="line_1_5" style="opacity: 0;">然而，谁又能想到</div>
+				<div class="line line_1" id="line_1_6" style="opacity: 0;">一根辣条，曾左右一个地方的脱贫致富</div>
+				<div class="line line_1" id="line_1_7" style="opacity: 0;">甚至带动一个企业的上市</div>
 
 				<script>
 					(function () {
@@ -213,15 +213,14 @@
 
 						// 使用 GSAP 的 staggerFromTo 创建动画
 						var tween = gsap.timeline();
-						tween.fromTo(".line_1", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.5 })
+						tween.to(".line_1", { opacity: 1, duration: 1, stagger: 0.5 })
 							.to(".line_1", { opacity: 0, duration: 1, stagger: 0.5, delay: 0.5 }, 0.5)
-
 
 						// 创建 ScrollMagic 场景
 						var scene = new ScrollMagic.Scene({
-							triggerElement: "#intro",
-							duration: 400,
-							offset: 300 // 添加 offset，延迟一定距离触发
+							triggerElement: "#line_1_1",
+							duration: 600,
+							offset: 4 // 添加 offset，延迟一定距离触发
 						})
 							.setTween(tween)
 							.addIndicators() // 添加指示器（需要插件）
@@ -569,7 +568,7 @@
 				<div style="height: 80vh;"></div>
 				<!-- 背景图片 -->
 				<div class="fullscreen_overlay"
-					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; opacity: 0; z-index: 0;">
+					style="position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background-color: black; display: none; z-index: 0;">
 				</div>
 				<div style="display: flex; justify-content: space-between; width: 100%;z-index: 1;">
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
@@ -704,9 +703,8 @@
 
 						// 创建全屏图片的淡入淡出动画
 						var tween = gsap.timeline()
-							.fromTo(".fullscreen_overlay",
-								{ opacity: 0 },
-								{ opacity: 1, duration: 1.5 }  // 较慢的淡入
+							.to(".fullscreen_overlay",
+								display // 较慢的淡入
 							)
 							.to(".fullscreen_overlay",
 								{ opacity: 0, duration: 1.5 },  // 较慢的淡出
@@ -1153,17 +1151,17 @@
 				<div style="height: 100px;"></div>
 				<img src="img/s5_饼图和鲨鱼.svg">
 				<div style="height: 100px;"></div>
-				<div style="height: 2500px; width:100%; border:1px solid red; position: relative;">
+				<div style="height: 3500px; width:100%; border:1px solid red; position: relative;">
 					<img src="img/s5_黑影时间线.svg"
 						style=" width:100%; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
 					<img class="fade-image" src="img/s5_辣条带货.svg"
 						style=" width:48%; position: absolute; top: 0; left: 0;">
 					<img class="fade-image" src="img/s5_县长辣条.svg"
-						style=" width:48%; position: absolute; top: 500px; right: 100px;">
+						style=" width:48%; position: absolute; top: 750px; right: 20px;">
 					<img class="fade-image" src="img/s5_辣椒箱.svg"
-						style=" width:48%; position: absolute; bottom: 750px; left: 0;">
+						style=" width:48%; position: absolute; top: 1600px; left: 10px;">
 					<img class="fade-image" src="img/s5_辣条博物馆.svg"
-						style=" width:48%; position: absolute; bottom: -30px; right: 30px;">
+						style=" width:50%; position: absolute; top: 2520px; right: 10px;">
 					<script>
 						(function () {
 							// 创建 ScrollMagic 控制器
