@@ -148,24 +148,24 @@
 	<main class="relative min-h-screen w-full">
 		<div id="bg">
 			<div class="fixed inset-0 w-full h-full transition-opacity duration-1000">
-				<img src="img/s1_bg01.png" class="w-full h-full object-cover" alt="背景图片" />
+				<img src="img/s1_bg01.png" class="w-full h-full object-cover" alt="背景图片" loading="lazy" />
 			</div>
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-				<img src="img/s2_bg02.svg" class="w-full h-full object-cover" alt="背景图片2" />
+				<img src="img/s2_bg02.svg" class="w-full h-full object-cover" alt="背景图片2" loading="lazy" />
 			</div>
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-				<img src="img/s3_bg03.png" class="w-full h-full object-cover" alt="背景图片3" />
+				<img src="img/s3_bg03.png" class="w-full h-full object-cover" alt="背景图片3" loading="lazy" />
 			</div>
 			<!-- 后续章节待更新 -->
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-				<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" />
+				<img src="img/s4_bg04.png" class="w-full h-full object-cover" alt="背景图片3" loading="lazy" />
 			</div>
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-				<div style="width: 100%; height: 100%; background-color: #fff"></div>
+				<div style="width: 100%; height: 100%; background-color: #fff"></div> 
 				<!-- <img src="img/s5_bg04.png" class="w-full h-full object-cover" alt="背景图片4" /> -->
 			</div>
 			<div class="fixed inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-				<img src="img/image (5).png" class="w-full h-full object-cover" alt="背景图片6" />
+				<img src="img/image (5).png" loading="lazy" class="w-full h-full object-cover" alt="背景图片6" />
 			</div>
 		</div>
 		<background></background>
@@ -229,8 +229,8 @@
 				</script>
 
 				<div style="display: flex; justify-content: center; gap: 20px;">
-					<img class="zuofang" src="img/s1_zuofang.png" alt="作坊" style="width: 40vw; opacity: 0;">
-					<img class="zuofang" src="img/s1_factory.png" alt="工厂" style="width: 45vw; opacity: 0;">
+					<img class="zuofang" src="img/s1_zuofang.png" loading="lazy" alt="作坊" style="width: 40vw; opacity: 0;">
+					<img class="zuofang" src="img/s1_factory.png" loading="lazy" alt="工厂" style="width: 45vw; opacity: 0;">
 					<script>
 						(function () {
 							// 初始化 ScrollMagic 控制器
@@ -253,10 +253,10 @@
 
 				</div>
 				<div style="height: 10vh;"></div>
-				<img src="img/s1_title.png" alt="辣条正传" style="width: 200vw; z-index: 999;">
+				<img src="img/s1_title.png" loading="lazy" alt="辣条正传" style="width: 200vw; z-index: 999;">
 				<img src="img/s1_xiaola.gif" alt="s1_xiaola style=" width: 40vw; margin-top: -150px; z-index: 1;">
 				<img src="img/s1_intro.svg" alt="字1" style="width: 120vw;" class="min-w-screen">
-				<!-- <div style="height: 100vh;"></div> -->
+				<div style="height: 50vh;"></div>
 			</section>
 
 			<section id="origin" class="flex flex-col items-center justify-center">
@@ -367,15 +367,15 @@
 							var controller = new ScrollMagic.Controller();
 
 							// 使用 GSAP 的 fromTo 创建动画
-							var tween = gsap.timeline({ repeat: -1, yoyo: true });
-							tween.fromTo("#feather", { opacity: 0 }, { opacity: 1, duration: 0.5 })
-								.to("#feather", { y: "+=40", x: "+=40", scale: 1.05, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: -1 })
-								.to("#feather", { y: "-=40", x: "-=40", scale: 0.95, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: -1 });
+							var tween = gsap.timeline();
+							tween.fromTo("#feather", { opacity: 0 }, { opacity: 1, duration: 0.1 })
+								.to("#feather", {  scale: 1.05, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: -1 })
+								.to("#feather", {  scale: 0.95, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: -1 });
 
 							// 创建 ScrollMagic 场景
 							var scene = new ScrollMagic.Scene({
 								triggerElement: "#fire",
-								offset: 0 // 添加 offset，延迟一定距离触发
+								offset: -200 // 添加 offset，延迟一定距离触发
 							})
 								.setTween(tween)
 								// .addIndicators() // 添加指示器（需要插件）
@@ -572,15 +572,15 @@
 				</div>
 				<div style="display: flex; justify-content: space-between; width: 100%;z-index: 1;">
 					<div style="width: 50%; display: flex; align-items: center; position: relative;">
-						<img class="factory_img" src="img/s3_工厂.png" alt="工厂图片"
+						<img class="factory_img" src="img/s3_工厂.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_1" src="img/s3_工厂1.png" alt="工��图片"
+						<img class="factory_img factory_1" src="img/s3_工厂1.png" loading="lazy" alt="工��图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_2" src="img/s3_工厂2.png" alt="工厂图片"
+						<img class="factory_img factory_2" src="img/s3_工厂2.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ">
-						<img class="factory_img factory_3" src="img/s3_工厂3.png" alt="工厂图片"
+						<img class="factory_img factory_3" src="img/s3_工厂3.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; ;">
-						<img class="factory_img factory_4" src="img/s3_工厂4.png" alt="工厂图片"
+						<img class="factory_img factory_4" src="img/s3_工厂4.png" loading="lazy" alt="工厂图片"
 							style="width: 30vw; position: fixed; left: 10%; top: 50%; transform: translateY(-50%); z-index: 1; display: none;">
 					</div>
 					<div style="width: 50%; margin-left: auto;z-index: 1;">
@@ -724,11 +724,11 @@
 				</script>
 				<div style="height: 100vh;"></div>
 				<div style="z-index: 1;">
-					<img src="img/s3_1_这样的活力维持了一段时间.png" style="display: block; margin: auto;">
+					<img src="img/s3_1_这样的活力维持了一段时间.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 80vh;"></div>
-					<img src="img/s3_2_但逐渐的，机器声音好像变得吃力.png" style="display: block; margin: auto;">
+					<img src="img/s3_2_但逐渐的，机器声音好像变得吃力.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img id="machine" src="img/s3_3.png" alt=""
+					<img id="machine" src="img/s3_3.png" loading="lazy" alt=""
 						style="display: block; margin: auto; aspect-ratio: 16 / 1;">
 					<script>
 						// 使用 GSAP 创建自动向右移动的动画
@@ -753,26 +753,26 @@
 						startAnimation();
 					</script>
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_4_每次来接送我们的卡车也更脏，更破。.png" style="display: block; margin: auto;">
+					<img src="img/s3_4_每次来接送我们的卡车也更脏，更破。.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 30vh;"></div>
-					<img id="truck" src="img/s3_5.png" alt="" style="display: block; margin: auto;">
+					<img id="truck" src="img/s3_5.png" loading="lazy" alt="" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_6_我听见一些工人嘴里说着.png" style="display: block; margin: auto;">
+					<img src="img/s3_6_我听见一些工人嘴里说着.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img src="img/s3_7.png" style="display: block; margin: auto;">
+					<img src="img/s3_7.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_8_原料问题.png" style="display: block; margin: auto;">
+					<img src="img/s3_8_原料问题.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_9_小麦种植.png" style="display: block; margin: auto;">
+					<img src="img/s3_9_小麦种植.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img src="img/s3_10_小麦产量.png" style="display: block; margin: auto;">
+					<img src="img/s3_10_小麦产量.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" alt=""
+					<img src="img/s3_11_首先用来制作辣条的面粉多为来自小麦主产区河南， 本地面粉产出量很低，价格偏高。.png" loading="lazy" alt=""
 						style="display: block; margin: auto;">
 					<div style="height: 40vh;"></div>
 					<div id="dive" style="height: 10vh;"></div>
-					<img id="dive_truck" src="img/s3_che.png" alt="" style="display: block; margin: 10;">
-					<img src="img/s3_12.png" alt="" style="display: block; margin: auto;">
+					<img id="dive_truck" src="img/s3_che.png" loading="lazy" alt="" style="display: block; margin: 10;">
+					<img src="img/s3_12.png" loading="lazy" alt="" style="display: block; margin: auto;">
 					<script>
 						(function () {
 							// 创建 ScrollMagic 控制器
@@ -789,17 +789,17 @@
 						})();
 					</script>
 					<div style="height: 10vh;"></div>
-					<img src="img/s3_13.png" style="display: block; margin: auto;">
+					<img src="img/s3_13.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_14.png" style="display: block; margin: auto;">
+					<img src="img/s3_14.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_15.png" style="display: block; margin: auto;">
+					<img src="img/s3_15.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
 					<!-- 开始修路 -->
 					<div style="display: flex; justify-content: center; gap: 5vw;">
-						<img src="img/s3_16_wa.png" style="display: block;">
-						<img src="img/s3_16_tuo.png" style="display: block;">
-						<img src="img/s3_16_ren.png" style="display: block;">
+						<img src="img/s3_16_wa.png" loading="lazy" style="display: block;">
+						<img src="img/s3_16_tuo.png" loading="lazy" style="display: block;">
+						<img src="img/s3_16_ren.png" loading="lazy" style="display: block;">
 					</div>
 					<div style="height: 30vh;"></div>
 					<div class="line" style="display: block; margin: auto; text-align: center;">
@@ -816,15 +816,15 @@
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
 							<!-- 预留右半边三个图片占位 -->
 							<div style="height: 50vh;">
-								<img src="img/s3_16_ren.png">
+								<img src="img/s3_16_ren.png" loading="lazy">
 							</div>
 							<div style="height: 50vh;"></div>
 							<div style="height: 50vh;">
-								<img src="img/s3_16_ren.png">
+								<img src="img/s3_16_ren.png" loading="lazy">
 							</div>
 							<div style="height: 50vh;"></div>
 							<div style="height: 50vh;">
-								<img src="img/s3_16_ren.png">
+								<img src="img/s3_16_ren.png" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -836,7 +836,7 @@
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
 
 							<div style="height: 50vh; display: flex; justify-content: center; gap: 5vw;">
-								<img src="img/s3_工厂4.png" alt="" style="transform: scale(80%);">
+								<img src="img/s3_工厂4.png" loading="lazy" alt="" style="transform: scale(80%);">
 							</div>
 						</div>
 						<div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between;">
@@ -847,8 +847,8 @@
 					</div>
 					<!-- 装车打包 -->
 					<div style="position: relative;">
-						<img id="pack_truck" src="img/s3_che.png" alt="" style="display: block; position: absolute;">
-						<img src="img/s3_new.png" alt="" style="display: block; position: absolute; top: 0; left: 0;">
+						<img id="pack_truck" src="img/s3_che.png" loading="lazy" alt="" style="display: block; position: absolute;">
+						<img src="img/s3_new.png" loading="lazy" alt="" style="display: block; position: absolute; top: 0; left: 0;">
 					</div>
 					<script>
 						(function () {
@@ -867,34 +867,34 @@
 					</script>
 					<!-- 路修通了 -->
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_b_1.png" style="display: block; margin: auto;">
+					<img src="img/s3_b_1.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 10vh;"></div>
-					<img src="img/s3_b_2.png" style="display: block; margin: auto;">
+					<img src="img/s3_b_2.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s3_b_3.png" style="display: block; margin: auto;">
+					<img src="img/s3_b_3.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 10vh;"></div>
-					<img src="img/s3_b_4.png" style="display: block; margin: auto;">
+					<img src="img/s3_b_4.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 40vh;"></div>
 					<!-- 修路对比 -->
 					<!-- <div id="roadbattle" style="height: 40vh;"></div> -->
 					<div id="roadbattle"></div>
 					<div id="roadbattle2"></div>
 					<div id="target" style="position: relative;height: 70vh;">
-						<img src="img/s3_b_5.png" alt="" style="display: block; margin: auto;">
+						<img src="img/s3_b_5.png" loading="lazy" alt="" style="display: block; margin: auto;">
 						<div id="scroll-distance" class="line" style="text-align: center; display: block;"></div>
 
 						<!-- shan -->
-						<img src="img/s3_moutain.png" alt=""
+						<img src="img/s3_moutain.png" loading="lazy" alt=""
 							style=" display: block; position: absolute; top: 0; left: 0;z-index: -1;">
 
 						<!-- 车 -->
-						<img id="old_truck" src="img/s3_che.png" alt=""
+						<img id="old_truck" src="img/s3_che.png" loading="lazy" alt=""
 							style="transform: scale(0.7); display: block; position: absolute;top: 20vh;">
 						<!-- 隧道 -->
-						<img id="tunnel" src="img/s3_tunnel.png" alt=""
+						<img id="tunnel" src="img/s3_tunnel.png" loading="lazy" alt=""
 							style="display: block; position: absolute; top: 79vh;">
 						<!-- 新车 -->
-						<img id="new_truck" src="img/s3_che.png" alt=""
+						<img id="new_truck" src="img/s3_che.png" loading="lazy" alt=""
 							style="transform: scale(0.7); display: block; position: absolute;top: 75vh;">
 
 					</div>
@@ -1093,7 +1093,7 @@
 						style=" width:80%; position: absolute; top: 12800px; left: 50%; transform: translateX(-50%);">
 					<img src="img/s4_穿衣服.gif" style=" width:64%; position: absolute; top: 12120px; left: 50%; transform: translateX(-50%);">
 					<img src="img/s4_车间.gif" style=" width:64%; position: absolute; top: 13120px; left: 50%; transform: translateX(-50%);">
-					<img src="img/s4_line04.png" style=" width:50%; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+					<img src="img/s4_line04.png" loading="lazy" style=" width:50%; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
 				</div>
 				<div style="z-index: 0;">
 				</div>
@@ -1149,10 +1149,10 @@
 						})
 							.setTween(tween) // 将 GSAP 动画绑定到场景
 							// .addIndicators({ name: "动画触发" }) // 添加指示器用于调试
-							.addTo(controller); // 将场景添加到控制器
+							.addTo(controller); // 将���景添���到控制器
 					})();
 				</script>
-				<img src="img/s5_辣条之王.png">
+				<img src="img/s5_辣条之王.png" loading="lazy">
 				<div style="height: 100px;"></div>
 				<img src="img/s5_饼图和鲨鱼.svg">
 				<div style="height: 100px;"></div>
@@ -1185,7 +1185,7 @@
 						})();
 					</script>
 				</div>
-				<img src="img/s5_地图.png">
+				<img src="img/s5_地图.png" loading="lazy">
 
 
 				<!-- </div> -->
@@ -1200,25 +1200,25 @@
 				<!-- <div style="height: 10vh;"class="w-full" style="background: linear-gradient(to bottom, #fff, #C10200);"></div> -->
 				<div class="w-full" style="background-color: #C10200;">
 					<div style="height: 80vh;"></div>
-					<img src="img/s6_1.png" style="display: block; margin: auto;">
-					<img src="img/s6_2.png" style="display: block; margin: auto;">
+					<img src="img/s6_1.png" loading="lazy" style="display: block; margin: auto;">
+					<img src="img/s6_2.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s6_3.png" style="display: block; margin: auto;">
+					<img src="img/s6_3.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s6_4.png" style="display: block; margin: auto;">
+					<img src="img/s6_4.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s6_5.png" style="display: block; margin: auto;">
+					<img src="img/s6_5.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
-					<img src="img/s6_6.png" style="display: block; margin: auto;">
+					<img src="img/s6_6.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
 					<div style="display: flex; justify-content: center; gap: 5vw;">
 						<!-- <a href="#assistance" class="hover:text-custom transition-colors"> -->
 
-						<img src="img/s6_d1.png" style="display: block; cursor: pointer;"
+						<img src="img/s6_d1.png" loading="lazy" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('assistance').scrollIntoView({ behavior: 'smooth' });">
-						<img src="img/s6_d2.png" style="display: block; cursor: pointer;"
+						<img src="img/s6_d2.png" loading="lazy" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('constraint').scrollIntoView({ behavior: 'smooth' });">
-						<img src="img/s6_d3.png" style="display: block; cursor: pointer;"
+						<img src="img/s6_d3.png" loading="lazy" style="display: block; cursor: pointer;"
 							onclick="document.getElementById('transform').scrollIntoView({ behavior: 'smooth' });">
 
 					</div>
