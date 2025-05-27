@@ -17,28 +17,12 @@ Date: Dec 25, 2024
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 	<link href="https://ai-public.mastergo.com/gen_page/tailwind-custom.css" rel="stylesheet" />
-	<script
-		src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
-	<script src="https://ai-public.mastergo.com/gen_page/tailwind-config.min.js" data-color="#D20000"
-		data-border-radius="medium"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/BezierPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug// .addIndicators.min.js"></script>
-
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/BezierPlugin.min.js"></script>
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+	<!-- Scripts moved to the end of body -->
 	<style>
 		@font-face {
 			font-family: 'Chillzhuo';
-			src: url('/fonts/寒蝉手拙体.ttf') format('truetype');
+			src: url('fonts/寒蝉手拙体.ttf') format('truetype');
+			font-display: swap;
 		}
 
 		/* 确保html和body的宽度和高度为100% */
@@ -209,7 +193,7 @@ Date: Dec 25, 2024
 		<div id="content" class="relative pt-24 w-full">
 
 			<section id="intro" class="flex flex-col items-center justify-center">
-				<img id="spicy-strip" src="img/s1_latiao.svg" alt="辣条开始"
+				<img id="spicy-strip" src="img/s1_latiao.svg" alt="辣条开始" loading="lazy"
 					style="width: 25vw; position: fixed; top: 120%; left: 50%; transform: translate(-50%, -50%);">
 				<script>
 					(function () {
@@ -288,9 +272,9 @@ Date: Dec 25, 2024
 
 				</div>
 				<div style="height: 10vh;"></div>
-				<img src="img/s1_title.png" alt="辣条正传" style="width: 200vw; z-index: 999;">
-				<img src="img/s1_xiaola.gif" alt="s1_xiaola style=" width: 40vw; margin-top: -150px; z-index: 1;">
-				<img src="img/s1_intro.svg" alt="字1" style="width: 120vw;" class="min-w-screen">
+				<img src="img/s1_title.png" alt="辣条正传" style="width: 200vw; z-index: 999;" loading="lazy">
+				<img src="img/s1_xiaola.gif" alt="s1_xiaola style=" width: 40vw; margin-top: -150px; z-index: 1;" loading="lazy">
+				<img src="img/s1_intro.svg" alt="字1" style="width: 120vw;" class="min-w-screen" loading="lazy">
 				<div style="height: 100vh;"></div>
 			</section>
 
@@ -311,8 +295,8 @@ Date: Dec 25, 2024
 				<div class="line_2 line" style="text-align: center; opacity: 0;">平江县最大的产业酱干的原料大豆, <br>大幅度减产,生意难以为继</div>
 				<div style="display: flex; justify-content: center; gap: 50vw; transform: translateY(-250px);"
 					id="chanliangid">
-					<img class="chanliang" src="img/s2_面积产量.svg" style="width: 20vw">
-					<img class="chanliang" src="img/s2_洪水中大豆产量.svg" style="width: 20vw">
+					<img class="chanliang" src="img/s2_面积产量.svg" style="width: 20vw" loading="lazy">
+					<img class="chanliang" src="img/s2_洪水中大豆产量.svg" style="width: 20vw" loading="lazy">
 				</div>
 				<div style="height: 20vh;"></div>
 
@@ -337,15 +321,15 @@ Date: Dec 25, 2024
 				</script>
 
 				<div style="height: 900px;">
-					<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨"
+					<img id="rain" class="scroll-image" src="img/s2_下雨.svg" alt="下雨" loading="lazy"
 						style="width: 900px; transform: translate(-500px, -300px);">
-					<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方"
+					<img id="secret" class="scroll-image" src="img/s2_秘方.svg" alt="秘方" loading="lazy"
 						style="width: 150px; transform: translate(-500px, -650px);">
-					<img class="scroll-image" src="img/s2_替代.svg" alt="替代"
+					<img class="scroll-image" src="img/s2_替代.svg" alt="替代" loading="lazy"
 						style="width: 400px; transform: translate(-300px, -1200px);">
-					<img class="scroll-image" id="exportImage" src="img/s2_出口.svg" alt="出口"
+					<img class="scroll-image" id="exportImage" src="img/s2_出口.svg" alt="出口" loading="lazy"
 						style="width: 100px; transform: translate(-135px, -950px);">
-					<img id="latiao" class="scroll-image" src="img/s2_辣条.svg" alt="辣条"
+					<img id="latiao" class="scroll-image" src="img/s2_辣条.svg" alt="辣条" loading="lazy"
 						style="width: 700px; transform: translate(-195px, -1000px);">
 
 
@@ -385,14 +369,14 @@ Date: Dec 25, 2024
 				</div>
 
 				<div style="width: 1600px; z-index: 1;">
-					<img src="img/s2girl.svg" style="width: 100%; ">
-					<img src="img/s2真好吃.svg" style="width: 30%; transform: translate(900px, -800px);">
+					<img src="img/s2girl.svg" style="width: 100%; " loading="lazy">
+					<img src="img/s2真好吃.svg" style="width: 30%; transform: translate(900px, -800px);" loading="lazy">
 				</div>
 				<div style="height: 50vh;"></div>
 				<div style="width: 100%; height: 1000px;">
-					<img src="img/s2我火辣.svg"
+					<img src="img/s2我火辣.svg" loading="lazy"
 						style="width: 40%; display: block; margin: 0 auto; position: relative; z-index: 1;" id="fire">
-					<img src="img/s2滋味背景.svg"
+					<img src="img/s2滋味背景.svg" loading="lazy"
 						style="width: 100%; transform: translateY(-50%); position: relative; z-index: 0; opacity: 0;"
 						id="feather">
 
@@ -429,17 +413,17 @@ Date: Dec 25, 2024
 							一被摆上货架就被迅速清空<br>尤其是每天都能看见疯抢的人类小孩</div>
 
 					</div>
-					<img src="img/s2人类小孩.svg" id="human"
+					<img src="img/s2人类小孩.svg" id="human" loading="lazy"
 						style="width: 50%; display: block; margin: 0 auto; position: relative; z-index: 1;">
-					<img src="img/s2辣条商店.svg"
+					<img src="img/s2辣条商店.svg" loading="lazy"
 						style="width: 100%; transform: translateY(-100%); position: relative; z-index: 0;">
 				</div>
 
 				<div style="height: 600px;"></div>
 
-				<img src="img/s2招牌.svg" style="width:60%; z-index: 1">
+				<img src="img/s2招牌.svg" style="width:60%; z-index: 1" loading="lazy">
 				<div style="height: 600px;"></div>
-				<img src="img/s2众多辣条.svg" style="width:100%; z-index: 1">
+				<img src="img/s2众多辣条.svg" style="width:100%; z-index: 1" loading="lazy">
 
 				<div style="height: 1vh;" id="logo"></div>
 
@@ -766,7 +750,7 @@ Date: Dec 25, 2024
 					<div style="height: 80vh;"></div>
 					<img src="img/s3_2_但逐渐的，机器声音好像变得吃力.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img src="img/s3_3运输.gif" width="100%" alt="">
+					<img src="img/s3_3运输.gif" width="100%" alt="" loading="lazy">
 					<!-- <img id="machine" src="img/s3_3.png" alt=""
 						style="display: block; margin: auto; aspect-ratio: 16 / 1;">
 					<script>
@@ -794,11 +778,11 @@ Date: Dec 25, 2024
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_4_每次来接送我们的卡车也更脏，更破。.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 30vh;"></div>
-					<img id="truck" src="img/s3_5破车.gif" alt="" style="display: block; margin: auto;">
+					<img id="truck" src="img/s3_5破车.gif" alt="" style="display: block; margin: auto;" loading="lazy">
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_6_我听见一些工人嘴里说着.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 20vh;"></div>
-					<img src="img/s3_7人跑了.gif" style="display: block; margin: auto;">
+					<img src="img/s3_7人跑了.gif" style="display: block; margin: auto;" loading="lazy">
 					<div style="height: 50vh;"></div>
 					<img src="img/s3_8_原料问题.png" loading="lazy" style="display: block; margin: auto;">
 					<div style="height: 50vh;"></div>
@@ -1055,19 +1039,19 @@ Date: Dec 25, 2024
 				<div class="line title" style="text-align: center;font-size: 160px; z-index: 1;">不能成为垃圾的我</div>
 				<div style="height: 100vh;"></div>
 				<div style="z-index: 0;">
-					<img src="img/s4line01.svg">
+					<img src="img/s4line01.svg" loading="lazy">
 				</div>
 				<!-- <div style="z-index: 0;">
 					<img src="img/s4line02.svg" >
 				</div> -->
 				<div style="height: 1500px;" id="lajidui">
-					<img class="garbage" src="img/s4垃圾堆.svg">
-					<img class="track" src="img/s4跑道.svg" style="transform: translateY(-500px);">
+					<img class="garbage" src="img/s4垃圾堆.svg" loading="lazy">
+					<img class="track" src="img/s4跑道.svg" style="transform: translateY(-500px);" loading="lazy">
 					<div class="spicy-strips"
 						style="display: flex; justify-content: space-between; width: 100%; gap: 8px; transform: translateY(-1300px);">
-						<img id="spicy-strip-left" src="img/s4辣条左.svg" style="transform: translateX(200px);">
-						<img id="spicy-strip-center" src="img/s4辣条中.svg" style="transform: translateY(200px);">
-						<img id="spicy-strip-right" src="img/s4辣条右.svg" style="transform: translateX(-200px);">
+						<img id="spicy-strip-left" src="img/s4辣条左.svg" style="transform: translateX(200px);" loading="lazy">
+						<img id="spicy-strip-center" src="img/s4辣条中.svg" style="transform: translateY(200px);" loading="lazy">
+						<img id="spicy-strip-right" src="img/s4辣条右.svg" style="transform: translateX(-200px);" loading="lazy">
 						<script>
 							gsap.to("#spicy-strip-left", {
 								y: -50,
@@ -1094,7 +1078,7 @@ Date: Dec 25, 2024
 							});
 						</script>
 					</div>
-					<img class="tv" src="img/s4电视.svg" style="transform: translateY(-1200px);">
+					<img class="tv" src="img/s4电视.svg" style="transform: translateY(-1200px);" loading="lazy">
 
 					<script>
 						(function () {
@@ -1121,17 +1105,17 @@ Date: Dec 25, 2024
 					</script>
 				</div>
 				<div style="z-index: 0;">
-					<img src="img/s4line03.svg">
+					<img src="img/s4line03.svg" loading="lazy">
 				</div>
 				<div id="tv_box"
 					style="z-index: 0; width:100%; position: relative; height: 14000px;">
-					<img src="img/s4line04.svg" style=" width:99%; position: absolute; top: 0; left: 0;">
+					<img src="img/s4line04.svg" style=" width:99%; position: absolute; top: 0; left: 0;" loading="lazy">
 					
-					<img src="img/s4_穿衣服.gif" style=" width:64%; position: absolute; top: 11410px; left: 50%; transform: translateX(-50%);">
-					<img src="img/s4_车间.gif" style=" width:64%; position: absolute; top: 12410px; left: 50%; transform: translateX(-50%);">
-					<img src="img/s4_电视框1.svg"
+					<img src="img/s4_穿衣服.gif" style=" width:64%; position: absolute; top: 11410px; left: 50%; transform: translateX(-50%);" loading="lazy">
+					<img src="img/s4_车间.gif" style=" width:64%; position: absolute; top: 12410px; left: 50%; transform: translateX(-50%);" loading="lazy">
+					<img src="img/s4_电视框1.svg" loading="lazy"
 						style=" width:80%; position: absolute; top: 11100px; left: 50%; transform: translateX(-50%);">
-					<img src="img/s4_电视框2.svg"
+					<img src="img/s4_电视框2.svg" loading="lazy"
 						style=" width:80%; position: absolute; top: 12100px; left: 50%; transform: translateX(-50%);">
 					<img src="img/s4_line04.png" loading="lazy" style=" width:50%; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
 				</div>
@@ -1151,7 +1135,7 @@ Date: Dec 25, 2024
 				<div style="height: 50vh;"></div>
 				<!-- 章节正文 -->
 				<!-- <div style="z-index: 1;"> -->
-				<img src="img/s5_1.svg">
+				<img src="img/s5_1.svg" loading="lazy">
 				<!-- <div style="height: 2000px">
 					<img src="img/s5_2.svg" style="transform: translate(100px, 100px);">
 					<img src="img/s5_文本框 窗前.svg" style="transform: translate(600px, -900px);">
@@ -1160,12 +1144,12 @@ Date: Dec 25, 2024
 				</div> -->
 
 				<div style="height: 1400px; width: 100%; position: relative;">
-					<img id="s5_2" src="img/s5_2.svg"
+					<img id="s5_2" src="img/s5_2.svg" loading="lazy"
 						style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-					<img id="s5_textbox_window" src="img/s5_文本框 窗前.svg"
+					<img id="s5_textbox_window" src="img/s5_文本框 窗前.svg" loading="lazy"
 						style="position: absolute; top: 300px; left: 500px;">
-					<img id="s5_live" src="img/s5_直播.svg" style="position: absolute; top: 300px; right: 100px;">
-					<img id="s5_textbox_car" src="img/s5_文本框 上车.svg"
+					<img id="s5_live" src="img/s5_直播.svg" style="position: absolute; top: 300px; right: 100px;" loading="lazy">
+					<img id="s5_textbox_car" src="img/s5_文本框 上车.svg" loading="lazy"
 						style="position: absolute; top: 200px; right: 100px;">
 				</div>
 				<script>
@@ -1194,18 +1178,18 @@ Date: Dec 25, 2024
 				</script>
 				<img src="img/s5_辣条之王.png" loading="lazy">
 				<div style="height: 100px;"></div>
-				<img src="img/s5_饼图和鲨鱼.svg">
+				<img src="img/s5_饼图和鲨鱼.svg" loading="lazy">
 				<div style="height: 100px;"></div>
 				<div style="height: 3500px; width:100%;  position: relative;">
-					<img src="img/s5_黑影时间线.svg"
+					<img src="img/s5_黑影时间线.svg" loading="lazy"
 						style=" width:100%; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-					<img class="fade-image" src="img/s5_辣条带货.svg"
+					<img class="fade-image" src="img/s5_辣条带货.svg" loading="lazy"
 						style=" width:48%; position: absolute; top: 0; left: 0;">
-					<img class="fade-image" src="img/s5_县长辣条.svg"
+					<img class="fade-image" src="img/s5_县长辣条.svg" loading="lazy"
 						style=" width:48%; position: absolute; top: 700px; right: 20px;">
-					<img class="fade-image" src="img/s5_辣椒箱.svg"
+					<img class="fade-image" src="img/s5_辣椒箱.svg" loading="lazy"
 						style=" width:48%; position: absolute; top: 1500px; left: 10px;">
-					<img class="fade-image" src="img/s5_辣条博物馆.svg"
+					<img class="fade-image" src="img/s5_辣条博物馆.svg" loading="lazy"
 						style=" width:50%; position: absolute; top: 2390px; right: 10px;">
 					<script>
 						(function () {
@@ -1467,6 +1451,16 @@ Date: Dec 25, 2024
 
 	</script>
 
+	<script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1" defer></script>
+	<script src="https://ai-public.mastergo.com/gen_page/tailwind-config.min.js" data-color="#D20000" data-border-radius="medium" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/BezierPlugin.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js" defer></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 </body>
 
 </html>
